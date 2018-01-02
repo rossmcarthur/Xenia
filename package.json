@@ -23,10 +23,6 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-<<<<<<< HEAD
-=======
-    "webpack": "webpack --watch",
->>>>>>> user-auth
     "postinstall": "webpack"
   },
   "engines": {
