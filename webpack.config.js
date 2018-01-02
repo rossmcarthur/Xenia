@@ -1,15 +1,17 @@
-var path = require('path');
+var path = require("path");
 
 module.exports = {
-  entry: './frontend/xenia.jsx',
+  context: __dirname,
+  entry: "./frontend/xenia.jsx",
   output: {
-    filename: './bundle.js',
+    path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
+    filename: "bundle.js"
   },
   module: {
     loaders: [
       {
-        test: [/\.jsx?$/],
-        exclude: /(node_modules)/,
+        test: [/\.jsx?$/, /\.js?$/],
+        exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
           presets: ['env', 'react']
@@ -19,6 +21,6 @@ module.exports = {
   },
   devtool: 'source-map',
   resolve: {
-    extensions: ['.js', '.jsx', '*']
+    extensions: [".js", ".jsx", "*"]
   }
 };
