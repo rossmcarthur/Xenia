@@ -1,0 +1,44 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  font-family: sans-serif;
+}
+
+.login-signup {
+  font-size: 15px;
+}
+
+.login-link {
+  text-decoration: none;
+    &:hover {
+      border-bottom: 2px solid gray;
+    }
+}
+
+.signup-link {
+  text-decoration: none;
+    &:hover {
+      border-bottom: 2px solid gray;
+    }
+}
+
+.login-form-container {
+  text-align: center;
+  border: 1px solid gray;
+  margin: auto;
+  width: 300px;
+  margin-top: 200px;
+  padding: 0px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+
+
+
+.homepage-icon {
+  font-size: 20px;
+  position: fixed;
+  top: -7px;
+  left: 5px;
+}

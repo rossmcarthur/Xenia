@@ -4,9 +4,9 @@ import SessionFormContainer from '../session_form/session_form_container'
 
 const sessionLinks = () => (
   <nav className="login-signup">
-    <Link to="/login">Login</Link>
-    &nbsp;or&nbsp;
-    <Link to="/signup">Sign up!</Link>
+    <Link className="login-link" to="/login">Login</Link>
+    &nbsp;&nbsp;
+    <Link className="signup-link" to="/signup">Sign up</Link>
   </nav>
 );
 

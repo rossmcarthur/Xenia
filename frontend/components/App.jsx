@@ -7,13 +7,12 @@ const App = () => (
   <div>
     <header>
       <Link to="/" className="header-link">
-        <h1>Welcome To Xenia</h1>
+        <h1 className="homepage-icon">Welcome To Xenia</h1>
       </Link>
       <LogoutContainer />
     </header>
       <Route path="/login" component={SessionFormContainer} />
       <Route path="/signup" component={SessionFormContainer} />
-
   </div>
 )
 
