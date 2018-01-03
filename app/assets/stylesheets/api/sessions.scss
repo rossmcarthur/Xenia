@@ -1,7 +1,7 @@
 header {
   display: flex;
   justify-content: space-between;
-  font-family: sans-serif;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
 }
 
 .login-signup {
@@ -10,6 +10,16 @@ header {
 
 .login-link {
   text-decoration: none;
+  color: inherit;
+    &:hover {
+      border-bottom: 2px solid gray;
+    }
+}
+
+.login-link2 {
+  text-decoration: none;
+  color: #008489;
+  font-weight: bold;
     &:hover {
       border-bottom: 2px solid gray;
     }
@@ -17,24 +27,77 @@ header {
 
 .signup-link {
   text-decoration: none;
+  color: inherit;
     &:hover {
       border-bottom: 2px solid gray;
     }
 }
 
+.signup-link2 {
+  text-decoration: none;
+  color: #008489;
+  font-weight: bold;
+    &:hover {
+      border-bottom: 2px solid gray;
+    }
+}
+
+.login-input {
+  margin: 8px;
+  width: 450px;
+  height: 40px;
+  font-size: 17px;
+  padding-left: 10px;
+  font-weight: lighter;
+}
+
+.login-button {
+  margin: 8px;
+  width: 466px;
+  height: 50px;
+  background: #FF5A5F;
+  color: white;
+  border-radius: 5px;
+  font-size: 17px;
+}
+
+.close-icon {
+  font-size: 30px;
+  text-decoration: none;
+  float: left;
+  padding-left: 20px;
+  padding-top: 10px;
+  color: inherit;
+  font-weight: 100;
+}
+
+.login-form-box {
+  padding-top: 40px;
+}
 .login-form-container {
   text-align: center;
   border: 1px solid gray;
   margin: auto;
-  width: 300px;
+  width: 525px;
+  height: 375px;
   margin-top: 200px;
   padding: 0px;
-  padding-top: 40px;
   padding-bottom: 40px;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
 }
-
-
-
+.session-redirect-border {
+  height: 0px;
+  width: 450px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.session-redirect {
+  text-decoration: none;
+  border-top: 1px solid gray;
+  font-weight: lighter;
+  padding-top: 20px;
+}
 
 .homepage-icon {
   font-size: 20px;
