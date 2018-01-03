@@ -2,6 +2,7 @@ header {
   display: flex;
   justify-content: space-between;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  padding-top: 10px;
 }
 
 .login-signup {
@@ -21,7 +22,7 @@ header {
   color: #008489;
   font-weight: bold;
     &:hover {
-      border-bottom: 2px solid gray;
+      border-bottom: 2px solid #008489;
     }
 }
 
@@ -38,7 +39,7 @@ header {
   color: #008489;
   font-weight: bold;
     &:hover {
-      border-bottom: 2px solid gray;
+      border-bottom: 2px solid #008489;
     }
 }
 
@@ -104,4 +105,6 @@ header {
   position: fixed;
   top: -7px;
   left: 5px;
+  color: black;
+  padding-top: 5px;
 }

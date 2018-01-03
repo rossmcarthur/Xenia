@@ -7,7 +7,7 @@ const App = () => (
   <div>
     <header>
       <Link to="/" className="header-link">
-        <h1 className="homepage-icon">Welcome To Xenia</h1>
+        <h1 className="homepage-icon">Xenia</h1>
       </Link>
       <LogoutContainer />
     </header>

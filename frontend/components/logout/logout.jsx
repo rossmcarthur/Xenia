@@ -11,7 +11,6 @@ const sessionLinks = () => (
 );
 
 const Logout = props => {
-  debugger
   if (props.currentUser) {
     return (
       <div>
