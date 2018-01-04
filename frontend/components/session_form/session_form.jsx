@@ -13,6 +13,7 @@ class SessionForm extends React.Component {
     this.handleSignupModal = this.handleSignupModal.bind(this);
     this.handleLoginModal = this.handleLoginModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
   }
 
   componentDidMount() {
@@ -31,10 +32,23 @@ class SessionForm extends React.Component {
     });
   }
 
+  toggleModal(e) {
+    e.preventDefault();
+    if (this.props.session_modal === 'login') {
+      this.props.loginModal();
+    } else if (this.props.session_modal === 'signup') {
+      this.props.signupModal();
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.processForm(user);
+    if (this.props.session_modal === 'login') {
+      this.props.login(user);
+    } else if (this.props.session_modal === 'signup'){
+      this.props.signup(user);
+    }
   }
 
   handleGuest(e) {
@@ -59,15 +73,15 @@ class SessionForm extends React.Component {
   }
 
   navLink() {
-    if (this.props.formType === 'login') {
-      return <Link onClick={this.handleSignupModal} className="login-link2" to="/signup">Sign up</Link>;
+    if (this.props.session_modal === 'signup') {
+      return <button onClick={this.toggleModal} className="login-link2">Sign up</button>;
     } else {
-      return <Link onClick={this.handleLoginModal} className="signup-link2" to="/login">Log in</Link>;
+      return <button onClick={this.toggleModal} className="signup-link2">Log in</button>;
     }
   }
 
   message() {
-    if (this.props.formType === 'login') {
+    if (this.props.session_modal === 'login') {
       return "Don't have an account?"
     } else {
       return "Already have a Xenia account?"
@@ -75,7 +89,7 @@ class SessionForm extends React.Component {
   }
 
   buttonMessage() {
-    if (this.props.formType === 'login') {
+    if (this.props.session_modal === 'login') {
       return "Log in"
     } else {
       return "Sign up"
@@ -95,38 +109,42 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    return (
-      <div className="login-form-container">
-        <Link to="/" className="close-icon">&times;</Link>
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          {this.renderErrors()}
-          <div className="login-form">
-            <br/>
-              <input type="text"
-                value={this.state.email}
-                placeholder="Email address"
-                onChange={this.update('email')}
-                className="login-input"
-              />
-            <br/>
-              <input type="password"
-                value={this.state.password}
-                placeholder="Password"
-                onChange={this.update('password')}
-                className="login-input"
-              />
-            <br/>
-            <input className="login-button" type="submit" value={this.buttonMessage()} />
-            <div className="session-redirect-border">
-              <p className="session-redirect">{this.message()} {this.navLink()}</p>
-              <button className="guest-login" onClick={this.handleGuest}>Guest Login</button>
-            </div>
+    if (!this.props.session_modal) {
+      return null;
+    }
+      return (
+        <div className="modal-window">
+          <div className="login-form-container">
+            <button onClick={this.closeModal} className="close-icon">&times;</button>
+            <form onSubmit={this.handleSubmit} className="login-form-box">
+              {this.renderErrors()}
+              <div className="login-form">
+                <br/>
+                  <input type="text"
+                    value={this.state.email}
+                    placeholder="Email address"
+                    onChange={this.update('email')}
+                    className="login-input"
+                  />
+                <br/>
+                  <input type="password"
+                    value={this.state.password}
+                    placeholder="Password"
+                    onChange={this.update('password')}
+                    className="login-input"
+                  />
+                <br/>
+                <input className="login-button" type="submit" value={this.buttonMessage()} />
+                <div className="session-redirect-border">
+                  <p className="session-redirect">{this.message()} {this.navLink()}</p>
+                  <button className="guest-login" onClick={this.handleGuest}>Guest Login</button>
+                </div>
+              </div>
+            </form>
           </div>
-        </form>
-
-      </div>
-    );
+        </div>
+      );
+    }
   }
-}
 
 export default withRouter(SessionForm);

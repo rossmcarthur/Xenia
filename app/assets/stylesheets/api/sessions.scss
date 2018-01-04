@@ -5,6 +5,19 @@ header {
   padding-top: 10px;
 }
 
+.modal-window {
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  overflow: scroll;
+}
+
 .login-signup {
   font-size: 15px;
 }
@@ -50,6 +63,7 @@ header {
   font-size: 17px;
   padding-left: 10px;
   font-weight: lighter;
+  background-image: url("../../images/airbnbIcons.png")
 }
 
 .login-button {
@@ -86,6 +100,7 @@ header {
   padding: 0px;
   padding-bottom: 40px;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  background-color: white;
 }
 .session-redirect-border {
   height: 0px;

@@ -5,17 +5,17 @@ import {
   CLOSE_MODAL
 } from '../actions/ui_actions';
 
+
 const initialState = {
-  login_modal: false,
-  signup_modal: false,
+  session_modal: null
 };
 
 export const uiReducer = (state = initialState, action) => {
   switch(action.type) {
     case LOGIN_MODAL:
-    return merge({}, state, { login_modal: true, signup_modal: false });
+    return merge({}, state, { session_modal: 'login' });
     case SIGNUP_MODAL:
-    return merge({}, state, { signup_modal: true, login_modal: false });
+    return merge({}, state, { session_modal: 'signup' });
     case CLOSE_MODAL:
     return initialState;
     default:

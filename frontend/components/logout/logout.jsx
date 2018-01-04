@@ -2,37 +2,34 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SessionFormContainer from '../session_form/session_form_container';
 
-handleLoginModal(e) {
-  this.props.loginModal();
-}
 
-handleSignupModal(e) {
-  this.props.signupModal();
-}
 
-handleCloseModal(e) {
-  this.props.closeModal();
-}
+class Logout extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-const sessionLinks = () => (
+sessionLinks() {
+  return (
   <nav className="login-signup">
-    <Link className="login-link" to="/login">Log In</Link>
+    <button onClick={this.props.loginModal} className="login-link">Log In</button>
     &nbsp;&nbsp;
-    <Link className="signup-link" to="/signup">Sign Up</Link>
+    <button onClick={this.props.signupModal} className="signup-link">Sign Up</button>
   </nav>
-);
+)};
 
-const Logout = props => {
-  if (props.currentUser) {
+  render() {
+  if (this.props.currentUser) {
     return (
       <div>
-        <h2 className="header-name">Hi, {props.currentUser.email}!</h2>
-        <button className="header-button" onClick={props.logout}>Log Out</button>
+        <h2 className="header-name">Hi, {this.props.currentUser.email}!</h2>
+        <button className="header-button" onClick={this.props.logout}>Log Out</button>
       </div>
     );
   } else {
-    return sessionLinks();
+    return this.sessionLinks();
   }
+}
 }
 
 export default Logout;

@@ -10,9 +10,9 @@ const App = () => (
         <h1 className="homepage-icon">Xenia</h1>
       </Link>
       <LogoutContainer />
+      <SessionFormContainer />
     </header>
-      <Route path="/login" component={SessionFormContainer} />
-      <Route path="/signup" component={SessionFormContainer} />
+
   </div>
 )
 
