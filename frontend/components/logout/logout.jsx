@@ -2,6 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SessionFormContainer from '../session_form/session_form_container';
 
+handleLoginModal(e) {
+  this.props.loginModal();
+}
+
+handleSignupModal(e) {
+  this.props.signupModal();
+}
+
+handleCloseModal(e) {
+  this.props.closeModal();
+}
+
 const sessionLinks = () => (
   <nav className="login-signup">
     <Link className="login-link" to="/login">Log In</Link>

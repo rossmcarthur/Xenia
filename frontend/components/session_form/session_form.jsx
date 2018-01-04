@@ -10,6 +10,13 @@ class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleGuest = this.handleGuest.bind(this);
+    this.handleSignupModal = this.handleSignupModal.bind(this);
+    this.handleLoginModal = this.handleLoginModal.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.clearErrors();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -27,23 +34,35 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.processForm({user});
+    this.props.processForm(user);
   }
 
   handleGuest(e) {
-    e.preventDefault();
+    e.stopPropagation();
     const guest = {
       email: 'guest123@gmail.com',
       password: 'guestpassword'
     };
-    this.props.login({guest});
+    this.props.login(guest);
+  }
+
+  handleLoginModal(e) {
+    this.props.loginModal();
+  }
+
+  handleSignupModal(e) {
+    this.props.signupModal();
+  }
+
+  handleCloseModal(e) {
+    this.props.closeModal();
   }
 
   navLink() {
     if (this.props.formType === 'login') {
-      return <Link className="login-link2" to="/signup">Sign up</Link>;
+      return <Link onClick={this.handleSignupModal} className="login-link2" to="/signup">Sign up</Link>;
     } else {
-      return <Link className="signup-link2" to="/login">Log in</Link>;
+      return <Link onClick={this.handleLoginModal} className="signup-link2" to="/login">Log in</Link>;
     }
   }
 
@@ -67,7 +86,7 @@ class SessionForm extends React.Component {
     return(
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+          <li className="errors-list" key={`error-${i}`}>
             {error}
           </li>
         ))}
@@ -80,7 +99,6 @@ class SessionForm extends React.Component {
       <div className="login-form-container">
         <Link to="/" className="close-icon">&times;</Link>
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          
           {this.renderErrors()}
           <div className="login-form">
             <br/>
@@ -101,9 +119,11 @@ class SessionForm extends React.Component {
             <input className="login-button" type="submit" value={this.buttonMessage()} />
             <div className="session-redirect-border">
               <p className="session-redirect">{this.message()} {this.navLink()}</p>
+              <button className="guest-login" onClick={this.handleGuest}>Guest Login</button>
             </div>
-            </div>
+          </div>
         </form>
+
       </div>
     );
   }

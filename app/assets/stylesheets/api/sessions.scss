@@ -75,6 +75,7 @@ header {
 .login-form-box {
   padding-top: 40px;
 }
+
 .login-form-container {
   text-align: center;
   border: 1px solid gray;
@@ -107,4 +108,16 @@ header {
   left: 5px;
   color: black;
   padding-top: 5px;
+}
+
+.guest-login {
+  border-style: none;
+  color: #008489;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.errors-list {
+  list-style: none;
 }
