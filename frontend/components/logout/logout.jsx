@@ -2,25 +2,38 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SessionFormContainer from '../session_form/session_form_container';
 
-const sessionLinks = () => (
-  <nav className="login-signup">
-    <Link className="login-link" to="/login">Log In</Link>
-    &nbsp;&nbsp;
-    <Link className="signup-link" to="/signup">Sign Up</Link>
-  </nav>
-);
 
-const Logout = props => {
-  if (props.currentUser) {
+
+class Logout extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+sessionLinks() {
+  return (
+  <nav className="login-signup">
+    <button onClick={this.props.signupModal} className="signup-link">
+      <span className="button-border">Sign Up</span>
+    </button>
+    &nbsp;&nbsp;
+    <button onClick={this.props.loginModal} className="login-link">
+      <span className="button-border">Log In</span>
+    </button>
+  </nav>
+)};
+
+  render() {
+  if (this.props.currentUser) {
     return (
       <div>
-        <h2 className="header-name">Hi, {props.currentUser.email}!</h2>
-        <button className="header-button" onClick={props.logout}>Log Out</button>
+        <h2 className="header-name">Hi, {this.props.currentUser.email}!</h2>
+        <button className="header-button" onClick={this.props.logout}>Log Out</button>
       </div>
     );
   } else {
-    return sessionLinks();
+    return this.sessionLinks();
   }
+}
 }
 
 export default Logout;
