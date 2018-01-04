@@ -34,11 +34,12 @@ class SessionForm extends React.Component {
 
   toggleModal(e) {
     e.preventDefault();
-    if (this.props.session_modal === 'login') {
-      this.props.loginModal();
-    } else if (this.props.session_modal === 'signup') {
-      this.props.signupModal();
-    }
+      if (this.props.session_modal === 'login') {
+        this.props.signupModal();
+      } else if (this.props.session_modal === 'signup') {
+        this.props.loginModal();
+      }
+    this.props.clearErrors();
   }
 
   handleSubmit(e) {
@@ -58,6 +59,7 @@ class SessionForm extends React.Component {
       password: 'guestpassword'
     };
     this.props.login(guest);
+    this.handleCloseModal();
   }
 
   handleLoginModal(e) {
@@ -70,12 +72,18 @@ class SessionForm extends React.Component {
 
   handleCloseModal(e) {
     this.props.closeModal();
+    this.props.clearErrors();
+    this.setState({email: '', password: ''})
+  }
+
+  stopPropagation(e) {
+    e.stopPropagation();
   }
 
   navLink() {
-    if (this.props.session_modal === 'signup') {
+    if (this.props.session_modal === 'login') {
       return <button onClick={this.toggleModal} className="login-link2">Sign up</button>;
-    } else {
+    } else if (this.props.session_modal === 'signup'){
       return <button onClick={this.toggleModal} className="signup-link2">Log in</button>;
     }
   }
@@ -83,7 +91,7 @@ class SessionForm extends React.Component {
   message() {
     if (this.props.session_modal === 'login') {
       return "Don't have an account?"
-    } else {
+    } else if (this.props.session_modal === 'signup'){
       return "Already have a Xenia account?"
     }
   }
@@ -91,7 +99,7 @@ class SessionForm extends React.Component {
   buttonMessage() {
     if (this.props.session_modal === 'login') {
       return "Log in"
-    } else {
+    } else if (this.props.session_modal === 'signup'){
       return "Sign up"
     }
   }
@@ -113,9 +121,9 @@ class SessionForm extends React.Component {
       return null;
     }
       return (
-        <div className="modal-window">
-          <div className="login-form-container">
-            <button onClick={this.closeModal} className="close-icon">&times;</button>
+        <div onClick={this.handleCloseModal} className="modal-window">
+          <div onClick={this.stopPropagation} className="login-form-container">
+            <button onClick={this.handleCloseModal} className="close-icon">&times;</button>
             <form onSubmit={this.handleSubmit} className="login-form-box">
               {this.renderErrors()}
               <div className="login-form">
@@ -124,14 +132,14 @@ class SessionForm extends React.Component {
                     value={this.state.email}
                     placeholder="Email address"
                     onChange={this.update('email')}
-                    className="login-input"
+                    className="email-input"
                   />
                 <br/>
                   <input type="password"
                     value={this.state.password}
                     placeholder="Password"
                     onChange={this.update('password')}
-                    className="login-input"
+                    className="password-input"
                   />
                 <br/>
                 <input className="login-button" type="submit" value={this.buttonMessage()} />

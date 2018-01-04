@@ -7,7 +7,7 @@ const App = () => (
   <div>
     <header>
       <Link to="/" className="header-link">
-        <h1 className="homepage-icon">Xenia</h1>
+        <img className="homepage-icon" src={window.staticImages.XeniaLogo}/>
       </Link>
       <LogoutContainer />
       <SessionFormContainer />

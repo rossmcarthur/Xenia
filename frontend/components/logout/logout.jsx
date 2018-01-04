@@ -12,9 +12,13 @@ class Logout extends React.Component {
 sessionLinks() {
   return (
   <nav className="login-signup">
-    <button onClick={this.props.loginModal} className="login-link">Log In</button>
+    <button onClick={this.props.signupModal} className="signup-link">
+      <span className="button-border">Sign Up</span>
+    </button>
     &nbsp;&nbsp;
-    <button onClick={this.props.signupModal} className="signup-link">Sign Up</button>
+    <button onClick={this.props.loginModal} className="login-link">
+      <span className="button-border">Log In</span>
+    </button>
   </nav>
 )};
 
