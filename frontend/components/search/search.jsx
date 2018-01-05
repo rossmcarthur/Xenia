@@ -1,14 +1,21 @@
 import React from 'react';
-import map from '../spot_map/spot_map';
-import spotIndex from '../spots/spot_index'
+import SpotMap from '../spot_map/spot_map';
+import SpotIndex from '../spots/spot_index';
 
 class Search extends React.Component {
+  componentDidMount() {
+    this.props.fetchSpots();
+  }
+  
   render() {
     return (
-      <div>
-        <SpotMap />
-        <SpotIndex />
-      </div>
+        <div>
+          <SpotMap spots={this.props.spots} />
+          <SpotIndex spots={this.props.spots} />
+        </div>
     );
   }
 }
+
+
+export default Search;
