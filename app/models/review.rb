@@ -7,7 +7,7 @@ class Review < ApplicationRecord
     foreign_key: :spot_id
 
   belongs_to :author,
-  class_name: :User,
-  foreign_key: :author_id
+    class_name: :User,
+    foreign_key: :author_id
 
 end
