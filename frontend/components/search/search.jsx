@@ -6,11 +6,11 @@ class Search extends React.Component {
   componentDidMount() {
     this.props.fetchSpots();
   }
-  
+
   render() {
     return (
         <div>
-          <SpotMap spots={this.props.spots} />
+          <SpotMap spots={this.props.spots} updateBounds={this.props.updateBounds} />
           <SpotIndex spots={this.props.spots} />
         </div>
     );
