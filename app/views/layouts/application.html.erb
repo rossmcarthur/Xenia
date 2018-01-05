@@ -3,12 +3,15 @@
   <head>
     <title>Xenia</title>
     <%= csrf_meta_tags %>
-
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClV1-NCBi0URX5ftUxD8bX_E8reM-z-B8&callback=initMap">
+    </script>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
+
     <%= yield %>
   </body>
 </html>
