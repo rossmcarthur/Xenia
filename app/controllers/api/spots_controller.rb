@@ -1,7 +1,7 @@
 class Api::SpotsController < ApplicationController
 
   def index
-    @spot = Spot.find(params[:id])
+    @spots = Spot.all
   end
 
   def create
@@ -9,7 +9,7 @@ class Api::SpotsController < ApplicationController
     if @spot.save
       render :show
     else
-      render json: @spot.errors.full_messages, status:422 
+      render json: @spot.errors.full_messages, status:422
     end
   end
 

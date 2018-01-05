@@ -5,10 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+User.destroy_all
+Spot.destroy_all
 
 user1 = User.create(email: 'ross@hotmail.com', password: 'whatever', first_name: 'Ross', last_name: 'McArthur')
 user2 = User.create(email: 'virginias_v_best@gmail.com', password: 'whatever', first_name: 'George', last_name: 'Washington')
+guest = User.create(email: 'guest123@gmail.com', password: 'guestpassword')
 
 spot1 = Spot.create(host_id: user2.id, title: "Great Spot", address: '1372 Broadway, New York, New York, 10018, United States',
   body: "A really great spot with a great location", guests: 3, price: 75, lng: 40.7522534, lat: -73.9891765)

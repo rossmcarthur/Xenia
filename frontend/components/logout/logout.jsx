@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SessionFormContainer from '../session_form/session_form_container';
+import SpotIndexContainer from '../spots/spot_index_container';
 
 
 
@@ -28,6 +29,7 @@ sessionLinks() {
       <div>
         <h2 className="header-name">Hi, {this.props.currentUser.email}!</h2>
         <button className="header-button" onClick={this.props.logout}>Log Out</button>
+        <SpotIndexContainer />
       </div>
     );
   } else {

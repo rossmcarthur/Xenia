@@ -3,6 +3,14 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
+  has_many :reviews,
+    class_name: :Review,
+    foreign_key: :author_id
+
+  has_many :spots,
+    class_name: :Spot,
+    foreign_key: :host_id
+
   attr_reader :password
 
   after_initialize :ensure_session_token

@@ -16,13 +16,11 @@ class SessionForm extends React.Component {
     this.toggleModal = this.toggleModal.bind(this);
   }
 
-  componentDidMount() {
-    this.props.clearErrors();
-  }
-
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn) {
       this.props.history.push('/');
+    } else if (!this.props.session_modal && !this.props.loggedIn) {
+      this.props.clearErrors();
     }
   }
 
@@ -39,7 +37,7 @@ class SessionForm extends React.Component {
       } else if (this.props.session_modal === 'signup') {
         this.props.loginModal();
       }
-    this.props.clearErrors();
+      this.props.clearErrors();
   }
 
   handleSubmit(e) {
@@ -72,8 +70,7 @@ class SessionForm extends React.Component {
 
   handleCloseModal(e) {
     this.props.closeModal();
-    this.props.clearErrors();
-    this.setState({email: '', password: ''})
+    this.setState({email: '', password: ''});
   }
 
   stopPropagation(e) {
