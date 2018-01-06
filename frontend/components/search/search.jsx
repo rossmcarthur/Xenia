@@ -3,10 +3,6 @@ import SpotMap from '../spot_map/spot_map';
 import SpotIndex from '../spots/spot_index';
 
 class Search extends React.Component {
-  componentDidMount() {
-    this.props.fetchSpots();
-  }
-
   render() {
     return (
         <div>

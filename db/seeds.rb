@@ -13,6 +13,6 @@ user2 = User.create(email: 'virginias_v_best@gmail.com', password: 'whatever', f
 guest = User.create(email: 'guest123@gmail.com', password: 'guestpassword')
 
 spot1 = Spot.create(host_id: user2.id, title: "Great Spot", address: '1372 Broadway, New York, New York, 10018, United States',
-  body: "A really great spot with a great location", guests: 3, price: 75, lng: 40.7522534, lat: -73.9891765)
+  body: "A really great spot with a great location", spot_type: "Private Room", guests: 3, price: 75, lng: 40.7522534, lat: -73.9891765)
 spot2 = Spot.create(host_id: user1.id, title: "Okay Spot", address: '262 W 38th St, New York, New York, 10018, United States',
-  body: "A really great spot with a great location", guests: 2, price: 100, lng: 40.754467, lat: -73.991073)
+  body: "A really great spot with a great location", spot_type: "Shared Room", guests: 2, price: 100, lng: 40.754467, lat: -73.991073)
