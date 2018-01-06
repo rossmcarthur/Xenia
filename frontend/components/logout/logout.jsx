@@ -27,8 +27,9 @@ sessionLinks() {
     if (this.props.currentUser) {
       return (
         <div>
-          <h2 className="header-name">Hi, {this.props.currentUser.email}!</h2>
-          <button className="header-button" onClick={this.props.logout}>Log Out</button>
+          <header className="nav-header">
+            <button className="header-button" onClick={this.props.logout}>Log Out</button>
+          </header>
           <SearchContainer />
         </div>
       );

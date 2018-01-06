@@ -8,7 +8,7 @@ const mapStateToProps = (state, { location }) => {
   return {
     loggedIn: Boolean(state.session.currentUser),
     errors: state.errors.session,
-    session_modal: state.ui.session_modal,
+    session_modal: state.ui.modals.session_modal,
   };
 };
 
