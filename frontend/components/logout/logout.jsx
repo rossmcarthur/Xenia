@@ -26,9 +26,10 @@ sessionLinks() {
   render() {
     if (this.props.currentUser) {
       return (
-        <div>
+        <div className="spot-index">
           <header className="nav-header">
-            <button className="header-button" onClick={this.props.logout}>Log Out</button>
+            <button className="logout-button" onClick={this.props.logout}>Log Out</button>
+            <button className="host-button">Become a host</button>
           </header>
           <SearchContainer />
         </div>

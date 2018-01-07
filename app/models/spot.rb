@@ -1,5 +1,7 @@
 class Spot < ApplicationRecord
   validates :host_id, :title, :address, :body, :guests, :price, :lng, :lat, presence: true
+  has_attached_file :image, styles: { small: "160x160>" }, default_url: "abandoned.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   belongs_to :host,
     class_name: :User,

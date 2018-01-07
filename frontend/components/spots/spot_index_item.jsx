@@ -8,6 +8,7 @@ const SpotIndexItem = ({ spot }) => {
     return (
       <div className="spot-index-item">
         <ul>
+          <img className="spot-image" src={spot.image_url}/>
           <li>{spot.spot_type}</li>
           <li>{spot.title}</li>
           <li>From ${spot.price} per night</li>

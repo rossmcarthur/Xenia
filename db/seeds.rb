@@ -15,4 +15,14 @@ guest = User.create(email: 'guest123@gmail.com', password: 'guestpassword')
 spot1 = Spot.create(host_id: user2.id, title: "Great Spot", address: '1372 Broadway, New York, New York, 10018, United States',
   body: "A really great spot with a great location", spot_type: "Private Room", guests: 3, price: 75, lng: 40.7522534, lat: -73.9891765)
 spot2 = Spot.create(host_id: user1.id, title: "Okay Spot", address: '262 W 38th St, New York, New York, 10018, United States',
-  body: "A really great spot with a great location", spot_type: "Shared Room", guests: 2, price: 100, lng: 40.754467, lat: -73.991073)
+  body: "Only okay", spot_type: "Shared Room", guests: 2, price: 100, lng: 40.754467, lat: -73.991073)
+spot3 = Spot.create(host_id: user1.id, title: "Bad Spot", address: '262 W 38th St, New York, New York, 10018, United States',
+  body: "Pretty bad spot", spot_type: "Shared Room", guests: 2, price: 100, lng: 40.754467, lat: -73.991073)
+spot4 = Spot.create(host_id: user1.id, title: "Wonderful Spot", address: '262 W 38th St, New York, New York, 10018, United States',
+  body: "What a wonderful spot", spot_type: "Shared Room", guests: 2, price: 100, lng: 40.754467, lat: -73.991073)
+spot5 = Spot.create(host_id: user1.id, title: "Terrible Spot", address: '262 W 38th St, New York, New York, 10018, United States',
+  body: "Worst spot ever", spot_type: "Shared Room", guests: 2, price: 100, lng: 40.754467, lat: -73.991073)
+spot6 = Spot.create(host_id: user1.id, title: "Whatever Spot", address: '262 W 38th St, New York, New York, 10018, United States',
+  body: "meh", spot_type: "Shared Room", guests: 2, price: 100, lng: 40.754467, lat: -73.991073)
+spot7 = Spot.create(host_id: user1.id, title: "Scary Spot", address: '262 W 38th St, New York, New York, 10018, United States',
+  body: "Too scary", spot_type: "Shared Room", guests: 2, price: 100, lng: 40.754467, lat: -73.991073)

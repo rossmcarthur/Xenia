@@ -14,7 +14,6 @@ class SpotIndex extends React.Component {
     });
     return (
       <div className="spot-list">
-        <h1>Spots: </h1>
         { spots }
       </div>
     );
