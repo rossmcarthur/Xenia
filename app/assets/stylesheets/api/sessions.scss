@@ -1,6 +1,6 @@
 header {
   display: flex;
-  font-family: Helvetica;
+  font-family: 'Roboto', sans-serif;
 }
 
 .modal-window {
@@ -147,7 +147,7 @@ header {
   margin-top: 200px;
   padding: 0px;
   padding-bottom: 40px;
-  font-family: Helvetica;
+  font-family: 'Roboto', sans-serif;
   background-color: white;
   z-index: 4;
 }
@@ -158,12 +158,13 @@ header {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 20px;
 }
 .session-redirect {
   text-decoration: none;
   border-top: 1px solid gray;
   font-weight: lighter;
-  padding-top: 20px;
+  padding-top: 40px;
 }
 
 .homepage-icon {
@@ -176,7 +177,7 @@ header {
 .guest-login {
   border-style: none;
   color: #008489;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: bold;
   font-size: 16px;
   padding-top: 10px;
@@ -192,4 +193,5 @@ header {
 
 .errors-list {
   list-style: none;
+  align-items: center;
 }

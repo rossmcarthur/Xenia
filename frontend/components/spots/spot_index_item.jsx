@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Route } from 'react-router-dom';
 import SpotIndex from './spot_index'
 
 
@@ -9,9 +9,10 @@ const SpotIndexItem = ({ spot }) => {
       <div className="spot-index-item">
         <ul>
           <img className="spot-image" src={spot.image_url}/>
-          <li>{spot.spot_type}</li>
-          <li>{spot.title}</li>
-          <li>From ${spot.price} per night</li>
+          <li className="spot-type">{spot.spot_type}</li>
+          <li className="spot-title">{spot.title}</li>
+          <li className="spot-price">From ${spot.price} per night</li>
+
         </ul>
       </div>
     );

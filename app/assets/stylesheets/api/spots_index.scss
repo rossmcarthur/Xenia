@@ -1,6 +1,7 @@
 .vsc-initialized {
   border-bottom: 1px solid lightgray;
   padding-bottom: 23px;
+  position: sticky;
 }
 
 .logout-button {
@@ -12,7 +13,7 @@
   font-size: 13px;
   cursor: pointer;
   padding-bottom: 6px;
-  font-family: Helvetica;
+  font-family: 'Roboto', sans-serif;
   border-bottom: 2px solid white;
   &:hover {
     border-bottom: 2px solid gray;
@@ -28,16 +29,70 @@
   font-size: 13px;
   cursor: pointer;
   padding-bottom: 6px;
-  font-family: Helvetica;
+  font-family: 'Roboto', sans-serif;
   border-bottom: 2px solid white;
   &:hover {
     border-bottom: 2px solid gray;
   }
 }
 
+.search-container {
+  position: fixed;
+  left: 78px;
+  top: 15px;
+  border: 1px solid lightgray;
+  background-image: image_url('search.png');
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: 20px 10px;
+  width: 566px;
+  height: 46px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar {
+  width: 504px;
+  height: 43px;
+  margin-left: 60px;
+  border-radius: 5px;
+  border-style: none;
+  font-size: 20px;
+  &:focus {
+    outline: none;
+  }
+}
+
+.spot-type {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  font-weight: 700;
+  color: rgb(57, 87, 106);
+  text-transform: uppercase;
+  padding: 3px;
+}
+
+.spot-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 19px;
+  color: #484848;
+  font-weight: 700;
+  padding: 3px;
+}
+
+.spot-price {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+  padding: 5px;
+
+
+}
 .spot-image {
   width: 390px;
   height: 260px;
+  border-radius: 5px;
 }
 
 
@@ -55,7 +110,7 @@
 }
 
 .spot-index-item {
-display: inline-block;
+display: flex;
 flex-wrap: wrap;
 float: left;
 padding: 20px;
