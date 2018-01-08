@@ -14,3 +14,5 @@ export const fetchSpots = () => dispatch => {
     return dispatch(receiveSpots(spots));
   });
 };
+
+window.fetchSpots = fetchSpots;

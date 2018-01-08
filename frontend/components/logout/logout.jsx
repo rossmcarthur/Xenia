@@ -1,6 +1,7 @@
 import React from 'react';
 import SessionFormContainer from '../session_form/session_form_container';
 import SearchContainer from '../search/search_container';
+import NavbarContainer from '../navbar/navbar_container';
 
 
 
@@ -20,18 +21,18 @@ sessionLinks() {
         <span className="button-border">Log In</span>
       </button>
     </nav>
-)};
+  );
+}
 
   render() {
     if (this.props.currentUser) {
       return (
-        <div className="spot-index">
-          <header className="nav-header">
-            <button className="logout-button" onClick={this.props.logout}>Log Out</button>
-            <button className="host-button">Become a host</button>
-          </header>
-          <SearchContainer />
-        </div>
+          <div className="spot-page">
+            <header className="nav-header">
+              <NavbarContainer />
+            </header>
+              <SearchContainer />
+          </div>
       );
     } else {
       return this.sessionLinks();
