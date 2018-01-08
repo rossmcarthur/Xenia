@@ -33,12 +33,6 @@ APIUtil.fetchBookings().then(bookings => (
   ))
 );
 
-// export const fetchBooking = booking => (
-//   APIUtil.fetchBooking(booking).then(booking => (
-//     dispatch(receiveBooking(booking)),
-//     err => dispatch(receiveBookingErrors(errors.responseJSON))
-//   ))
-// );
 
 export const createBooking = booking => (
   APIUtil.createBooking(booking).then(booking => (

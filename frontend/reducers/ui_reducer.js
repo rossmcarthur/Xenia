@@ -1,6 +1,7 @@
 import merge from 'lodash/merge';
 import filters from './filters_reducer';
 import modals from './session_modals_reducer';
+import spotDisplay from './spot_display_reducer';
 import { combineReducers } from 'redux';
 
 // const initialState = {
@@ -20,4 +21,4 @@ import { combineReducers } from 'redux';
 //   }
 // };
 
-export default combineReducers({ modals, filters });
+export default combineReducers({ modals, filters, spotDisplay });
