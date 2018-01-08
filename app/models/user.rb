@@ -13,6 +13,10 @@ class User < ApplicationRecord
     class_name: :Spot,
     foreign_key: :host_id
 
+    has_many :bookings,
+    class_name: :Booking,
+    foreign_key: :booker_id
+
   attr_reader :password
 
   after_initialize :ensure_session_token

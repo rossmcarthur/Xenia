@@ -1,4 +1,4 @@
-class BookingsController < ApplicationController
+class Api::BookingsController < ApplicationController
 
   def create
     @booking = current_user.bookings.create(booking_params)

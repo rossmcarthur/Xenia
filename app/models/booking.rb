@@ -1,7 +1,7 @@
 class Booking < ApplicationRecord
   validates :start_date, :end_date, :spot_id, :booker_id, presence: true
-  validates :start_before_end
-  validates :not_overlapping
+  validate :start_before_end
+  validate :not_overlapping
 
   belongs_to :booker,
     foreign_key: :booker_id,

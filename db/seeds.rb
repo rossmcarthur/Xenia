@@ -8,6 +8,7 @@
 User.destroy_all
 Spot.destroy_all
 Review.destroy_all
+Booking.destroy_all
 
 user1 = User.create(email: 'ross@hotmail.com', password: 'whatever', first_name: 'Ross', last_name: 'McArthur')
 user2 = User.create(email: 'virginias_v_best@gmail.com', password: 'whatever', first_name: 'George', last_name: 'Washington')
@@ -41,3 +42,7 @@ review10 = Review.create(title: "Best Review", body: "What a good spot!", rating
 review11 = Review.create(title: "Meh Review", body: "What a good spot!", rating: 1, spot_id: spot2.id, author_id: user1.id)
 review12 = Review.create(title: "Crazy Review", body: "What a good spot!", rating: 2, spot_id: spot3.id, author_id: user2.id)
 review13 = Review.create(title: "Never Review", body: "What a good spot!", rating: 2, spot_id: spot4.id, author_id: user1.id)
+
+booking1 = Booking.create(start_date: Date.today, end_date: Date.new(2018, 2, 3), spot_id: spot1.id, booker_id: guest.id)
+booking2 = Booking.create(start_date: Date.today, end_date: Date.new(2018, 4, 3), spot_id: spot2.id, booker_id: user2.id)
+booking3 = Booking.create(start_date: Date.today, end_date: Date.new(2018, 5, 6), spot_id: spot3.id, booker_id: guest.id)
