@@ -3,7 +3,6 @@ import { Route, Link } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import SessionFormContainer from './session_form/session_form_container';
 import LogoutContainer from './logout/logout_container';
-import SpotIndexContainer from './spots/spot_index_container';
 const App = () => (
   <div>
     <header>
@@ -13,8 +12,7 @@ const App = () => (
       <LogoutContainer />
       <SessionFormContainer />
     </header>
-
   </div>
-)
+);
 
 export default App;

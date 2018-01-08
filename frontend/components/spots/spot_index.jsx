@@ -2,9 +2,6 @@ import React from 'react';
 import SpotIndexItem from './spot_index_item';
 
 class SpotIndex extends React.Component {
-  componentDidMount() {
-    this.props.fetchSpots();
-  }
 
   render() {
     const spots = this.props.spots.map(spot => {
@@ -16,13 +13,11 @@ class SpotIndex extends React.Component {
       );
     });
     return (
-      <div>
-        <h1>Spots: </h1>
+      <div className="spot-list">
         { spots }
       </div>
     );
   }
 }
-
 
 export default SpotIndex;

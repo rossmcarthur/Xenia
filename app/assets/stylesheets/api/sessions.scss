@@ -1,7 +1,7 @@
 header {
   display: flex;
-  justify-content: space-between;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(#f7f7f7, #ffffff);
 }
 
 .modal-window {
@@ -10,7 +10,7 @@ header {
   width: 100%;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   background-color: rgba(0, 0, 0, 0.6);
   top: 0;
   left: 0;
@@ -20,6 +20,7 @@ header {
 .login-signup {
   font-size: 15px;
   padding-top: 20px;
+  float: right;
 }
 
 .button-border {
@@ -38,6 +39,7 @@ header {
   border: none;
   padding-left: 22px;
   padding-right: 20px;
+  background-color: transparent;
   &:focus {
     outline: none;
   }
@@ -61,6 +63,7 @@ header {
 
 .signup-link {
   border: none;
+  background-color: transparent;
   &:focus {
     outline: none;
   }
@@ -94,8 +97,6 @@ header {
   background-repeat: no-repeat;
   background-position: 420px;
 }
-
-
 
 .password-input {
   margin: 8px;
@@ -149,22 +150,24 @@ header {
   margin-top: 200px;
   padding: 0px;
   padding-bottom: 40px;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: white;
   z-index: 4;
 }
+
 .session-redirect-border {
   height: 0px;
   width: 450px;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 20px;
 }
 .session-redirect {
   text-decoration: none;
   border-top: 1px solid gray;
   font-weight: lighter;
-  padding-top: 20px;
+  padding-top: 40px;
 }
 
 .homepage-icon {
@@ -177,7 +180,7 @@ header {
 .guest-login {
   border-style: none;
   color: #008489;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: bold;
   font-size: 16px;
   padding-top: 10px;
@@ -188,9 +191,9 @@ header {
   &:hover {
     border-bottom: 2px solid #008489;
   }
-
 }
 
 .errors-list {
   list-style: none;
+  align-items: center;
 }
