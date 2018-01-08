@@ -11,6 +11,9 @@ class Spot < ApplicationRecord
     class_name: :Review,
     foreign_key: :spot_id
 
+  has_many :amenities,
+    through: :SpotAmenity,
+    source: :amenity_id
 
     def self.in_bounds(bounds)
       self.where("lat < ?", bounds[:northEast][:lat])
