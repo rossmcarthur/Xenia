@@ -1,21 +1,12 @@
 import React from 'react';
-<<<<<<< HEAD
 import ReactDOM from 'react-dom';
 import { withRouter } from 'react-router-dom';
-=======
 import MarkerManager from '../../util/marker_manager';
->>>>>>> spot-function
 
 class SpotMap extends React.Component {
 
   componentDidMount() {
     const mapOptions = {
-<<<<<<< HEAD
-      center: { lat: 37.7758, lng: -122.435 }, // this is SF
-      zoom: 13
-    };
-    this.map = new google.maps.Map(this.mapNode, mapOptions);
-=======
       center: { lat: 40.7514, lng: -73.989 },
       zoom: 13
     };
@@ -42,21 +33,13 @@ class SpotMap extends React.Component {
       const coords = getCoordsObj(event.latLng);
       this.handleClick(coords);
     });
->>>>>>> spot-function
   }
 
   render() {
     return (
-<<<<<<< HEAD
-      <div ref={ map => this.mapNode = map}></div>
+      <div id="map-container" ref={ map => this.mapNode = map}></div>
     );
   }
-
-=======
-      <div id="map-container" ref={ map => this.mapNode = map }></div>
-    );
-  }
->>>>>>> spot-function
 }
 
 export default SpotMap;
