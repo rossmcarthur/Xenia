@@ -28,7 +28,7 @@ sessionLinks() {
     if (this.props.currentUser) {
       return (
           <div className="spot-page">
-            <header className="nav-header">
+            <header>
               <NavbarContainer />
             </header>
               <SearchContainer />

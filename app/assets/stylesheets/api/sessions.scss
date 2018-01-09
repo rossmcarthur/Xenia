@@ -100,6 +100,7 @@
   font-size: 17px;
   padding-left: 10px;
   font-weight: lighter;
+  margin-top: 80px;
   background-image: image-url('email.png');
   background-size: 25px 25px;
   background-repeat: no-repeat;
@@ -145,18 +146,13 @@
   }
 }
 
-.login-form-box {
-  padding-top: 40px;
-}
-
 .login-form-container {
   text-align: center;
   border: 1px solid gray;
   margin: auto;
   width: 525px;
-  height: 400px;
+  height: 475px;
   margin-top: 200px;
-  padding: 0px;
   padding-bottom: 40px;
   font-family: 'Roboto', sans-serif;
   background-color: white;
@@ -195,7 +191,7 @@
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
   font-size: 16px;
-  padding-top: 10px;
+  padding-top: 30px;
   cursor: pointer;
   &:focus {
     outline: none;
@@ -204,8 +200,6 @@
     border-bottom: 2px solid #008489;
   }
 }
-
-.errors-list {
-  list-style: none;
-  align-items: center;
-}
+ .errors-list {
+   margin-top: 20px;
+ }

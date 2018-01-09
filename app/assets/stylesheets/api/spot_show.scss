@@ -1,0 +1,74 @@
+.spot-show-image {
+  width: 100vw;
+  height: 780px;
+  display: block;
+}
+
+.spot-show-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 2fr 0.1fr 2fr;
+}
+
+.spot-amenities-list {
+  grid-column-start: 2;
+  margin-left: 2px;
+  color: #484848;
+  justify-content: flex-start;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+
+.spot-amenity {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 17px;
+  letter-spacing: 0.2px;
+  margin: 20px;
+}
+
+.amenities-title {
+  display: block;
+  font-weight: 700;
+  width: 100%;
+}
+
+.booking-container {
+  grid-column-start: 4;
+  align-content: flex-start;
+}
+
+.spot-show-title {
+  grid-column-start: 2;
+  list-style: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  color: #484848;
+  margin-top: 50px;
+  padding-top: 30px;
+  padding-bottom: 6px;
+  border-top: 1px solid lightgray;
+}
+
+.spot-show-body {
+  grid-column-start: 2;
+  list-style: none;
+  margin-bottom: 30px;
+  font-family: 'Roboto', sans-serif;
+  margin-left: 2px;
+  color: #484848;
+}
+
+.spot-show-spot_type {
+  grid-column-start: 2;
+  list-style: none;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 17px;
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: 0.2px;
+  font-weight: 100;
+  color: #767676;
+  margin-left: 2px;
+}

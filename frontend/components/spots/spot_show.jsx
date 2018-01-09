@@ -12,13 +12,33 @@ class SpotShow extends React.Component {
     this.props.fetchSpot(this.props.spotId);
   }
 
+  renderAmenities() {
+    return (
+      <ul className="spot-amenities-list">
+        <p className="amenities-title">Amenities</p>
+        {this.props.spot.amenities.map( (amenity, i) => (
+          <li className="spot-amenity" key={i}>
+             { amenity.amenity_type }
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   render() {
+
     if (this.props.spot) {
       return (
-        <div>
-          <h1>Welcome to the show page!</h1>
-          <li> {this.props.spot.title}</li>
-          <BookingFormContainer />
+        <div className="spot-show-container">
+          <NavbarContainer />
+          <img className="spot-show-image" src={this.props.spot.image_url}/>
+          <div className="spot-show-grid">
+            <li className="spot-show-title"> {this.props.spot.title}</li>
+            <li className="spot-show-spot_type">{this.props.spot.spot_type}</li>
+            <li className="spot-show-body"> {this.props.spot.body} </li>
+            {this.renderAmenities()}
+            <BookingFormContainer />
+          </div>
         </div>
       );
     } else {

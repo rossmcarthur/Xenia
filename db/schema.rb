@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180108203647) do
+ActiveRecord::Schema.define(version: 20180109171929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "amenities", force: :cascade do |t|
-    t.string "type", null: false
+    t.string "amenity_type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["type"], name: "index_amenities_on_type"
+    t.index ["amenity_type"], name: "index_amenities_on_amenity_type"
   end
 
   create_table "bookings", force: :cascade do |t|

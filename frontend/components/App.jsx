@@ -7,7 +7,7 @@ import SpotShowContainer from './spots/spot_show_container';
 const App = () => (
   <div>
     <header className="main-header">
-      <Route exact path = "/" component={SessionContainer} />
+      <Route exact path = "/" component={ SessionContainer } />
       <Route exact path='/spots/:spotId' component={ SpotShowContainer } />
     </header>
   </div>

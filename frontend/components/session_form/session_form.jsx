@@ -87,25 +87,25 @@ class SessionForm extends React.Component {
 
   message() {
     if (this.props.session_modal === 'login') {
-      return "Don't have an account?"
+      return "Don't have an account?";
     } else if (this.props.session_modal === 'signup'){
-      return "Already have a Xenia account?"
+      return "Already have a Xenia account?";
     }
   }
 
   buttonMessage() {
     if (this.props.session_modal === 'login') {
-      return "Log in"
+      return "Log in";
     } else if (this.props.session_modal === 'signup'){
-      return "Sign up"
+      return "Sign up";
     }
   }
 
   renderErrors() {
     return(
-      <ul>
+      <ul className="errors-list">
         {this.props.errors.map((error, i) => (
-          <li className="errors-list" key={`error-${i}`}>
+          <li key={`error-${i}`}>
             {error}
           </li>
         ))}
