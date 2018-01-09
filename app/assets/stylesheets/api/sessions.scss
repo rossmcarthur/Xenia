@@ -1,7 +1,14 @@
-header {
-  display: flex;
+.main-header {
   font-family: 'Roboto', sans-serif;
   background: linear-gradient(#f7f7f7, #ffffff);
+  display: flex;
+  justify-content: space-between;
+}
+
+.session-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .modal-window {
@@ -19,8 +26,9 @@ header {
 
 .login-signup {
   font-size: 15px;
-  padding-top: 20px;
   float: right;
+  padding-right: 16px;
+  padding-top: 28px;
 }
 
 .button-border {
@@ -171,10 +179,14 @@ header {
 }
 
 .homepage-icon {
-  padding-left: 12px;
-  padding-top: 12px;
+  padding-left: 21px;
+  padding-top: 21px;
   width: 40px;
   height: 40px;
+}
+
+.header-link {
+  width: 0px;
 }
 
 .guest-login {

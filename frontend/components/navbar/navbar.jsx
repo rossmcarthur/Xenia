@@ -6,12 +6,12 @@ class Navbar extends React.Component {
   render() {
     return (
     <div>
-      <Link to="/" className="header-link">
-        <img className="homepage-icon-login" src={window.staticImages.XeniaLogo}/>
-      </Link>
+      <Link to="/" className="nav-header-link">
+        <img className="nav-header-icon" src={window.staticImages.XeniaLogo}/>
         <SearchBar />
         <button className="logout-button" onClick={this.props.logout}>Log Out</button>
         <button className="host-button">Become a host</button>
+      </Link>
     </div>
     );
   }

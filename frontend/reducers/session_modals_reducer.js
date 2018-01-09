@@ -5,7 +5,6 @@ import {
   CLOSE_MODAL
 } from '../actions/ui_actions';
 
-
 const initialState = {
   session_modal: null
 };
@@ -22,6 +21,5 @@ const sessionModalReducer = (state = initialState, action) => {
     return state;
   }
 };
-
 
 export default sessionModalReducer;

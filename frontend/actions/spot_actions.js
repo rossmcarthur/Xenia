@@ -1,6 +1,7 @@
 import * as APIUtil from '../util/spot_api_util';
 
 export const RECEIVE_SPOTS = 'RECEIVE_SPOTS';
+export const RECEIVE_SPOT = 'RECEIVE_SPOT';
 
 export const receiveSpots = spots => {
   return {
@@ -28,8 +29,8 @@ export const fetchSpots = () => dispatch => {
   });
 };
 
-export const fetchSpot = spot => dispatch => {
-  return APIUtil.fetchSpot(spot).then(spot => {
+export const fetchSpot = id => dispatch => {
+  return APIUtil.fetchSpot(id).then(spot => {
     return dispatch(receiveSpot(spot));
   });
 };

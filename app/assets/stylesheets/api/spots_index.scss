@@ -1,6 +1,6 @@
 .nav-header {
   position: fixed;
-  z-index: 6;
+  z-index: 10;
   border-bottom: 1px solid lightgray;
   padding-bottom: 23px;
   width: 100%;
@@ -135,7 +135,17 @@
 }
 
 .spot-index {
-  margin-top: 70px;
+  margin-top: 100px;
+}
+
+.nav-header-link {
+  margin-left: 21px;
+}
+
+.nav-header-icon{
+  width: 40px;
+  height: 40px;
+  margin-top: 36px;
 }
 
 .homepage-icon-login {
