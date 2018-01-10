@@ -18,12 +18,17 @@ class MarkerManager {
 
 
   updateMarkers(spots) {
-    spots.forEach(spot => {
-      if (!this.markers[spot.id]) {
-        this.createMarkerFromSpot(spot);
-      }
-    });
-  }
+    const spotsObj = {};
+    spots.forEach(spot => spotsObj[spot.id] = spot);
+
+
+
+    spots.filter(spot => !this.markers[spot.id])
+      .forEach(newSpot => this.createMarkerFromSpot(newSpot, this.handleClick));
+
+    Object.keys(this.markers).filter(spotId => !spotsObj[spotId])
+      .forEach((spotId) => this.removeMarker(this.markers[spotId]));
+    }
 
     removeMarker(marker) {
       this.markers[marker.spotId].setMap(null);
