@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactStars from 'react-stars';
-// import moment from 'moment';
 import 'react-dates/initialize';
 import { DateRangePicker } from 'react-dates';
 

@@ -20,10 +20,10 @@ class Spot < ApplicationRecord
     source: :amenity
 
     def self.in_bounds(bounds)
-      self.where("lat < ?", bounds[:northEast][:lat])
-      .where("lat > ?", bounds[:southWest][:lat])
-      .where("lng > ?", bounds[:southWest][:lng])
-      .where("lng < ?", bounds[:northEast][:lng])
+      self.where("lat < ?", bounds[:bounds][:northEast][:lat])
+      .where("lat > ?", bounds[:bounds][:southWest][:lat])
+      .where("lng > ?", bounds[:bounds][:southWest][:lng])
+      .where("lng < ?", bounds[:bounds][:northEast][:lng])
     end
 
     def average_rating

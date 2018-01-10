@@ -23,14 +23,27 @@ export const removeSpot = id => {
   };
 };
 
-export const fetchSpots = () => dispatch => {
-  return APIUtil.fetchSpots().then(spots => {
+export const fetchSpots = (args) => dispatch => {
+  debugger
+  return APIUtil.fetchSpots(args).then(spots => {
     return dispatch(receiveSpots(spots));
   });
 };
 
 export const fetchSpot = id => dispatch => {
   return APIUtil.fetchSpot(id).then(spot => {
+    return dispatch(receiveSpot(spot));
+  });
+};
+
+export const createSpot = spot => dispatch => {
+  return APIUtil.createSpot(spot).then(spot => {
+    return dispatch(receiveSpot(spot));
+  });
+};
+
+export const updateSpot = spot => dispatch => {
+  return APIUtil.updateSpot(spot).then(spot => {
     return dispatch(receiveSpot(spot));
   });
 };

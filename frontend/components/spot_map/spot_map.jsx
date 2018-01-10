@@ -11,7 +11,6 @@ class SpotMap extends React.Component {
       zoom: 13
     };
     this.map = new google.maps.Map(this.mapNode, mapOptions);
-    window.map = this.map;
     this.MarkerManager = new MarkerManager(this.map);
     this.registerListeners();
     this.MarkerManager.updateMarkers(this.props.spots);
