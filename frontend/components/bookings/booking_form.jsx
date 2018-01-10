@@ -25,7 +25,6 @@ class BookingForm extends React.Component {
   }
 
   handleSubmit(e) {
-      debugger
     e.preventDefault();
     let newState = Object.assign({}, this.state);
     newState.end_date = this.state.endDate.format();
