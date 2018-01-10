@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactStars from 'react-stars';
+// import moment from 'moment';
 import 'react-dates/initialize';
 import { DateRangePicker } from 'react-dates';
-import moment from 'moment';
+
 
 class BookingForm extends React.Component {
   constructor(props) {
@@ -24,8 +25,15 @@ class BookingForm extends React.Component {
   }
 
   handleSubmit(e) {
+      debugger
     e.preventDefault();
-    this.props.createBooking(this.state);
+    let newState = Object.assign({}, this.state);
+    newState.end_date = this.state.endDate.format();
+    newState.start_date = this.state.startDate.format();
+    delete newState.focusedInput;
+    delete newState.startDate;
+    delete newState.endDate;
+    this.props.createBooking(newState);
   }
 
   render() {

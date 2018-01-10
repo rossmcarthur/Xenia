@@ -34,13 +34,13 @@ APIUtil.fetchBookings().then(bookings => (
 );
 
 
-export const createBooking = booking => (
-  APIUtil.createBooking(booking).then(booking => (
-    dispatch(receiveBooking(booking))
-  ))
-);
+export const createBooking = booking => dispatch => {
+  return APIUtil.createBooking(booking).then(booking => {
+    return dispatch(receiveBooking(booking));
+  });
+};
 
-export const removeBooking = bookingId => (
+export const removeBooking = bookingId => dispatch => (
   APIUtil.removeBooking(bookingId).then(booking => (
     dispatch(removeBooking(bookingId))
   ))
