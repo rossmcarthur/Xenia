@@ -10,31 +10,32 @@ Spot.destroy_all
 Review.destroy_all
 Booking.destroy_all
 Amenity.destroy_all
+SpotAmenity.destroy_all
 
 user1 = User.create(email: 'ross@hotmail.com', password: 'whatever', first_name: 'Ross', last_name: 'McArthur')
 user2 = User.create(email: 'virginias_v_best@gmail.com', password: 'whatever', first_name: 'George', last_name: 'Washington')
 guest = User.create(email: 'guest123@gmail.com', password: 'guestpassword')
 
 amenity1 = Amenity.create(amenity_type: "Wifi")
-amenity2 = Amenity.create(amenity_type: "Washer/Dryer")
+amenity2 = Amenity.create(amenity_type: "Air Conditioning")
 amenity3 = Amenity.create(amenity_type: "Kitchen")
 amenity4 = Amenity.create(amenity_type: "Family/Kid Friendly")
-amenity5 = Amenity.create(amenity_type: "Private Entrance")
+amenity5 = Amenity.create(amenity_type: "Cable TV")
 
 spot1 = Spot.create(host_id: user2.id, title: "Great Spot", address: '1372 Broadway, New York, New York, 10018, United States',
-  body: "A really great spot with a great location", spot_type: "Private Room", guests: 3, price: 75, lng: -73.9891765, lat: 40.7522534)
+  body: "A really great spot with a great location", spot_type: "Private Room", guests: 3, price: 75, lng: -73.9891765, lat: 40.7522534, bedrooms: 1, bathrooms: 1, beds: 3)
 spot2 = Spot.create(host_id: user1.id, title: "Okay Spot", address: '262 W 38th St, New York, New York, 10018, United States',
-  body: "Only okay", spot_type: "Shared Room", guests: 2, price: 90, lng: -73.991073, lat: 40.7522534)
+  body: "Only okay", spot_type: "Shared Room", guests: 2, price: 90, lng: -73.991073, lat: 40.7522534, bedrooms: 2, bathrooms: 2, beds: 3)
 spot3 = Spot.create(host_id: user1.id, title: "Bad Spot", address: '262 W 38th St, New York, New York, 10018, United States',
-  body: "Pretty bad spot", spot_type: "Shared Room", guests: 2, price: 80, lng: -73.991073, lat: 40.7522534)
+  body: "Pretty bad spot", spot_type: "Shared Room", guests: 2, price: 80, lng: -73.991073, lat: 40.7522534, bedrooms: 3, bathrooms: 1, beds: 2)
 spot4 = Spot.create(host_id: user1.id, title: "Wonderful Spot", address: '262 W 38th St, New York, New York, 10018, United States',
-  body: "What a wonderful spot", spot_type: "Shared Room", guests: 2, price: 70, lng: -73.991073, lat: 40.7522534)
+  body: "What a wonderful spot", spot_type: "Shared Room", guests: 2, price: 70, lng: -73.991073, lat: 40.7522534, bedrooms: 2, bathrooms: 2, beds: 1)
 spot5 = Spot.create(host_id: user1.id, title: "Terrible Spot", address: '262 W 38th St, New York, New York, 10018, United States',
-  body: "Worst spot ever", spot_type: "Shared Room", guests: 2, price: 100, lng: -73.991073, lat: 40.7522534)
+  body: "Worst spot ever", spot_type: "Shared Room", guests: 2, price: 100, lng: -73.991073, lat: 40.7522534, bedrooms: 1, bathrooms: 2, beds: 2)
 spot6 = Spot.create(host_id: user1.id, title: "Whatever Spot", address: '262 W 38th St, New York, New York, 10018, United States',
-  body: "meh", spot_type: "Shared Room", guests: 2, price: 120, lng: -73.991073, lat: 40.7522534)
+  body: "meh", spot_type: "Shared Room", guests: 2, price: 120, lng: -73.991073, lat: 40.7522534, bedrooms: 2, bathrooms: 2, beds: 2)
 spot7 = Spot.create(host_id: user1.id, title: "Scary Spot", address: '262 W 38th St, New York, New York, 10018, United States',
-  body: "Too scary", spot_type: "Shared Room", guests: 2, price: 110, lng: -73.991073, lat: 40.7522534)
+  body: "Too scary", spot_type: "Shared Room", guests: 2, price: 110, lng: -73.991073, lat: 40.7522534, bedrooms: 1, bathrooms: 2, beds: 3)
 
 spot1_amenities1 = SpotAmenity.create(spot_id: spot1.id, amenity_id: amenity1.id)
 spot1_amenities2 = SpotAmenity.create(spot_id: spot1.id, amenity_id: amenity3.id)

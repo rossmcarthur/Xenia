@@ -20,11 +20,27 @@
   border-bottom: 1px solid lightgray;
 }
 
+.spot-show-guests {
+  font-family: 'Work Sans', sans-serif;
+}
+
 .spot-amenity {
   font-family: 'Work Sans', sans-serif;
   font-size: 17px;
   letter-spacing: 0.2px;
   margin: 20px;
+  display: flex;
+}
+
+.spot-show-accommodations {
+  grid-column-start: 2;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  margin-bottom: 40px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 17px;
+  padding-left: 3px;
 }
 
 .amenities-title {
@@ -33,6 +49,14 @@
   width: 100%;
 }
 
+.list-icons {
+  display: flex;
+}
+
+i {
+  align-self: center;
+  padding-right: 10px;
+}
 
 .spot-show-title {
   grid-column-start: 2;
@@ -47,6 +71,10 @@
   border-top: 1px solid lightgray;
 }
 
+.spot-show-bathrooms {
+  font-family: 'Work Sans', sans-serif;
+}
+
 .spot-show-body {
   grid-column-start: 2;
   list-style: none;
@@ -59,7 +87,7 @@
 .spot-show-spot_type {
   grid-column-start: 2;
   list-style: none;
-  margin-top: 5px;
+  margin-top: 10px;
   margin-bottom: 10px;
   font-size: 17px;
   font-family: 'Work Sans', sans-serif;
