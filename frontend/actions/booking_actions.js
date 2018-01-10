@@ -36,8 +36,7 @@ APIUtil.fetchBookings().then(bookings => (
 
 export const createBooking = booking => (
   APIUtil.createBooking(booking).then(booking => (
-    dispatch(receiveBooking(booking)),
-    err => dispatch(receiveBookingErrors(errors.responseJSON))
+    dispatch(receiveBooking(booking))
   ))
 );
 

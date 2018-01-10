@@ -1,0 +1,41 @@
+.booking-container {
+  border: 1px solid lightgray;
+  width: 380px;
+  grid-column-start: 4;
+  align-content: flex-start;
+  position: sticky;
+}
+
+.booking-content {
+  margin: 27px;
+}
+
+.booking-price {
+  margin-bottom: 10px;
+}
+
+.booking-rating {
+  margin-bottom: 27px;
+}
+
+.booking-request {
+  font-family: "Roboto", sans-serif;
+  background: #FF5A5F;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 50px;
+  width: 325px;
+  font-size: 19px;
+  margin-top: 20px;
+}
+
+.dates {
+  font-size: 13px;
+  padding-top: 25px;
+  border-top: 1px solid lightgray;
+}
+
+.calendar {
+  border: 1px solid lightgray;
+}
