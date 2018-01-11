@@ -1,5 +1,4 @@
 class Booking < ApplicationRecord
-
   validates :start_date, :end_date, :spot_id, :booker_id, presence: true
   validate :does_not_overlap_approved_request
 
@@ -28,6 +27,5 @@ class Booking < ApplicationRecord
         errors[:base] << 'Booking overlaps with existing booking'
       end
     end
-
 
 end
