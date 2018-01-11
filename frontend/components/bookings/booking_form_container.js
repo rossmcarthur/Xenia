@@ -5,7 +5,7 @@ import Bookings from './booking_form';
 const mapStateToProps = state => {
   return {
     currentUser: state.session.currentUser,
-    errors: state.errors.booking,
+    errors: state.errors.session,
     spot: Object.values(state.entities.spots)[0]
   };
 };

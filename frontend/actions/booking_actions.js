@@ -29,14 +29,15 @@ export const receiveBookingErrors = errors => {
 export const fetchBookings = () => dispatch => (
 APIUtil.fetchBookings().then(bookings => (
     dispatch(receiveBookings(bookings)),
-    err => dispatch(receiveBookingErrors(errors.responseJSON))
+    err => dispatch(receiveBookingErrors(err.responseJSON))
   ))
 );
 
 
 export const createBooking = booking => dispatch => {
   return APIUtil.createBooking(booking).then(booking => {
-    return dispatch(receiveBooking(booking));
+    return dispatch(receiveBooking(booking)),
+     errors => dispatch(receiveBookingErrors(errors.responseJSON));
   });
 };
 
