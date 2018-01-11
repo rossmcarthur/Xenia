@@ -28,6 +28,18 @@
   width: 325px;
   font-size: 19px;
   margin-top: 20px;
+  &:focus{
+    outline: none;
+  }
+}
+
+.booking-created {
+  text-align: center;
+  margin-bottom: 20px
+}
+
+button:disabled {
+  background-color: gainsboro;
 }
 
 .dates {

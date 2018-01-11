@@ -52,6 +52,9 @@
   &:hover {
     border-bottom: 2px solid gray;
   }
+  &:focus {
+    outline: none;
+  }
 }
 
 .search-container {
@@ -70,7 +73,7 @@
 }
 
 .search-bar {
-  width: 80%;
+  width: 60%;
   height: 45px;
   margin-left: 60px;
   border-radius: 5px;
@@ -94,7 +97,7 @@
   border-right: 1px solid lightgray;
   height: 100%;
   right: 0;
-  bottom: 2px;
+  bottom: 0;
   font-family: 'Work Sans', sans-serif;
   font-size: 30px;
   font-weight: 100;

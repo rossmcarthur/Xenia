@@ -3,7 +3,6 @@ import ReactStars from 'react-stars';
 import 'react-dates/initialize';
 import { DateRangePicker } from 'react-dates';
 
-
 class BookingForm extends React.Component {
   constructor(props) {
     super(props);
@@ -12,7 +11,9 @@ class BookingForm extends React.Component {
       endDate: null,
       booker_id: this.props.currentUser.id,
       spot_id: this.props.spot.id,
-      focusedInput: null
+      focusedInput: null,
+      rendered: '',
+      cost: null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -25,26 +26,46 @@ class BookingForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let newState = Object.assign({}, this.state);
-    newState.end_date = this.state.endDate.format();
-    newState.start_date = this.state.startDate.format();
-    delete newState.focusedInput;
-    delete newState.startDate;
-    delete newState.endDate;
-    this.props.createBooking(newState);
+     if (this.state.startDate && this.state.endDate) {
+        let newState = Object.assign({}, this.state);
+        newState.end_date = this.state.endDate.format();
+        newState.start_date = this.state.startDate.format();
+        delete newState.focusedInput;
+        delete newState.startDate;
+        delete newState.endDate;
+        this.props.createBooking(newState).then(() => {
+          this.setState({rendered: 'create'});
+        });
+      }
   }
 
-  // renderErrors() {
-  //     return(
-  //       <ul className="booking-errors-list">
-  //         {this.props.errors.map((error, i) => (
-  //           <li key={`error-${i}`}>
-  //             {error}
-  //           </li>
-  //         ))}
-  //       </ul>
-  //     );
-  // }
+  renderBooking() {
+    if (this.state.rendered === 'create') {
+      debugger
+      return(
+        <div>
+          <p className="booking-created">Booking created!</p>
+          <p>{this.props.spot.cost}</p>
+        </div>
+      );
+    } else {
+      return null;
+    }
+  }
+
+  renderErrors() {
+    if (this.props.errors[0]) {
+      return(
+        <ul className="booking-errors-list">
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+  }
 
   render() {
     return (
@@ -57,6 +78,8 @@ class BookingForm extends React.Component {
                 value={ this.props.spot.average_rating }
                 edit={ false }
                 color2='#008489' />
+              { this.renderBooking() }
+              { this.renderErrors() }
               <p className="dates">Dates</p>
               <div className="calendar">
                 <DateRangePicker
@@ -64,10 +87,10 @@ class BookingForm extends React.Component {
                   endDate={this.state.endDate}
                   onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
                   focusedInput={this.state.focusedInput}
-                  onFocusChange={focusedInput => this.setState({ focusedInput })}
+                  onFocusChange={ focusedInput => this.setState({ focusedInput })}
                   />
                 </div>
-            <button className="booking-request">Request to Book</button>
+            <button className="booking-request" disabled={!this.state.startDate || !this.state.endDate}>Request to Book</button>
           </form>
         </div>
       </div>

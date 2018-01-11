@@ -8,7 +8,7 @@ const initialState = {
 export default (state = initialState, action) => {
   switch(action.type) {
     case RECEIVE_MAP_LOCATION:
-    return merge({}, state, action.location);
+    return merge({}, state, { location: action.location });
     default:
     return state;
   }

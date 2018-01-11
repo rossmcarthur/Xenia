@@ -11,7 +11,7 @@ class Navbar extends React.Component {
         <SearchBarContainer />
         <button className="logout-button" onClick={this.props.logout}>Log Out</button>
       </Link>
-      <Link to="/spots/new">
+      <Link to="/spots/">
         <button className="host-button">Become a host</button>
       </Link>
     </div>

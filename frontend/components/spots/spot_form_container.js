@@ -11,7 +11,7 @@ import SpotForm from './spot_form';
 const mapStateToProps = (state, ownProps) => {
   let formType;
   let spot;
-  if (ownProps.match.path.slice(1) === 'spots/new') {
+  if (ownProps.match.path.slice(1) === 'spots/') {
     return { formType: 'Create',
     spot: {
       title: '',

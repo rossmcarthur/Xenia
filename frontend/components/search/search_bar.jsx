@@ -42,8 +42,8 @@ class SearchBar extends React.Component {
             value={this.state.search}
             onChange={this.handleChange}>
           </input>
-          <button onClick={this.handleClear} className="search-close-icon">&times;</button>
         </form>
+        <button onClick={this.handleClear} className="search-close-icon">&times;</button>
       </div>
     );
   }

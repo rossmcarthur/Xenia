@@ -15,8 +15,10 @@ class SpotMap extends React.Component {
     this.MarkerManager.updateMarkers(this.props.spots);
   }
 
-  componentDidUpdate() {
-    this.map.setCenter(getState().search);
+  componentWillReceiveProps(newProps) {
+    if (newProps.location) {
+      this.map.setCenter(newProps.location);
+    }
     this.MarkerManager.updateMarkers(this.props.spots);
   }
 
@@ -28,10 +30,13 @@ class SpotMap extends React.Component {
       southWest: { lat: south, lng: west } };
       this.props.updateBounds('bounds', bounds);
     });
-
     google.maps.event.addListener(this.map, 'click', (event) => {
       const coords = getCoordsObj(event.latLng);
       this.handleClick(coords);
+    });
+    this.map.addListener('center_changed', () => {
+      const center = this.map.getCenter();
+      this.props.receiveMapLocation(null);
     });
   }
 
