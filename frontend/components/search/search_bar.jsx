@@ -6,6 +6,7 @@ class SearchBar extends React.Component {
     this.state = { search: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleClear = this.handleClear.bind(this);
   }
 
   componentDidMount() {
@@ -25,16 +26,23 @@ class SearchBar extends React.Component {
     });
   }
 
+  handleClear(e) {
+    e.preventDefault();
+    this.setState({ search: "" });
+  }
+
   render() {
     return (
       <div className="search-container">
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="search-form">
           <input
             className="search-bar"
             type="text"
             placeholder="Anywhere"
             value={this.state.search}
-            onChange={this.handleChange}/>
+            onChange={this.handleChange}>
+          </input>
+          <button onClick={this.handleClear} className="search-close-icon">&times;</button>
         </form>
       </div>
     );

@@ -65,17 +65,40 @@
   background-position: 20px 10px;
   background-color: white;
   width: 566px;
-  height: 46px;
+  height: 100%px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .search-bar {
-  width: 504px;
-  height: 43px;
+  width: 80%;
+  height: 45px;
   margin-left: 60px;
   border-radius: 5px;
   border-style: none;
   font-size: 20px;
+  &:focus {
+    outline: none;
+  }
+}
+
+.search-form {
+  display: inline-block;
+  width: 700px;
+}
+
+.search-close-icon {
+  display: inline-block;
+  position: absolute;
+  background-color: transparent;
+  border-style: none;
+  border-right: 1px solid lightgray;
+  height: 100%;
+  right: 0;
+  bottom: 2px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 30px;
+  font-weight: 100;
+  cursor: pointer;
   &:focus {
     outline: none;
   }
