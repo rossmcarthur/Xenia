@@ -41,11 +41,9 @@ class BookingForm extends React.Component {
 
   renderBooking() {
     if (this.state.rendered === 'create') {
-      debugger
       return(
         <div>
           <p className="booking-created">Booking created!</p>
-          <p>{this.props.spot.cost}</p>
         </div>
       );
     } else {
