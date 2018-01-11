@@ -1,10 +1,7 @@
 class Booking < ApplicationRecord
 
   validates :start_date, :end_date, :spot_id, :booker_id, presence: true
-<<<<<<< HEAD
-=======
   validate :does_not_overlap_approved_request
->>>>>>> spot-create
 
   belongs_to :booker,
     foreign_key: :booker_id,
@@ -16,8 +13,6 @@ class Booking < ApplicationRecord
 
     def cost
       self.spot.price * ((self.end_date - self.start_date).to_i)
-<<<<<<< HEAD
-=======
     end
 
     def overlapping_bookings
@@ -32,7 +27,6 @@ class Booking < ApplicationRecord
       unless overlapping_bookings.empty?
         errors[:base] << 'Booking overlaps with existing booking'
       end
->>>>>>> spot-create
     end
 
 
