@@ -24,7 +24,6 @@ export const removeSpot = id => {
 };
 
 export const fetchSpots = (args) => dispatch => {
-  debugger
   return APIUtil.fetchSpots(args).then(spots => {
     return dispatch(receiveSpots(spots));
   });

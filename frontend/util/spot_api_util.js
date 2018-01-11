@@ -1,5 +1,4 @@
 export const fetchSpots = bounds => {
-  debugger
   return $.ajax({
     method: 'get',
     url: 'api/spots',

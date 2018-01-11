@@ -1,18 +1,17 @@
 import { connect } from 'react-redux';
-import { updateBounds } from '../../actions/filter_actions';
+import SpotMap from './spot_map';
 import { receiveMapLocation } from '../../actions/search_actions';
-import Search from './search';
-
+import { updateBounds } from '../../actions/filter_actions';
 
 const mapStateToProps = state => {
   return {
-    spots: Object.values(state.entities.spots),
+    spots: Object.values(state.entities.spots)
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateBounds: (filter, value) => dispatch(updateBounds(filter, value)),
+    updateBounds: (bounds, value) => dispatch(updateBounds(bounds, value)),
     receiveMapLocation: location => dispatch(receiveMapLocation(location))
   };
 };
@@ -20,4 +19,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Search);
+)(SpotMap);

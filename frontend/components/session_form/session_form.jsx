@@ -122,7 +122,7 @@ class SessionForm extends React.Component {
           <div onClick={this.stopPropagation} className="login-form-container">
             <button onClick={this.handleCloseModal} className="close-icon">&times;</button>
             <form onSubmit={this.handleSubmit} className="login-form-box">
-              {this.renderErrors()}
+              { this.renderErrors() }
               <div className="login-form">
                 <br/>
                   <input type="text"

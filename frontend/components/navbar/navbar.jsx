@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchBar from '../search/search_bar';
+import SearchBarContainer from '../search/search_bar_container';
 import { Link } from 'react-router-dom';
 
 class Navbar extends React.Component {
@@ -8,7 +8,7 @@ class Navbar extends React.Component {
     <div  className="nav-header">
       <Link to="/" className="nav-header-link">
         <img className="nav-header-icon" src={window.staticImages.XeniaLogo}/>
-        <SearchBar />
+        <SearchBarContainer />
         <button className="logout-button" onClick={this.props.logout}>Log Out</button>
       </Link>
       <Link to="/spots/new">

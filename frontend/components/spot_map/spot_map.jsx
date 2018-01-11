@@ -4,7 +4,6 @@ import { withRouter } from 'react-router-dom';
 import MarkerManager from '../../util/marker_manager';
 
 class SpotMap extends React.Component {
-
   componentDidMount() {
     const mapOptions = {
       center: { lat: 40.7514, lng: -73.989 },
@@ -17,6 +16,7 @@ class SpotMap extends React.Component {
   }
 
   componentDidUpdate() {
+    this.map.setCenter(getState().search);
     this.MarkerManager.updateMarkers(this.props.spots);
   }
 
@@ -28,6 +28,7 @@ class SpotMap extends React.Component {
       southWest: { lat: south, lng: west } };
       this.props.updateBounds('bounds', bounds);
     });
+
     google.maps.event.addListener(this.map, 'click', (event) => {
       const coords = getCoordsObj(event.latLng);
       this.handleClick(coords);
