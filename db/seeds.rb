@@ -152,7 +152,7 @@ spot17 = Spot.create!(host_id: user1.id, title: "Scary Spot", address: '262 W 38
     reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.", spot_type: "Shared Room", guests: 2, price: 110, lng: -83.042417, lat: 42.362518, bedrooms: 1, bathrooms: 2, beds: 3, image: "https://s3.amazonaws.com/xenia-seeds/apartment17.jpeg")
-spo18 = Spot.create!(host_id: user1.id, title: "Scary Spot", address: '262 W 38th St, New York, New York, 10018, United States',
+spot18 = Spot.create!(host_id: user1.id, title: "Scary Spot", address: '262 W 38th St, New York, New York, 10018, United States',
   body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
