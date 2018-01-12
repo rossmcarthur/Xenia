@@ -35,6 +35,8 @@ class BookingForm extends React.Component {
         delete newState.endDate;
         this.props.createBooking(newState).then(() => {
           this.setState({rendered: 'create'});
+        },()=>{
+          this.setState({rendered: 'errors'});
         });
       }
   }
@@ -52,16 +54,12 @@ class BookingForm extends React.Component {
   }
 
   renderErrors() {
-    if (this.props.errors[0]) {
+    if (this.state.rendered === 'errors') {
       return(
-        <ul className="booking-errors-list">
-          {this.props.errors.map((error, i) => (
-            <li key={`error-${i}`}>
-              {error}
-            </li>
-          ))}
-        </ul>
+        <p className="booking-errors">Booking slot unavailable</p>
       );
+    } else {
+      return null;
     }
   }
 

@@ -8,7 +8,6 @@
 .session-container{
   width: 100%;
   display: flex;
-  justify-content: space-between;
 }
 
 .modal-window {
@@ -23,10 +22,17 @@
   left: 0;
   overflow: scroll;
 }
+.main-container {
+  width: 100%
+}
+.nav-head {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
 
 .login-signup {
   font-size: 15px;
-  float: right;
   padding-right: 16px;
   padding-top: 28px;
 }

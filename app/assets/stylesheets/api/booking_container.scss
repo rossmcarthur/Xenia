@@ -2,8 +2,10 @@
   border: 1px solid lightgray;
   width: 380px;
   grid-column-start: 4;
-  align-content: flex-start;
-  position: sticky;
+  position: relative;
+  margin-top: 20px;
+  top: -368px;
+  left: 40px;
 }
 
 .booking-content {
@@ -34,10 +36,16 @@
 }
 
 .booking-created {
+  font-family: "Roboto", sans-serif;
   text-align: center;
   margin-bottom: 20px
 }
 
+.booking-errors {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+}
 button:disabled {
   background-color: gainsboro;
 }

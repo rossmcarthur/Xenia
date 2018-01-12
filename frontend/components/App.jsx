@@ -21,11 +21,12 @@ const SessionContainer = () => (
     <Link to="/" className="header-link">
       <img className="homepage-icon" src={window.staticImages.XeniaLogo}/>
     </Link>
-    <div>
+    <div className='main-container'>
       <LogoutContainer />
       <SessionFormContainer />
     </div>
   </div>
+
 );
 
 export default App;

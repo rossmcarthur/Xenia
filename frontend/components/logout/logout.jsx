@@ -12,6 +12,7 @@ class Logout extends React.Component {
 
 sessionLinks() {
   return (
+    <div className="nav-head">
       <nav className="login-signup">
         <button onClick={this.props.signupModal} className="signup-link">
           <span className="button-border">Sign Up</span>
@@ -21,6 +22,7 @@ sessionLinks() {
           <span className="button-border">Log In</span>
         </button>
       </nav>
+    </div>
   );
 }
 

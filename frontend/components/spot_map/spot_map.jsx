@@ -10,16 +10,22 @@ class SpotMap extends React.Component {
       zoom: 13
     };
     this.map = new google.maps.Map(this.mapNode, mapOptions);
-    this.MarkerManager = new MarkerManager(this.map);
+    this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
     this.registerListeners();
     this.MarkerManager.updateMarkers(this.props.spots);
   }
 
   componentWillReceiveProps(newProps) {
-    if (newProps.location) {
-      this.map.setCenter(newProps.location);
+    debugger
+    if (newProps.focus) {
+      this.map.setCenter(newProps.focus);
     }
-    this.MarkerManager.updateMarkers(this.props.spots);
+    this.MarkerManager.updateMarkers(newProps.spots);
+  }
+
+
+  handleMarkerClick(spot) {
+    this.props.history.push(`spots/${spot.id}`);
   }
 
   registerListeners() {
@@ -47,4 +53,4 @@ class SpotMap extends React.Component {
   }
 }
 
-export default SpotMap;
+export default withRouter(SpotMap);
