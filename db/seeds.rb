@@ -111,7 +111,7 @@ spot12 = Spot.create!(host_id: user1.id, title: "Scary Spot", address: '262 W 38
     nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
     reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-    culpa qui officia deserunt mollit anim id est laborum.", spot_type: "Shared Room", guests: 2, price: 110, lng: -73.991073, lat: 40.7522534, bedrooms: 1, bathrooms: 2, beds: 3)
+    culpa qui officia deserunt mollit anim id est laborum.", spot_type: "Shared Room", guests: 2, price: 110, lng: -122.419498, lat: 37.796761, bedrooms: 1, bathrooms: 2, beds: 3)
 spot13 = Spot.create!(host_id: user1.id, title: "Scary Spot", address: '262 W 38th St, New York, New York, 10018, United States',
   body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -119,7 +119,7 @@ spot13 = Spot.create!(host_id: user1.id, title: "Scary Spot", address: '262 W 38
     nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
     reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-    culpa qui officia deserunt mollit anim id est laborum.", spot_type: "Shared Room", guests: 2, price: 110, lng: -73.991073, lat: 40.7522534, bedrooms: 1, bathrooms: 2, beds: 3)
+    culpa qui officia deserunt mollit anim id est laborum.", spot_type: "Shared Room", guests: 2, price: 110, lng: -122.449625, lat: 37.778515, bedrooms: 1, bathrooms: 2, beds: 3)
 spot14 = Spot.create!(host_id: user1.id, title: "Scary Spot", address: '262 W 38th St, New York, New York, 10018, United States',
   body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -127,7 +127,7 @@ spot14 = Spot.create!(host_id: user1.id, title: "Scary Spot", address: '262 W 38
     nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
     reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-    culpa qui officia deserunt mollit anim id est laborum.", spot_type: "Shared Room", guests: 2, price: 110, lng: -73.991073, lat: 40.7522534, bedrooms: 1, bathrooms: 2, beds: 3)
+    culpa qui officia deserunt mollit anim id est laborum.", spot_type: "Shared Room", guests: 2, price: 110, lng: -122.461555, lat: 37.779193, bedrooms: 1, bathrooms: 2, beds: 3)
 spot15 = Spot.create!(host_id: user1.id, title: "Scary Spot", address: '262 W 38th St, New York, New York, 10018, United States',
   body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -135,7 +135,7 @@ spot15 = Spot.create!(host_id: user1.id, title: "Scary Spot", address: '262 W 38
     nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
     reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-    culpa qui officia deserunt mollit anim id est laborum.", spot_type: "Shared Room", guests: 2, price: 110, lng: -73.991073, lat: 40.7522534, bedrooms: 1, bathrooms: 2, beds: 3)
+    culpa qui officia deserunt mollit anim id est laborum.", spot_type: "Shared Room", guests: 2, price: 110, lng: -122.393835, lat: 37.778922, bedrooms: 1, bathrooms: 2, beds: 3)
 spot16 = Spot.create!(host_id: user1.id, title: "Scary Spot", address: '262 W 38th St, New York, New York, 10018, United States',
   body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -143,7 +143,7 @@ spot16 = Spot.create!(host_id: user1.id, title: "Scary Spot", address: '262 W 38
     nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
     reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-    culpa qui officia deserunt mollit anim id est laborum.", spot_type: "Shared Room", guests: 2, price: 110, lng: -73.991073, lat: 40.7522534, bedrooms: 1, bathrooms: 2, beds: 3)
+    culpa qui officia deserunt mollit anim id est laborum.", spot_type: "Shared Room", guests: 2, price: 110, lng: -122.427910, lat: 37.801712, bedrooms: 1, bathrooms: 2, beds: 3)
 spot17 = Spot.create!(host_id: user1.id, title: "Scary Spot", address: '262 W 38th St, New York, New York, 10018, United States',
   body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -151,7 +151,7 @@ spot17 = Spot.create!(host_id: user1.id, title: "Scary Spot", address: '262 W 38
     nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
     reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-    culpa qui officia deserunt mollit anim id est laborum.", spot_type: "Shared Room", guests: 2, price: 110, lng: -73.991073, lat: 40.7522534, bedrooms: 1, bathrooms: 2, beds: 3)
+    culpa qui officia deserunt mollit anim id est laborum.", spot_type: "Shared Room", guests: 2, price: 110, lng: -83.042417, lat: 42.362518, bedrooms: 1, bathrooms: 2, beds: 3)
 spo18 = Spot.create!(host_id: user1.id, title: "Scary Spot", address: '262 W 38th St, New York, New York, 10018, United States',
   body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -159,7 +159,7 @@ spo18 = Spot.create!(host_id: user1.id, title: "Scary Spot", address: '262 W 38t
     nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
     reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-    culpa qui officia deserunt mollit anim id est laborum.", spot_type: "Shared Room", guests: 2, price: 110, lng: -73.991073, lat: 40.7522534, bedrooms: 1, bathrooms: 2, beds: 3)
+    culpa qui officia deserunt mollit anim id est laborum.", spot_type: "Shared Room", guests: 2, price: 110, lng: -83.124643, lat: 42.326866, bedrooms: 1, bathrooms: 2, beds: 3)
 spot19 = Spot.create!(host_id: user1.id, title: "Scary Spot", address: '262 W 38th St, New York, New York, 10018, United States',
   body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -167,7 +167,7 @@ spot19 = Spot.create!(host_id: user1.id, title: "Scary Spot", address: '262 W 38
     nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
     reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-    culpa qui officia deserunt mollit anim id est laborum.", spot_type: "Shared Room", guests: 2, price: 110, lng: -73.991073, lat: 40.7522534, bedrooms: 1, bathrooms: 2, beds: 3)
+    culpa qui officia deserunt mollit anim id est laborum.", spot_type: "Shared Room", guests: 2, price: 110, lng: -83.189188, lat: 42.350848, bedrooms: 1, bathrooms: 2, beds: 3)
 spot20 = Spot.create!(host_id: user1.id, title: "Scary Spot", address: '262 W 38th St, New York, New York, 10018, United States',
   body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -175,7 +175,7 @@ spot20 = Spot.create!(host_id: user1.id, title: "Scary Spot", address: '262 W 38
     nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
     reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-    culpa qui officia deserunt mollit anim id est laborum.", spot_type: "Shared Room", guests: 2, price: 110, lng: -73.991073, lat: 40.7522534, bedrooms: 1, bathrooms: 2, beds: 3)
+    culpa qui officia deserunt mollit anim id est laborum.", spot_type: "Shared Room", guests: 2, price: 110, lng: -73.993850, lat: 40.724013, bedrooms: 1, bathrooms: 2, beds: 3)
 
 spot1_amenities1 = SpotAmenity.create!(spot_id: spot1.id, amenity_id: amenity1.id)
 spot1_amenities2 = SpotAmenity.create!(spot_id: spot1.id, amenity_id: amenity3.id)
