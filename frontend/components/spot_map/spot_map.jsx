@@ -16,7 +16,6 @@ class SpotMap extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    debugger
     if (newProps.focus) {
       this.map.setCenter(newProps.focus);
     }
