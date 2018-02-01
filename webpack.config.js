@@ -23,7 +23,7 @@ plugins = plugins.concat(
 
 module.exports = {
   context: __dirname,
-  entry: "./frontend/<name of entry file>",
+  entry: "./frontend/xenia.jsx",
   output: {
     path: path.resolve(__dirname, "app", "assets", "javascripts"),
     filename: "bundle.js"
@@ -36,7 +36,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['react', 'es2015']
+          presets: ['react', 'env']
         }
       }
     ]

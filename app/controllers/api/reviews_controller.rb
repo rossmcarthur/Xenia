@@ -3,6 +3,11 @@ class Api::ReviewsController < ApplicationController
   def new
   end
 
+  def index
+    @reviews = Review.find_by(spot: params[:spot_id])
+    render :index
+  end
+
   def create
     @review = current_user.reviews.create(review_params)
       if @review.save

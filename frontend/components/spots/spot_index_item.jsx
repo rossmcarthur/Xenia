@@ -12,7 +12,7 @@ const SpotIndexItem = ({ spot }) => {
           <Link className="spot-link" to={`/spots/${spot.id}`}>
             <img className="spot-image" src={spot.image_url}/>
             <li className="spot-type">{spot.spot_type}</li>
-            <li className="spot-title">{spot.title}</li>
+            <li className="spot-title truncate">{spot.title}</li>
             <li className="spot-price">From ${spot.price} per night</li>
           </Link>
         </ul>

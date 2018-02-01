@@ -124,6 +124,7 @@
   color: #484848;
   font-weight: 700;
   padding: 3px;
+  width: 93%;
   text-decoration: none;
 }
 
@@ -189,6 +190,11 @@
   height: 40px;
 }
 
+.truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 
 .spot-index-item {
   display: flex;

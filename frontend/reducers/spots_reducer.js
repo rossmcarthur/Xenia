@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-
+import { RECEIVE_REVIEW } from '../actions/review_actions';
 import {
   RECEIVE_SPOTS,
   RECEIVE_SPOT,
@@ -15,6 +15,8 @@ const spotsReducer = (state = {}, action) => {
     return action.spots;
     case RECEIVE_SPOT:
     return merge({}, state, { [action.spot.id]: action.spot });
+    case RECEIVE_REVIEW:
+    return merge({}, state, action.review);
     case REMOVE_SPOT:
     delete newState[action.spot.id];
     return newState;
@@ -22,5 +24,6 @@ const spotsReducer = (state = {}, action) => {
     return state;
   }
 };
+
 
 export default spotsReducer;
