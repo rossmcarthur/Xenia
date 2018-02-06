@@ -13,13 +13,6 @@ export const fetchSpot = id => {
   });
 };
 
-export const fetchReviews = id => {
-  return $.ajax({
-    method: 'get',
-    url: `api/spots/${id}/reviews`
-  });
-};
-
 export const createSpot = spot => {
   return $.ajax({
     method: 'post',

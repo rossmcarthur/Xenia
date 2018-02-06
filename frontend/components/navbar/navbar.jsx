@@ -8,7 +8,9 @@ class Navbar extends React.Component {
     <div  className="nav-header">
       <Link to="/" className="nav-header-link">
         <img className="nav-header-icon" src={window.staticImages.XeniaLogo}/>
-        <SearchBarContainer />
+        <div className="search-container">
+          <SearchBarContainer />
+        </div>
         <button className="logout-button" onClick={this.props.logout}>Log Out</button>
       </Link>
         <button className="host-button">Become a host</button>

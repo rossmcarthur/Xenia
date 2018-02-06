@@ -33,7 +33,7 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div className="search-container">
+      <div>
         <form onSubmit={this.handleSubmit} className="search-form">
           <input
             className="search-bar"

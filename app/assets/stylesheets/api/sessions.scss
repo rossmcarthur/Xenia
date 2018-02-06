@@ -59,6 +59,50 @@
   }
 }
 
+.home-search {
+  display: flex;
+  position: fixed;
+  width: 777px;
+  height: 72px;
+  top: 49%;
+  left: 15%;
+  border: 1px solid lightgray;
+  background-image: url();
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-image: image_url('search.png');
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: 13px 24px;
+  background-color: white;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.home-text {
+  position: fixed;
+  top: 23%;
+  left: 15%;
+
+}
+
+.home-title {
+  color: #FF5A5F;
+  font-family: 'Roboto', sans-serif;
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 15px;
+
+}
+
+.home-body {
+  font-family: inherit;
+  width: 624px;
+  height: 184px;
+  font-size: calc(0.5vw + 42px);
+  line-height: calc(0.7vw + 48px);
+  color: #484848;
+}
+
 .signup-link2 {
   text-decoration: none;
   color: #008489;

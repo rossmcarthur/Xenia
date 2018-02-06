@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import SpotIndex from './spot_index';
 import ReactStars from 'react-stars';
 

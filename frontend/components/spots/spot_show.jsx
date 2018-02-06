@@ -2,6 +2,7 @@ import React from 'react';
 import ReactStars from 'react-stars';
 import BookingFormContainer from '../bookings/booking_form_container';
 import NavbarContainer from '../navbar/navbar_container';
+import SpotReviewContainer from './spot_reviews_container';
 
 class SpotShow extends React.Component {
   constructor(props) {
@@ -15,15 +16,15 @@ class SpotShow extends React.Component {
   getAmenityIcon(amenity){
     switch (amenity.amenity_type) {
       case "Kitchen":
-        return <i class="fa fa-cutlery" aria-hidden="true"></i>
+        return <i class="fa fa-cutlery" aria-hidden="true"></i>;
       case "Wifi":
-        return <i class="fa fa-wifi" aria-hidden="true"></i>
+        return <i class="fa fa-wifi" aria-hidden="true"></i>;
       case "Air Conditioning":
-        return <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+        return <i class="fa fa-snowflake-o" aria-hidden="true"></i>;
       case "Family/Kid Friendly":
-        return <i class="fa fa-child" aria-hidden="true"></i>
+        return <i class="fa fa-child" aria-hidden="true"></i>;
       case "Cable TV":
-        return <i class="fa fa-television" aria-hidden="true"></i>
+        return <i class="fa fa-television" aria-hidden="true"></i>;
       default:
         return null;
     }
@@ -117,6 +118,7 @@ class SpotShow extends React.Component {
             <li className="spot-show-body"> {this.props.spot.body} </li>
             {this.renderAmenities()}
             <BookingFormContainer />
+            <SpotReviewContainer />
           </div>
         </div>
       );
