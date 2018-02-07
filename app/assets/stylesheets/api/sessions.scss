@@ -80,9 +80,8 @@
 
 .home-text {
   position: fixed;
-  top: 23%;
+  top: 30%;
   left: 15%;
-
 }
 
 .home-title {
@@ -91,15 +90,15 @@
   font-size: 45px;
   font-weight: 700;
   margin-bottom: 15px;
-
 }
 
 .home-body {
   font-family: inherit;
-  width: 624px;
+  width: 700px;
   height: 184px;
-  font-size: calc(0.5vw + 42px);
-  line-height: calc(0.7vw + 48px);
+  font-size: 48px;
+  line-height: 48px;
+  letter-spacing: 0.8px;
   color: #484848;
 }
 

@@ -3,12 +3,15 @@ import ReactStars from 'react-stars';
 import BookingFormContainer from '../bookings/booking_form_container';
 import NavbarContainer from '../navbar/navbar_container';
 import SpotReviewContainer from './spot_reviews_container';
+import SpotReviewIndexItem from './spot_reviews_index_item';
 
 class SpotShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      reviews: {}
+    };
   }
-
   componentDidMount() {
     this.props.fetchSpot(this.props.spotId);
   }
@@ -101,7 +104,17 @@ class SpotShow extends React.Component {
   }
 
   render() {
+    debugger
     if (this.props.spot) {
+      const reviews = this.props.spot.reviews.map(review => {
+        return (
+          <SpotReviewIndexItem
+            key={review.id}
+            review={review}
+            spot={this.props.spot}
+            />
+        );
+      });
       return (
         <div className="spot-show-container">
           <NavbarContainer />
@@ -118,7 +131,9 @@ class SpotShow extends React.Component {
             <li className="spot-show-body"> {this.props.spot.body} </li>
             {this.renderAmenities()}
             <BookingFormContainer />
-            <SpotReviewContainer />
+            <div className="review-list">
+              {reviews}
+            </div>
           </div>
         </div>
       );

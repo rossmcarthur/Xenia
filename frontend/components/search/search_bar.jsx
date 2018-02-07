@@ -32,6 +32,22 @@ class SearchBar extends React.Component {
   }
 
   render() {
+    if (this.props.currentUser) {
+      return (
+        <div>
+          <form onSubmit={this.handleSubmit} className="search-form">
+            <input
+              className="search-bar"
+              type="text"
+              placeholder="Anywhere"
+              value={this.state.search}
+              onChange={this.handleChange}>
+            </input>
+          </form>
+          <button onClick={this.handleClear} className="search-close-icon">&times;</button>
+        </div>
+    );
+  } else {
     return (
       <div>
         <form onSubmit={this.handleSubmit} className="search-form">
@@ -46,6 +62,7 @@ class SearchBar extends React.Component {
         <button onClick={this.handleClear} className="search-close-icon">&times;</button>
       </div>
     );
+  }
   }
 }
 

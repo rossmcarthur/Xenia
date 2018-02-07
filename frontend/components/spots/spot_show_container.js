@@ -14,7 +14,6 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchSpot: spotId => dispatch(fetchSpot(spotId)),
     deleteSpot: spotId => dispatch(deleteSpot(spotId)),
-    fetchReviews: spotId => dispatch(fetchReviews(spotId))
   };
 };
 

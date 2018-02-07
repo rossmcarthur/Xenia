@@ -16,6 +16,7 @@ class MarkerManager {
         text: "$"+spot.price
       },
       icon: {
+
       }
     });
     marker.addListener('click', () => this.handleClick(spot));
