@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import SpotShow from './spot_show';
-import { fetchSpot, deleteSpot, fetchReviews } from '../../actions/spot_actions';
+import { fetchSpot, deleteSpot } from '../../actions/spot_actions';
+import { fetchReview } from '../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const spotId = ownProps.match.params.spotId;
@@ -14,6 +15,7 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchSpot: spotId => dispatch(fetchSpot(spotId)),
     deleteSpot: spotId => dispatch(deleteSpot(spotId)),
+
   };
 };
 

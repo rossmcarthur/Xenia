@@ -10,10 +10,12 @@ export const receiveSpots = spots => {
   };
 };
 
-export const receiveSpot = spot => {
+export const receiveSpot = payload => {
   return {
     type: RECEIVE_SPOT,
-    spot
+    spot: payload,
+    reviews: payload.reviews,
+    bookings: payload.bookings,
   };
 };
 

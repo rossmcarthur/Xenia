@@ -6,7 +6,8 @@ export const REMOVE_REVIEW = 'REMOVE_REVIEW';
 export const receiveReview = payload => {
   return {
     type: RECEIVE_REVIEW,
-    review: payload.review,
+    review: payload,
+    user: payload.author
   };
 };
 

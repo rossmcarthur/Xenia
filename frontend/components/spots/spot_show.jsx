@@ -6,12 +6,6 @@ import SpotReviewContainer from './spot_reviews_container';
 import SpotReviewIndexItem from './spot_reviews_index_item';
 
 class SpotShow extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      reviews: {}
-    };
-  }
   componentDidMount() {
     this.props.fetchSpot(this.props.spotId);
   }
@@ -104,7 +98,6 @@ class SpotShow extends React.Component {
   }
 
   render() {
-    debugger
     if (this.props.spot) {
       const reviews = this.props.spot.reviews.map(review => {
         return (
