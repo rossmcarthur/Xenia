@@ -1,14 +1,21 @@
 import React from 'react';
-import SpotReviews from './spot_reviews';
 
-const SpotReviewsIndexItem = (state) => {
+const MONTH = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+const SpotReviewsIndexItem = ({ review }) => {
+  const date = new Date(review.created_at)
+  debugger
     return (
       <div className="spot-reviews-item">
         <ul>
-            <li className="review-body">{state.review.body}</li>
+            <img className="review-image" src={review.author.image_url}/>
+            <li className="review-author">{review.author.first_name}</li>
+            <li className="review-date">{MONTH[date.getMonth()] + " " + date.getFullYear()}</li>
+            <li className="review-body">{review.body}</li>
+
         </ul>
       </div>
     );
-  }
+  };
 
   export default SpotReviewsIndexItem;

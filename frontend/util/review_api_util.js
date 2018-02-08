@@ -1,8 +1,15 @@
 export const createReview = review => {
   return $.ajax({
     method: 'post',
-    url: `/api/spot/${review.spotId}/reviews`,
+    url: `/api/spots/${review.spotId}/reviews`,
     data: { review }
+  });
+};
+
+export const fetchReviews = spotId => {
+  return $.ajax({
+    method: 'get',
+    url: `/api/spots/${spotId}/reviews`
   });
 };
 

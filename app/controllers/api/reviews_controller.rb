@@ -4,7 +4,7 @@ class Api::ReviewsController < ApplicationController
   end
 
   def index
-    @reviews = Review.find_by(spot: params[:spot_id])
+    @reviews = Review.where("spot_id = ?", params[:spot_id])
     render :index
   end
 

@@ -1,13 +1,12 @@
 import * as APIUtil from '../util/review_api_util';
 
-export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
+export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
 export const REMOVE_REVIEW = 'REMOVE_REVIEW';
 
-export const receiveReview = payload => {
+export const receiveReviews = reviews => {
   return {
-    type: RECEIVE_REVIEW,
-    review: payload,
-    user: payload.author
+    type: RECEIVE_REVIEWS,
+    reviews
   };
 };
 
@@ -18,14 +17,20 @@ export const removeReview = payload => {
   };
 };
 
+export const fetchReviews = spotId => dispatch => {
+  return APIUtil.fetchReviews(spotId).then(reviews => {
+    return dispatch(receiveReviews(reviews));
+  });
+};
+
 export const createReview = review => dispatch => {
-  APIUtil.createReview(review).then(review => {
-    dispatch(receiveReview(review));
+  return APIUtil.createReview(review).then(review => {
+    return dispatch(receiveReview(review));
   });
 };
 
 export const deleteReview = id => dispatch => {
-  APIUtil.deleteReview(id).then(review => {
-    dispatch(deleteReview(id));
+  return APIUtil.deleteReview(id).then(review => {
+    return dispatch(deleteReview(id));
   });
 };

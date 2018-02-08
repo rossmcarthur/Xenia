@@ -8,6 +8,7 @@ import SpotReviewIndexItem from './spot_reviews_index_item';
 class SpotShow extends React.Component {
   componentDidMount() {
     this.props.fetchSpot(this.props.spotId);
+    this.props.fetchReviews(this.props.spotId);
   }
 
   getAmenityIcon(amenity){
@@ -98,8 +99,9 @@ class SpotShow extends React.Component {
   }
 
   render() {
-    if (this.props.spot) {
-      const reviews = this.props.spot.reviews.map(review => {
+
+    if (this.props.spot && Object.keys(this.props.reviews).length > 0) {
+      const reviews = Object.values(this.props.reviews).map(review => {
         return (
           <SpotReviewIndexItem
             key={review.id}

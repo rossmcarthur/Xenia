@@ -14,7 +14,6 @@ export const receiveSpot = payload => {
   return {
     type: RECEIVE_SPOT,
     spot: payload,
-    reviews: payload.reviews,
     bookings: payload.bookings,
   };
 };
