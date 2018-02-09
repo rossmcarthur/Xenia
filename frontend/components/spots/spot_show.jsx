@@ -99,9 +99,11 @@ class SpotShow extends React.Component {
   }
 
   render() {
-
-    if (this.props.spot && Object.keys(this.props.reviews).length > 0) {
-      const reviews = Object.values(this.props.reviews).map(review => {
+    let reviews;
+    const spotId = parseInt(this.props.spotId);
+    if (Object.keys(this.props.reviews).length > 0) {
+      reviews = Object.values(this.props.reviews).map(review => {
+        if (review.spot.id === spotId) {
         return (
           <SpotReviewIndexItem
             key={review.id}
@@ -109,7 +111,12 @@ class SpotShow extends React.Component {
             spot={this.props.spot}
             />
         );
-      });
+      }
+    });
+  } else {
+      return null;
+    }
+    if (this.props.spot) {
       return (
         <div className="spot-show-container">
           <NavbarContainer />
