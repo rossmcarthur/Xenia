@@ -169,6 +169,32 @@
   background-position: 420px;
 }
 
+.first-name-input {
+  margin: 8px;
+  width: 450px;
+  height: 40px;
+  font-size: 17px;
+  padding-left: 10px;
+  font-weight: lighter;
+  background-image: image-url('social.png');
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: 420px;
+}
+
+.last-name-input {
+  margin: 8px;
+  width: 450px;
+  height: 40px;
+  font-size: 17px;
+  padding-left: 10px;
+  font-weight: lighter;
+  background-image: image-url('social.png');
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: 420px;
+}
+
 .login-button {
   margin: 8px;
   width: 466px;
@@ -201,6 +227,19 @@
   margin: auto;
   width: 525px;
   height: 475px;
+  margin-top: 200px;
+  padding-bottom: 40px;
+  font-family: 'Roboto', sans-serif;
+  background-color: white;
+  z-index: 4;
+}
+
+.signup-form-container {
+  text-align: center;
+  border: 1px solid gray;
+  margin: auto;
+  width: 525px;
+  height: 595px;
   margin-top: 200px;
   padding-bottom: 40px;
   font-family: 'Roboto', sans-serif;

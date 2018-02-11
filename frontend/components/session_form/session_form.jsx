@@ -6,7 +6,9 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      first_name: '',
+      last_name: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleGuest = this.handleGuest.bind(this);
@@ -116,7 +118,7 @@ class SessionForm extends React.Component {
   render() {
     if (!this.props.session_modal) {
       return null;
-    }
+    } else if (this.props.session_modal === 'login') {
       return (
         <div onClick={this.handleCloseModal} className="modal-window">
           <div onClick={this.stopPropagation} className="login-form-container">
@@ -149,6 +151,57 @@ class SessionForm extends React.Component {
           </div>
         </div>
       );
+    } else {
+      return (
+        <div onClick={this.handleCloseModal} className="modal-window">
+          <div onClick={this.stopPropagation} className="signup-form-container">
+            <button onClick={this.handleCloseModal} className="close-icon">&times;</button>
+            <form onSubmit={this.handleSubmit} className="signup-form-box">
+              { this.renderErrors() }
+              <div className="login-form">
+                <br/>
+                  <input type="text"
+                    value={this.state.email}
+                    placeholder="Email address"
+                    onChange={this.update('email')}
+                    className="email-input"
+                  />
+                <br/>
+                  <input
+                    type="text"
+                    value={this.state.first_name}
+                    placeholder="First Name"
+                    onChange={this.update('first_name')}
+                    className="first-name-input"
+                    />
+                <br/>
+                  <input
+                    type="text"
+                    value={this.state.last_name}
+                    placeholder="Last Name"
+                    onChange={this.update('last_name')}
+                    className="last-name-input"
+                    />
+                  <br/>
+                    <input type="password"
+                      value={this.state.password}
+                      placeholder="Create a password"
+                      onChange={this.update('password')}
+                      className="password-input"
+                    />
+                  <br/>
+                <input className="login-button" type="submit" value={this.buttonMessage()} />
+                <div className="session-redirect-border">
+                  <p className="session-redirect">{this.message()} {this.navLink()}</p>
+                  <button className="guest-login" onClick={this.handleGuest}>Guest Login</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      );
+    }
+
     }
   }
 
