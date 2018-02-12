@@ -25,12 +25,14 @@ sessionLinks() {
           </button>
         </nav>
       </div>
-      <div className="home-text">
-        <h2 className="home-title">Xenia</h2>
-        <p className="home-body">Book unique homes and experiences all over the world.</p>
-      </div>
-      <div className="home-search">
-        <SearchBarContainer />
+      <div className="home-search-box">
+        <div className="home-text">
+          <h2 className="home-title">Xenia</h2>
+          <p className="home-body">Book unique homes and experiences all over the world.</p>
+        </div>
+        <div className="home-search">
+          <SearchBarContainer />
+        </div>
       </div>
     </div>
   );
