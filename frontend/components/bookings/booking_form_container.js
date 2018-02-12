@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { fetchBookings, createBooking } from '../../actions/booking_actions';
 import Bookings from './booking_form';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
     errors: state.errors.session,
@@ -12,7 +12,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchBookings: () => dispatch(fetchBookings()),
     createBooking: booking => dispatch(createBooking(booking))
   };
 };

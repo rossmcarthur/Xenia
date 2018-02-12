@@ -26,8 +26,8 @@ export const receiveBookingErrors = errors => {
   };
 };
 
-export const fetchBookings = () => dispatch => (
-APIUtil.fetchBookings().then(bookings => (
+export const fetchBookings = spotId => dispatch => (
+APIUtil.fetchBookings(spotId).then(bookings => (
     dispatch(receiveBookings(bookings)),
     err => dispatch(receiveBookingErrors(err.responseJSON))
   ))

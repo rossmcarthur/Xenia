@@ -1,7 +1,7 @@
-export const fetchBookings = () => {
+export const fetchBookings = spotId => {
   return $.ajax({
     method: 'get',
-    url: '/api/bookings'
+    url: `/api/spots/${spotId}/bookings`
   });
 };
 
@@ -15,7 +15,7 @@ export const fetchBooking = id => {
 export const createBooking = booking => {
   return $.ajax({
     method: 'post',
-    url: `api/bookings`,
+    url: `api/spots/${booking.spot_id}/bookings`,
     data: { booking }
   });
 };

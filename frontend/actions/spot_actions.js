@@ -13,8 +13,7 @@ export const receiveSpots = spots => {
 export const receiveSpot = payload => {
   return {
     type: RECEIVE_SPOT,
-    spot: payload,
-    bookings: payload.bookings,
+    spot: payload
   };
 };
 

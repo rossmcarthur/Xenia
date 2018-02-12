@@ -3,7 +3,6 @@ import React from 'react';
 const MONTH = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
 const SpotReviewsIndexItem = ({ review }) => {
-  debugger
   const date = new Date(review.created_at)
     return (
       <div>

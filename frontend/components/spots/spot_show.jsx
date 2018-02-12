@@ -9,6 +9,7 @@ class SpotShow extends React.Component {
   componentDidMount() {
     this.props.fetchSpot(this.props.spotId);
     this.props.fetchReviews(this.props.spotId);
+    this.props.fetchBookings(this.props.spotId);
   }
 
   getAmenityIcon(amenity){
