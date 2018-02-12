@@ -13,11 +13,12 @@ class SearchBar extends React.Component {
   componentDidMount() {
     this.geocoder = new google.maps.Geocoder();
     this.input = document.getElementById('search-input');
-    this.autocomplete = new google.maps.places.Autocomplete(this.input);
+    const options = {
+      types: ['geocode']
+    };
+    this.autocomplete = new google.maps.places.Autocomplete(this.input, options);
   }
 
-  // componentWillReceiveProps(newProps) {
-  // }
   handleChange(e) {
     this.setState({ search: e.target.value });
   }
