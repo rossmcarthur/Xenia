@@ -1,10 +1,13 @@
 import React from 'react';
 import SpotMapContainer from '../spot_map/spot_map_container';
 import SpotIndexContainer from '../spots/spot_index_container';
+import NavbarContainer from '../navbar/navbar_container';
 
 class Search extends React.Component {
   render() {
     return (
+      <div>
+        <NavbarContainer />
           <div className="spots-main-grid">
             <div className="spot-index">
               <SpotIndexContainer />
@@ -13,6 +16,7 @@ class Search extends React.Component {
               <SpotMapContainer />
             </div>
           </div>
+      </div>
     );
   }
 }

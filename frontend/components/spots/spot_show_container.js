@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import SpotShow from './spot_show';
 import { fetchSpot, deleteSpot } from '../../actions/spot_actions';
 import { fetchReviews } from '../../actions/review_actions';
-import { fetchBookings } from '../../actions/booking_actions'
+import { fetchBookings } from '../../actions/booking_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const spotId = ownProps.match.params.spotId;

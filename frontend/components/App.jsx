@@ -5,13 +5,16 @@ import SessionFormContainer from './session_form/session_form_container';
 import LogoutContainer from './logout/logout_container';
 import SpotShowContainer from './spots/spot_show_container';
 import SpotFormContainer from './spots/spot_form_container';
+import SpotIndexContainer from './spots/spot_index_container';
+import SearchContainer from './search/search_container';
 
 const App = () => (
   <div>
     <header className="main-header">
-      <Route exact path = "/" component={ SessionContainer } />
+      <Route exact path="/" component={ SessionContainer } />
+      <Route exact path="/spots" component={ SearchContainer } />
       <Route exact path='/spots/:spotId' component={ SpotShowContainer } />
-      <Route exact path='/spots/' component={ SpotFormContainer } />
+      <Route exact path='/spots/create' component={ SpotFormContainer } />
     </header>
   </div>
 );

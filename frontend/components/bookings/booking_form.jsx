@@ -9,7 +9,6 @@ class BookingForm extends React.Component {
     this.state = {
       startDate: null,
       endDate: null,
-      booker_id: this.props.currentUser.id,
       spot_id: this.props.spot.id,
       focusedInput: null,
       rendered: '',

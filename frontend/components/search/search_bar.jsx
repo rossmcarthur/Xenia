@@ -1,4 +1,6 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+import SessionFormContainer from '../session_form/session_form_container';
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -14,7 +16,7 @@ class SearchBar extends React.Component {
     this.geocoder = new google.maps.Geocoder();
     this.input = document.getElementById('search-input');
     const options = {
-      types: ['geocode']
+      types: ['address']
     };
     this.autocomplete = new google.maps.places.Autocomplete(this.input, options);
   }
@@ -30,6 +32,7 @@ class SearchBar extends React.Component {
       const center = response[0].geometry.location.toJSON();
       this.props.receiveMapLocation(center);
     });
+    this.props.history.push("spots");
   }
 
   handleClear(e) {
@@ -37,8 +40,11 @@ class SearchBar extends React.Component {
     this.setState({ search: "" });
   }
 
+
+// CHANGE: Don't need to have different renders.
+
   render() {
-    if (this.props.currentUser) {
+    if (this.props.history.location.pathname.includes("/spots")) {
       return (
         <div>
           <form onSubmit={this.handleSubmit} className="search-form">
@@ -51,7 +57,7 @@ class SearchBar extends React.Component {
               onChange={this.handleChange}>
             </input>
           </form>
-          <button onClick={this.handleClear} className="search-close-icon">&times;</button>
+        <button onClick={this.handleClear} className="search-close-icon">&times;</button>
         </div>
     );
   } else {
@@ -74,4 +80,4 @@ class SearchBar extends React.Component {
   }
 }
 
-export default SearchBar;
+export default withRouter(SearchBar);

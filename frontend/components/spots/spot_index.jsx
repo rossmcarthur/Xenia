@@ -2,7 +2,6 @@ import React from 'react';
 import SpotIndexItem from './spot_index_item';
 
 class SpotIndex extends React.Component {
-  
   componentDidMount() {
     this.props.closeModal();
   }
@@ -22,6 +21,8 @@ class SpotIndex extends React.Component {
       </div>
     );
   }
+
+
 }
 
 export default SpotIndex;
