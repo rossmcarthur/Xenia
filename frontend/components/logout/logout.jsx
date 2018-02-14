@@ -62,6 +62,7 @@ logoutLinks() {
           <button onClick={this.props.logout} className="login-link">
             <span className="button-border">Log Out</span>
           </button>
+          <img className="home-user-image" src={this.props.currentUser.image_url} />
         </nav>
       </div>
         {this.homeSearch()}

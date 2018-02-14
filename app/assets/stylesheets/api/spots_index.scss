@@ -15,7 +15,7 @@
 
 .logout-button {
   position: fixed;
-  right: 20px;
+  right: 80px;
   top: 10px;
   background-color: transparent;
   border-style: none;
@@ -40,7 +40,7 @@
 .host-button {
   position: fixed;
   background-color: transparent;
-  right: 100px;
+  right: 150px;
   top: 10px;
   border-style: none;
   padding-top: 20px;
@@ -206,29 +206,28 @@
   max-width: 400px;
 }
 
+.nav-links {
+  position: relative;
+  float: right;
+  border: none;
+  padding-left: 22px;
+  padding-right: 20px;
+  top: 50px;
+  background-color: transparent;
+  &:focus {
+    outline: none;
+  }
+}
 
-// .nav-login-link {
-//   position: relative;
-//   float: right;
-//   border: none;
-//   padding-left: 22px;
-//   padding-right: 20px;
-//   top: 50px;
-//   background-color: transparent;
-//   &:focus {
-//     outline: none;
-//   }
-// }
-//
-// .nav-signup-link {
-//   position: relative;
-//   float: right;
-//   border: none;
-//   padding-left: 22px;
-//   padding-right: 20px;
-//   top: 50px;
-//   background-color: transparent;
-//   &:focus {
-//     outline: none;
-//   }
-// }
+.nav-signup-link {
+  position: relative;
+  float: right;
+  border: none;
+  padding-left: 22px;
+  padding-right: 20px;
+  top: 50px;
+  background-color: transparent;
+  &:focus {
+    outline: none;
+  }
+}

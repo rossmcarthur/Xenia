@@ -41,8 +41,8 @@ class BookingForm extends React.Component {
   }
 
   renderBooking() {
-    if (this.state.rendered === 'create') {
-      return(
+    if (this.state.rendered === 'create' && this.props.currentUser) {
+      return (
         <div>
           <p className="booking-created">Booking created!</p>
         </div>
@@ -54,11 +54,15 @@ class BookingForm extends React.Component {
 
   renderErrors() {
     if (this.state.rendered === 'errors') {
-      return(
-        <p className="booking-errors">Booking slot unavailable</p>
-      );
-    } else {
-      return null;
+      if (this.props.loggedIn) {
+        return(
+          <p className="booking-errors">Booking slot unavailable</p>
+        );
+      } else {
+        return (
+          <p className="booking-errors">Must be logged in to create a booking!</p>
+        );
+      }
     }
   }
 

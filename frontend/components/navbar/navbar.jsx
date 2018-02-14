@@ -10,12 +10,17 @@ class Navbar extends React.Component {
       <div  className="nav-header">
         <Link to="/" className="nav-header-link">
           <img className="nav-header-icon" src={window.staticImages.XeniaLogo}/>
+        </Link>
           <div className="search-container">
             <SearchBarContainer />
           </div>
-            <button className="logout-button" onClick={this.props.logout}>Log Out</button>
-          </Link>
-          <button className="host-button">Become a host</button>
+          <div className="nav-links">
+              <img className="nav-user-image" src={this.props.currentUser.image_url}/>
+              <Link to="/">
+                <button className="logout-button" onClick={this.props.logout}>Log Out</button>
+              </Link>
+              <button className="host-button">Become a host</button>
+          </div>
       </div>
       );
     } else {

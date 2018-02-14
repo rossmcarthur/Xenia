@@ -50,6 +50,7 @@ class SessionForm extends React.Component {
     } else if (this.props.session_modal === 'signup'){
       this.props.signup(user);
     }
+    this.props.closeModal();
   }
 
   handleGuest(e) {
