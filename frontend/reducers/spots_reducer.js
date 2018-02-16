@@ -5,6 +5,7 @@ import {
   RECEIVE_SPOT,
   REMOVE_SPOT
 } from '../actions/spot_actions';
+import { RECEIVE_BOOKING } from '../actions/booking_actions';
 
 const spotsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -16,7 +17,9 @@ const spotsReducer = (state = {}, action) => {
     case RECEIVE_SPOT:
     return merge({}, state, { [action.spot.id]: action.spot });
     case RECEIVE_REVIEW:
-    return merge({}, state, action.review);
+    return merge({}, state, state[action.spotId].reviews.push(action.review));
+    case RECEIVE_BOOKING:
+    return merge({}, state, state[action.spotId].bookings.push(action.booking));
     case REMOVE_SPOT:
     delete newState[action.spot.id];
     return newState;

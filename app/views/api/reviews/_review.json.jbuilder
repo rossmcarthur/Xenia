@@ -9,5 +9,5 @@ json.author do
 end
 
 json.spot do
-  json.extract! spot, :id
+  json.extract! spot, :id, :reviews
 end

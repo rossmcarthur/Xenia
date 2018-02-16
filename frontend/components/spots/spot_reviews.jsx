@@ -27,7 +27,6 @@ class SpotReview extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger
     e.preventDefault();
     this.props.action(this.state);
     e.stopPropagation();
@@ -43,13 +42,13 @@ class SpotReview extends React.Component {
       <div className="create-review-container">
         <form id='review-create-form' onSubmit={this.handleSubmit}>
           <ReactStars
-            onClick={this.handleRating}
+            onChange={this.handleRating}
             className='stars'
             count={5}
             value={this.state.rating}
             size={20}
             edit={true}
-            half={true}
+            half={false}
             color2={'#008489'}
             />
           <label>Review:</label>

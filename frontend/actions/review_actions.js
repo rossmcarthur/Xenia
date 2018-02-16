@@ -21,7 +21,8 @@ export const removeReview = payload => {
 export const receiveReview = review => {
   return {
     type: RECEIVE_REVIEW,
-    review
+    review,
+    spotId: review.spot.id
   };
 };
 

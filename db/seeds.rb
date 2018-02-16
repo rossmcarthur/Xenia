@@ -7,7 +7,7 @@ SpotAmenity.destroy_all
 
 user1 = User.create!(email: 'bill_clinton@hotmail.com', password: 'whatever', first_name: 'Bill', last_name: 'Clinton', image: "https://s3.amazonaws.com/xenia-seeds/pexels-photo-462680.jpeg")
 user2 = User.create!(email: 'virginias_v_best@gmail.com', password: 'whatever', first_name: 'George', last_name: 'Washington', image: "https://s3.amazonaws.com/xenia-seeds/pexels-photo-428341.jpeg")
-guest = User.create!(email: 'guest123@gmail.com', password: 'guestpassword', first_name: 'Guest', last_name: 'Guest', image: "")
+guest = User.create!(email: 'guest123@gmail.com', password: 'guestpassword', first_name: 'Guest', last_name: 'Guest')
 user3 = User.create!(email: 'todd123@gmail.com', password: 'whatever', first_name: 'Todd', last_name: 'Smith', image: "https://s3.amazonaws.com/xenia-seeds/pexels-photo-819482.jpeg")
 user4 = User.create!(email: 'susan123@gmail.com', password: 'whatever', first_name: 'Susan', last_name: 'Jones', image: "https://s3.amazonaws.com/xenia-seeds/pexels-photo-818819.jpeg")
 user5 = User.create!(email: 'sandy123@gmail.com', password: 'whatever', first_name: 'Sandy', last_name: 'Harris', image: "https://s3.amazonaws.com/xenia-seeds/pexels-photo-769024.jpeg")
