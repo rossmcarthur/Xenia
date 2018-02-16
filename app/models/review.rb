@@ -1,6 +1,6 @@
 class Review < ApplicationRecord
-  validates :title, :body, :spot_id, :author_id, :rating, presence: true
-  validates :rating, numericality: { only_integer: true, greater_than: 0, less_than: 6 }
+  validates :body, :spot_id, :author_id, :rating, presence: true
+  validates :rating, numericality: { less_than: 6 }
 
   belongs_to :spot,
     class_name: :Spot,

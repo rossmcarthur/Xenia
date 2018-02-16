@@ -1,7 +1,7 @@
 export const createReview = review => {
   return $.ajax({
     method: 'post',
-    url: `/api/spots/${review.spotId}/reviews`,
+    url: `/api/spots/${review.spot_id}/reviews`,
     data: { review }
   });
 };

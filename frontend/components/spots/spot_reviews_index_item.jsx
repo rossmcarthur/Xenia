@@ -15,7 +15,6 @@ const SpotReviewsIndexItem = ({ review }) => {
               </div>
             </div>
             <li className="review-body">{review.body}</li>
-
         </ul>
       </div>
     );

@@ -3,6 +3,7 @@ import ReactStars from 'react-stars';
 import BookingFormContainer from '../bookings/booking_form_container';
 import NavbarContainer from '../navbar/navbar_container';
 import SpotReviewIndexItem from './spot_reviews_index_item';
+import SpotReviewsContainer from './spot_reviews_container';
 
 class SpotShow extends React.Component {
   componentDidMount() {
@@ -133,6 +134,7 @@ class SpotShow extends React.Component {
             <li className="spot-show-body"> {this.props.spot.body} </li>
             {this.renderAmenities()}
             <BookingFormContainer />
+            <SpotReviewsContainer />
             <div className="review-list">
               {reviews}
             </div>

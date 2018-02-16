@@ -2,6 +2,7 @@ import * as APIUtil from '../util/review_api_util';
 
 export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
 export const REMOVE_REVIEW = 'REMOVE_REVIEW';
+export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 
 export const receiveReviews = reviews => {
   return {
@@ -14,6 +15,13 @@ export const removeReview = payload => {
   return {
     type: REMOVE_REVIEW,
     review: payload.review,
+  };
+};
+
+export const receiveReview = review => {
+  return {
+    type: RECEIVE_REVIEW,
+    review
   };
 };
 
