@@ -56,7 +56,7 @@ logoutLinks() {
   return (
     <div>
       <div className="nav-head">
-        <nav className="login-signup">
+        <nav className="host-logout">
             <span className="button-border">Become a host</span>
             &nbsp;&nbsp;
           <button onClick={this.props.logout} className="login-link">

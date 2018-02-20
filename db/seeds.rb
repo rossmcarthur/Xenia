@@ -274,7 +274,3 @@ review63 = Review.create!(title: "Never Review", body: "We were perfectly satisf
 review64 = Review.create!(title: "Never Review", body: "Great location!!! Super convenient to everywhere. The apt is very comfy! Highly recommend.", rating: 4, spot_id: spot18.id, author_id: user17.id)
 review65 = Review.create!(title: "Never Review", body: "A great place! Very convenient location, clean, nice shower! We had a great time.", rating: 1, spot_id: spot19.id, author_id: user21.id)
 review66 = Review.create!(title: "Never Review", body: "The apartment is in a perfect position, I felt safe at night and the area has every sort of restaurants and shop to explore. The apartment is cleand and is exactly how described.", rating: 5, spot_id: spot20.id, author_id: user2.id)
-
-booking1 = Booking.create!(start_date: Date.today, end_date: Date.new(2018, 2, 3), spot_id: spot1.id, booker_id: guest.id)
-booking2 = Booking.create!(start_date: Date.today, end_date: Date.new(2018, 4, 3), spot_id: spot2.id, booker_id: user2.id)
-booking3 = Booking.create!(start_date: Date.today, end_date: Date.new(2018, 5, 6), spot_id: spot3.id, booker_id: guest.id)

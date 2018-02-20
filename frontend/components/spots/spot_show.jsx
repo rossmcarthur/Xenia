@@ -6,10 +6,21 @@ import SpotReviewIndexItem from './spot_reviews_index_item';
 import SpotReviewsContainer from './spot_reviews_container';
 
 class SpotShow extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      renderChild: true,
+    };
+    this.handleReviewUnmount.bind(this);
+  }
   componentDidMount() {
     this.props.fetchSpot(this.props.spotId);
     this.props.fetchReviews(this.props.spotId);
     this.props.fetchBookings(this.props.spotId);
+  }
+
+  handleReviewUnmount(e) {
+    this.setState({ renderChild: false });
   }
 
   getAmenityIcon(amenity){
@@ -134,7 +145,7 @@ class SpotShow extends React.Component {
             <li className="spot-show-body"> {this.props.spot.body} </li>
             {this.renderAmenities()}
             <BookingFormContainer />
-            <SpotReviewsContainer />
+            {this.state.renderChild ? <SpotReviewsContainer unmountMe={this.handleReviewUnmount} render={this.state.renderChild} /> : null}
             <div className="review-list">
               {reviews}
             </div>

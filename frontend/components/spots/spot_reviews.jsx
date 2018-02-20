@@ -9,7 +9,8 @@ class SpotReview extends React.Component {
       rating: 1,
       body: '',
       spot_id: this.props.spotId,
-      author_id: this.props.currentUser.id
+      author_id: this.props.currentUser,
+      render: this.props.render
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
@@ -29,6 +30,7 @@ class SpotReview extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.action(this.state);
+    this.setState({ render: false });
     e.stopPropagation();
   }
 
@@ -37,7 +39,7 @@ class SpotReview extends React.Component {
   }
 
   render() {
-    if(this.props.bookingIds.includes(this.props.spotId) && !this.props.reviewIds.includes(this.props.spotId)) {
+    if(this.props.currentUser && this.state.render && this.props.bookingIds.includes(this.props.spotId) && !this.props.reviewIds.includes(this.props.spotId)) {
     return (
       <div className="create-review-container">
         <form id='review-create-form' onSubmit={this.handleSubmit}>
@@ -51,7 +53,7 @@ class SpotReview extends React.Component {
             half={false}
             color2={'#008489'}
             />
-          <label>Review:</label>
+          <label className='review-label'>Leave a review:</label>
           <textarea
             className='review-body-input'
             type='textarea'
@@ -60,15 +62,15 @@ class SpotReview extends React.Component {
             form='review-create-form'
             />
           <div className='review-create-cancel'>
-            <button onClick={this.handleSubmit}>Create</button>
-            <button onClick={this.handleCancel}>Cancel</button>
+            <button className='review-create-button' onClick={this.handleSubmit}>Create</button>
+            <button className='review-cancel-button' onClick={this.handleCancel}>Cancel</button>
           </div>
         </form>
       </div>
     );
   } else {
     return null;
-  }
+    }
   }
 
 }

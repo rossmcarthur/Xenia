@@ -32,7 +32,12 @@ class SearchBar extends React.Component {
       const center = response[0].geometry.location.toJSON();
       this.props.receiveMapLocation(center);
     });
-    this.props.history.push("spots");
+    if (!this.props.history.location.pathname.includes("spots")) {
+        this.props.history.push("spots");
+    } else {
+      this.props.history.goBack();
+    }
+
   }
 
   handleClear(e) {

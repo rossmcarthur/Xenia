@@ -104,6 +104,7 @@ i {
 .review-item {
   margin-bottom: 20px;
   border-bottom: 1px solid lightgray;
+  margin-top: 20px;
 }
 
 .review-list {
@@ -152,9 +153,42 @@ i {
   grid-column-start: 2;
   padding-bottom: 20px;
   border-bottom: 1px solid lightgray;
+  margin-top: -80px;
 }
 
 .review-body-input {
   width: 100%;
   height: 200px;
+  border-radius: 5px;
+}
+
+.stars {
+  margin-bottom: 10px;
+}
+
+.review-body-input {
+  margin-top: 10px;
+}
+
+.review-create-button {
+  width: 70px;
+  height: 30px;
+  color: white;
+  background-color: #FF5A5F;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.review-cancel-button {
+  width: 70px;
+  height: 30px;
+  color: white;
+  background-color: #FF5A5F;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+textarea {
+  resize: none;
 }

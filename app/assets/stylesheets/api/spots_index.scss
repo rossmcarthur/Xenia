@@ -218,7 +218,18 @@
     outline: none;
   }
 }
-
+.nav-login-link {
+  position: relative;
+  float: right;
+  border: none;
+  padding-left: 22px;
+  padding-right: 20px;
+  top: 50px;
+  background-color: transparent;
+  &:focus {
+    outline: none;
+  }
+}
 .nav-signup-link {
   position: relative;
   float: right;
