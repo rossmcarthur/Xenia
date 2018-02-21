@@ -21,8 +21,12 @@ class SessionForm extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn) {
       this.props.history.push('/');
-    } else if (!this.props.session_modal && !this.props.loggedIn) {
+    } else if (!this.props.session_modal && !this.props.loggedIn && (this.props.errors.length === nextProps.errors.length)) {
       this.props.clearErrors();
+    }
+    if (nextProps.loggedIn) {
+      this.props.clearErrors();
+      this.props.closeModal();
     }
   }
 
@@ -50,7 +54,6 @@ class SessionForm extends React.Component {
     } else if (this.props.session_modal === 'signup'){
       this.props.signup(user);
     }
-    this.props.closeModal();
   }
 
   handleGuest(e) {
@@ -74,6 +77,7 @@ class SessionForm extends React.Component {
   handleCloseModal(e) {
     this.props.closeModal();
     this.setState({email: '', password: ''});
+    this.props.clearErrors();
   }
 
   stopPropagation(e) {
@@ -152,7 +156,8 @@ class SessionForm extends React.Component {
           </div>
         </div>
       );
-    } else {
+    } else if (this.props.session_modal === 'signup'){
+      debugger
       return (
         <div onClick={this.handleCloseModal} className="modal-window">
           <div onClick={this.stopPropagation} className="signup-form-container">
