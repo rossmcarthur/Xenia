@@ -20,14 +20,12 @@ class SessionForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     debugger
-    if (nextProps.loggedIn) {
+    if (!this.props.loggedIn && nextProps.loggedIn) {
+      this.props.clearErrors();
+      this.props.closeModal();
       this.props.history.push('/');
     } else if (!this.props.session_modal && !this.props.loggedIn && (this.props.errors.length === nextProps.errors.length)) {
       this.props.clearErrors();
-    }
-    if (nextProps.loggedIn) {
-      this.props.clearErrors();
-      this.props.closeModal();
     }
   }
 
@@ -158,7 +156,6 @@ class SessionForm extends React.Component {
         </div>
       );
     } else if (this.props.session_modal === 'signup'){
-      debugger
       return (
         <div onClick={this.handleCloseModal} className="modal-window">
           <div onClick={this.stopPropagation} className="signup-form-container">
