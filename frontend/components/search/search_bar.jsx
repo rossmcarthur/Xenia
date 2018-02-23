@@ -34,19 +34,15 @@ class SearchBar extends React.Component {
     });
     if (!this.props.history.location.pathname.includes("spots")) {
         this.props.history.push("spots");
-    } else {
+    } else if (this.props.history.location.pathname.includes("spots/")) {
       this.props.history.goBack();
     }
-
   }
 
   handleClear(e) {
     e.preventDefault();
     this.setState({ search: "" });
   }
-
-
-// CHANGE: Don't need to have different renders.
 
   render() {
     if (this.props.history.location.pathname.includes("/spots")) {

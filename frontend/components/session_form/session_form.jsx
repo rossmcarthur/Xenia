@@ -19,7 +19,6 @@ class SessionForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    debugger
     if (!this.props.loggedIn && nextProps.loggedIn) {
       this.props.clearErrors();
       this.props.closeModal();
