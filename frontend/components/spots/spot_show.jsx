@@ -10,9 +10,11 @@ class SpotShow extends React.Component {
     super(props);
     this.state = {
       renderChild: true,
+      bookings: this.props.bookings
     };
     this.handleReviewUnmount.bind(this);
   }
+
   componentDidMount() {
     this.props.fetchSpot(this.props.spotId);
     this.props.fetchReviews(this.props.spotId);
