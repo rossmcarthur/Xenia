@@ -40,7 +40,7 @@ class SpotReview extends React.Component {
 
   render() {
     if (this.props.currentUser && this.state.render &&
-        (this.props.bookingIds.filter(id => id === this.props.spotId).length > this.props.reviewIds.filter(id => id === this.props.spotId.length))) {
+        (this.props.bookingIds.filter(id => id === this.props.spotId).length > this.props.reviewIds.filter(id => id === this.props.spotId).length)) {
           return (
             <div className="create-review-container">
               <form id='review-create-form' onSubmit={this.handleSubmit}>
