@@ -23,7 +23,7 @@ const mapStateToProps =  (state, ownProps) => {
     spotId: parseInt(spot),
     currentUser: state.session.currentUser,
     reviewIds: reviewIds,
-    bookingIds: bookingIds
+    bookingIds: bookingIds,
   };
 };
 

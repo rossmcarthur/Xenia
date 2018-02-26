@@ -10,19 +10,13 @@ class SpotShow extends React.Component {
     super(props);
     this.state = {
       renderChild: true,
-      bookings: this.props.bookings
     };
-    this.handleReviewUnmount.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchSpot(this.props.spotId);
     this.props.fetchReviews(this.props.spotId);
     this.props.fetchBookings(this.props.spotId);
-  }
-
-  handleReviewUnmount(e) {
-    this.setState({ renderChild: false });
   }
 
   getAmenityIcon(amenity){
@@ -103,7 +97,6 @@ class SpotShow extends React.Component {
         </div>
         );
     });
-
     return (
       <ul className="spot-amenities-list">
         <p className="amenities-title">Amenities</p>
@@ -137,6 +130,7 @@ class SpotShow extends React.Component {
           <img className="spot-show-image" src={this.props.spot.image_url}/>
           <div className="spot-show-grid">
             <li className="spot-show-title"> {this.props.spot.title}</li>
+              <BookingFormContainer created={this.handleBookingCreate}/>
             <li className="spot-show-spot_type">{this.props.spot.spot_type}</li>
               <ul className="spot-show-accommodations">
                 { this.renderGuests(this.props.spot.guests) }
@@ -146,8 +140,7 @@ class SpotShow extends React.Component {
               </ul>
             <li className="spot-show-body"> {this.props.spot.body} </li>
             {this.renderAmenities()}
-            <BookingFormContainer />
-            {this.state.renderChild ? <SpotReviewsContainer unmountMe={this.handleReviewUnmount} render={this.state.renderChild} /> : null}
+            {this.state.renderChild ? <SpotReviewsContainer render={this.state.renderChild} /> : null}
             <div className="review-list">
               {reviews}
             </div>

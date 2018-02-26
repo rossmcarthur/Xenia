@@ -16,7 +16,8 @@ export const receiveBooking = booking => {
   return {
     type: RECEIVE_BOOKING,
     booking,
-    spotId: booking.spot.id
+    spotId: booking.spot.id,
+    booker: booking.booker_id
   };
 };
 
