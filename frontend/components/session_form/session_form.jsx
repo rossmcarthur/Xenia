@@ -23,6 +23,12 @@ class SessionForm extends React.Component {
       this.props.clearErrors();
       this.props.closeModal();
       this.props.history.push('/');
+      this.setState({
+            email: '',
+            password: '',
+            first_name: '',
+            last_name: ''
+          });
     } else if (!this.props.session_modal && !this.props.loggedIn && (this.props.errors.length === nextProps.errors.length)) {
       this.props.clearErrors();
     }

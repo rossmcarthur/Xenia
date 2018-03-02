@@ -9,9 +9,10 @@ import SpotForm from './spot_form';
 
 
 const mapStateToProps = (state, ownProps) => {
+  debugger
   let formType;
   let spot;
-  if (ownProps.match.path.slice(1) === 'spots/') {
+  if (ownProps.match.path.slice(1) === 'spots/create') {
     return { formType: 'Create',
     spot: {
       title: '',

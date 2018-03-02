@@ -2,8 +2,8 @@ import React from 'react';
 import ReactStars from 'react-stars';
 import BookingFormContainer from '../bookings/booking_form_container';
 import NavbarContainer from '../navbar/navbar_container';
-import SpotReviewIndexItem from './spot_reviews_index_item';
-import SpotReviewsContainer from './spot_reviews_container';
+import SpotReviewIndexItem from '../reviews/spot_reviews_index_item';
+import SpotReviewsContainer from '../reviews/spot_reviews_container';
 
 class SpotShow extends React.Component {
   constructor(props) {
