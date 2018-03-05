@@ -9,27 +9,29 @@ import SpotForm from './spot_form';
 
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   let formType;
   let spot;
   if (ownProps.match.path.slice(1) === 'spots/create') {
-    return { formType: 'Create',
-    spot: {
-      title: '',
-      address: '',
-      body: '',
-      guests: 0,
-      price: 0,
-      spot_type: '',
-      bathrooms: 0,
-      bedrooms: 0,
-      beds: 0
-    }
-  };
+    return {
+      formType: 'Create',
+      spot: {
+        title: '',
+        address: '',
+        body: '',
+        guests: 0,
+        price: 0,
+        spot_type: '',
+        bathrooms: 0,
+        bedrooms: 0,
+        beds: 0
+      },
+      user: state.session.currentUser
+    };
   } else {
     return {
     formType: 'Edit',
-    spot: state.session.spots[ownProps.match.params.spotId]
+    spot: state.session.spots[ownProps.match.params.spotId],
+    user: state.session.currentUser
     };
   }
 };
