@@ -6,10 +6,7 @@ import Counter from '../counter/counter';
 class SpotForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      spot: this.props.spot,
-      user: this.props.user
-    };
+    this.state = this.props.spot;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -21,52 +18,54 @@ class SpotForm extends React.Component {
 
   update(field) {
     return e => this.setState({
-      [spot.field]: e.currentTarget.value
+      [field]: e.currentTarget.value
     });
+  }
+
+  counterHandler(key, value) {
+    debugger
+    this.setState( { [key]: value });
   }
 
   handleSubmit(e) {
     e.preventDefault();
     if (this.props.formType === 'Create') {
-      this.props.createSpot(this.state.spot);
+      this.props.createSpot(this.state);
     } else if (this.props.formType === 'Edit') {
-      this.props.updateSpot(this.state.spot);
+      this.props.updateSpot(this.state);
     }
   }
 
-  stopPropagation(e) {
-    e.stopPropagation();
-  }
-
   render () {
+debugger
     if (this.props.formType === 'Create') {
       return (
-        <div>
+        <div className='spot-create-grid'>
           <form className='spot-create-form' onSubmit={this.handleSubmit}>
             <div className='spot-create-content'>
               <input
                 type='text'
                 className='spot-create-title'
-                value={this.state.spot.title}
+                value={this.state.title}
                 placeholder="Title"
                 onChange={this.update('title')}
                 />
               <input
                 type='text'
                 className='spot-create-address'
-                value={this.state.spot.address}
+                value={this.state.address}
                 placeholder="Address"
                 onChange={this.update('address')}
                 />
               <textarea
                 type='textarea'
                 className='spot-create-body'
-                value={this.state.spot.body}
+                value={this.state.body}
                 onChange={this.update('body')}
                 />
                 <input
                   className='spot-create-type'
-                  value={this.state.spot.spot_type}
+                  value={this.state.spot_type}
                   placeholder="Spot Type (eg. Studio, 1 bedroom...)"
                   onChange={this.update('spot_type')}
                   />
@@ -74,23 +73,27 @@ class SpotForm extends React.Component {
                   <input
                     type='number'
                     className='spot-create-price'
-                    value={this.state.spot.price}
+                    value={this.state.price}
                     placeholder="Price"
                     onChange={this.update('price')}
                     />
                   </label>
               <label>Guests:
               </label>
-                <Counter />
+                <Counter counterType='guests' counterHandler={this.counterHandler.bind(this)}/>
               <label>Bathrooms:
               </label>
-                <Counter />
+                <Counter counterType='bathrooms' counterHandler={this.counterHandler.bind(this)}/>
               <label>Bedrooms:
               </label>
-                <Counter />
+                <Counter counterType='bedrooms' counterHandler={this.counterHandler.bind(this)}/>
               <label>Beds:
               </label>
-                <Counter />
+                <Counter counterType='beds' counterHandler={this.counterHandler.bind(this)}/>
+              <input
+                type='submit'
+                value='Create Spot'
+                />
             </div>
           </form>
         </div>

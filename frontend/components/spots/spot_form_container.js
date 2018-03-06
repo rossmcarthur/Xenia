@@ -18,12 +18,12 @@ const mapStateToProps = (state, ownProps) => {
         title: '',
         address: '',
         body: '',
-        guests: 0,
+        guests: 1,
         price: 0,
         spot_type: '',
-        bathrooms: 0,
-        bedrooms: 0,
-        beds: 0
+        bathrooms: 1,
+        bedrooms: 1,
+        beds: 1,
       },
       user: state.session.currentUser
     };
