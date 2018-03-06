@@ -71,28 +71,36 @@ class SpotForm extends React.Component {
         <div className='spot-create-grid'>
           <form className='spot-create-form' onSubmit={this.handleSubmit}>
             <div className='spot-create-content'>
-              {this.previewAttachment()}
-              <label>Upload Photo:</label>
-              <input
-                className='spot-create-upload'
-                type='file'
-                name='Upload Photo'
-                onChange={this.handleImagePreview}
-                />
-              <input
-                type='text'
-                className='spot-create-title'
-                value={this.state.title}
-                placeholder="Title"
-                onChange={this.update('title')}
-                />
-              <input
-                type='text'
-                className='spot-create-address'
-                value={this.state.address}
-                placeholder="Address"
-                onChange={this.update('address')}
-                />
+              <div className='spot-create-image'>
+                {this.previewAttachment()}
+                <label>Upload Photo:</label>
+                <input
+                  className='spot-create-upload'
+                  type='file'
+                  name='Upload Photo'
+                  onChange={this.handleImagePreview}
+                  />
+              </div>
+              <div className='spot-create-location'>
+                Location:
+                <input
+                  type='text'
+                  className='spot-create-address'
+                  value={this.state.address}
+                  placeholder="Address, City, Country"
+                  onChange={this.update('address')}
+                  />
+              </div>
+              <div className='spot-create-title-container'>
+                Title:
+                <input
+                  type='text'
+                  className='spot-create-title'
+                  value={this.state.title}
+                  onChange={this.update('title')}
+                  />
+              </div>
+              Description:
               <textarea
                 type='textarea'
                 className='spot-create-body'
@@ -114,18 +122,26 @@ class SpotForm extends React.Component {
                     onChange={this.update('price')}
                     />
                   </label>
-              <label>Guests:
-              </label>
+              <div className='spot-create-guests'>
+                <label className='label'>Guests
+                </label>
                 <Counter counterType='guests' counterHandler={this.counterHandler.bind(this)}/>
-              <label>Bathrooms:
-              </label>
+              </div>
+              <div className='spot-create-bathrooms'>
+                <label className='label'>Bathrooms
+                </label>
                 <Counter counterType='bathrooms' counterHandler={this.counterHandler.bind(this)}/>
-              <label>Bedrooms:
-              </label>
+              </div>
+              <div className='spot-create-bedrooms'>
+                <label className='label'>Bedrooms
+                </label>
                 <Counter counterType='bedrooms' counterHandler={this.counterHandler.bind(this)}/>
-              <label>Beds:
-              </label>
+              </div>
+              <div className='spot-create-beds'>
+                <label className='label'>Beds
+                </label>
                 <Counter counterType='beds' counterHandler={this.counterHandler.bind(this)}/>
+              </div>
               <input
                 className='spot-create-submit'
                 type='submit'

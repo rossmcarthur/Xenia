@@ -23,10 +23,10 @@ class Counter extends React.Component {
 
   render() {
     return (
-      <div>
-        <button onClick={this.handleDecrement} disabled={this.state.count === 1}>-</button>
-          <span>{this.state.count}</span>
-        <button onClick={this.handleIncrement}>+</button>
+      <div className='counter'>
+        <button className='counter-button' onClick={this.handleDecrement} disabled={this.state.count === 1}>-</button>
+          <span className='counter-value'>{this.state.count}</span>
+        <button className='counter-button' onClick={this.handleIncrement}>+</button>
       </div>
     );
   }

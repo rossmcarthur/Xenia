@@ -21,6 +21,14 @@
   height: 100%;
 }
 
+.spot-create-image {
+  display: flex;
+}
+
+.spot-create-location {
+  display: flex;
+}
+
 .spot-create-submit {
   background: #FF5A5F;
   color: white;
@@ -28,4 +36,57 @@
   height: 40px;
   font-size: 16px;
   border-radius: 5px;
+}
+
+.spot-create-body {
+  height: 100px;
+}
+.label {
+ font-family: 'Roboto', sans-serif;
+}
+
+.spot-create-guests {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.spot-create-bedrooms {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.spot-create-beds {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.spot-create-bathrooms {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  margin-right: 80px;
+}
+
+.counter-button {
+  outline: none;
+  border: none;
+  border: 1px solid #008489;
+  border-radius: 50%
+}
+
+.counter-button:enabled {
+  cursor: pointer;
+}
+
+.counter-value {
 }
