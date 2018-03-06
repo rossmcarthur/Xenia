@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 500px;
+  height: 100%;
   margin: 0 auto;
   grid-column-start: 2;
 }
@@ -14,4 +14,18 @@
   width: 100%;
   height: 100%;
   grid-template-columns: 1fr 1fr 1fr;
+}
+
+.spot-create-upload-preview {
+  width: 100%;
+  height: 100%;
+}
+
+.spot-create-submit {
+  background: #FF5A5F;
+  color: white;
+  width: 120px;
+  height: 40px;
+  font-size: 16px;
+  border-radius: 5px;
 }

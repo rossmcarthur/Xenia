@@ -8,6 +8,7 @@ class SpotForm extends React.Component {
     super(props);
     this.state = this.props.spot;
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleImagePreview = this.handleImagePreview.bind(this);
   }
 
   componentWillMount() {
@@ -23,8 +24,35 @@ class SpotForm extends React.Component {
   }
 
   counterHandler(key, value) {
-    debugger
     this.setState( { [key]: value });
+  }
+
+  handleImagePreview(e) {
+    const reader = new FileReader();
+    const file = e.currentTarget.files[0];
+    reader.onloadend = () =>
+      this.setState({ imageUrl: reader.result, imageFile: file});
+
+      if (file) {
+        reader.readAsDataURL(file);
+      } else {
+        this.setState({ imageUrl: '', imageFile: null });
+      }
+          debugger
+    }
+
+
+  previewAttachment() {
+    if (this.state.imageUrl) {
+      return (
+        <div>
+          <img className='spot-create-upload-preview' src={this.state.imageUrl}  alt='Spot Preview'/>
+        </div>
+      );
+    } else {
+      return null;
+    }
+    debugger
   }
 
   handleSubmit(e) {
@@ -37,12 +65,20 @@ class SpotForm extends React.Component {
   }
 
   render () {
-debugger
+    debugger
     if (this.props.formType === 'Create') {
       return (
         <div className='spot-create-grid'>
           <form className='spot-create-form' onSubmit={this.handleSubmit}>
             <div className='spot-create-content'>
+              {this.previewAttachment()}
+              <label>Upload Photo:</label>
+              <input
+                className='spot-create-upload'
+                type='file'
+                name='Upload Photo'
+                onChange={this.handleImagePreview}
+                />
               <input
                 type='text'
                 className='spot-create-title'
@@ -91,6 +127,7 @@ debugger
               </label>
                 <Counter counterType='beds' counterHandler={this.counterHandler.bind(this)}/>
               <input
+                className='spot-create-submit'
                 type='submit'
                 value='Create Spot'
                 />

@@ -24,6 +24,8 @@ const mapStateToProps = (state, ownProps) => {
         bathrooms: 1,
         bedrooms: 1,
         beds: 1,
+        imageUrl: '',
+        imageFile: null
       },
       user: state.session.currentUser
     };
