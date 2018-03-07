@@ -30,14 +30,13 @@ const mapStateToProps = (state, ownProps) => {
       user: state.session.currentUser
     };
   } else {
-    return {
-    formType: 'Edit',
-    spot: state.session.spots[ownProps.match.params.spotId],
-    user: state.session.currentUser
-    };
+      return {
+      formType: 'Edit',
+      spot: state.session.spots[ownProps.match.params.spotId],
+      user: state.session.currentUser
+      };
   }
 };
-
 
 const mapDispatchToProps = dispatch => {
   return {

@@ -38,7 +38,6 @@ class SpotForm extends React.Component {
       } else {
         this.setState({ imageUrl: '', imageFile: null });
       }
-          debugger
     }
 
 
@@ -65,7 +64,6 @@ class SpotForm extends React.Component {
   }
 
   render () {
-    debugger
     if (this.props.formType === 'Create') {
       return (
         <div className='spot-create-grid'>
@@ -107,12 +105,15 @@ class SpotForm extends React.Component {
                 value={this.state.body}
                 onChange={this.update('body')}
                 />
+              <div className='spot-create-spot-type'>
+                Spot Type:
                 <input
                   className='spot-create-type'
                   value={this.state.spot_type}
-                  placeholder="Spot Type (eg. Studio, 1 bedroom...)"
+                  placeholder="(eg. Studio, 1 bedroom...)"
                   onChange={this.update('spot_type')}
                   />
+              </div>
                 <label>Price:
                   <input
                     type='number'
