@@ -1,5 +1,5 @@
 class Spot < ApplicationRecord
-  validates :host_id, :title, :address, :body, :guests, :bedrooms, :beds, :bathrooms, :price, :lng, :lat, presence: true
+  validates :host_id, :title, :address, :body, :guests, :bedrooms, :beds, :bathrooms, :price, presence: true
   has_attached_file :image, default_url: "abandoned.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
@@ -7,9 +7,9 @@ class Spot < ApplicationRecord
     class_name: :User,
     foreign_key: :host_id
 
-    has_many :bookings,
-      class_name: :Booking,
-      foreign_key: :spot_id
+  has_many :bookings,
+    class_name: :Booking,
+    foreign_key: :spot_id
 
   has_many :reviews,
     class_name: :Review,

@@ -51,16 +51,21 @@ class SpotForm extends React.Component {
     } else {
       return null;
     }
-    debugger
   }
 
   handleSubmit(e) {
     e.preventDefault();
     if (this.props.formType === 'Create') {
-      this.props.createSpot(this.state);
+      const file = this.state.imageFile;
+
+      const formData = new FormData();
+      formData.append("post[title]", title);
+      if (file) formData.append("post[image]", file);
+  this.props.createPost(formData);
     } else if (this.props.formType === 'Edit') {
       this.props.updateSpot(this.state);
     }
+
   }
 
   render () {

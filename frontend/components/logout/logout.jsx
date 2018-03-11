@@ -3,7 +3,7 @@ import SessionFormContainer from '../session_form/session_form_container';
 import SearchContainer from '../search/search_container';
 import NavbarContainer from '../navbar/navbar_container';
 import SearchBarContainer from '../search/search_bar_container';
-
+import { Link } from 'react-router-dom';
 
 
 class Logout extends React.Component {
@@ -30,7 +30,9 @@ logoutLinks() {
     <div>
       <div className="nav-head">
         <nav className="host-logout">
+          <Link to='/spots/create'>
             <span className="button-border">Become a host</span>
+          </Link>
             &nbsp;&nbsp;
           <button onClick={this.props.logout} className="login-link">
             <span className="button-border">Log Out</span>

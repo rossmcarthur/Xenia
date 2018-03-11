@@ -28,7 +28,7 @@ class Api::SpotsController < ApplicationController
   private
 
   def spot_params
-    params.require(:spot).permit(:host_id, :title, :address, :body, :guests, :price, :lng, :lat)
+    params.require(:spot).permit(:host_id, :title, :address, :body, :guests, :price, :bedrooms, :beds, :lng, :lat)
   end
 
   def bounds
