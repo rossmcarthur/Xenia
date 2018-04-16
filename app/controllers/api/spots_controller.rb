@@ -10,7 +10,7 @@ class Api::SpotsController < ApplicationController
     if @spot.save
       render :show
     else
-      render json: @spot.errors.full_messages, status:422
+      render json: @spot.errors.full_messages, status: 422
     end
   end
 
@@ -28,7 +28,7 @@ class Api::SpotsController < ApplicationController
   private
 
   def spot_params
-    params.require(:spot).permit(:host_id, :title, :address, :body, :guests, :price, :bedrooms, :beds, :lng, :lat)
+    params.require(:spot).permit(:host_id, :title, :address, :body, :guests, :price, :bedrooms, :beds, :lng, :lat, :bathrooms, :spot_type)
   end
 
   def bounds

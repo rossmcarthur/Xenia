@@ -19,7 +19,7 @@ const mapStateToProps = (state, ownProps) => {
         address: '',
         body: '',
         guests: 1,
-        price: 0,
+        price: '0',
         spot_type: '',
         bathrooms: 1,
         bedrooms: 1,
@@ -27,8 +27,7 @@ const mapStateToProps = (state, ownProps) => {
         imageUrl: '',
         imageFile: null,
         host_id: state.session.currentUser.id
-      },
-      user: state.session.currentUser
+      }
     };
   } else {
       return {

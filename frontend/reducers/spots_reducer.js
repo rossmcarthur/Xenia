@@ -13,18 +13,18 @@ const spotsReducer = (state = {}, action) => {
 
   switch(action.type) {
     case RECEIVE_SPOTS:
-    return action.spots;
+      return action.spots;
     case RECEIVE_SPOT:
-    return merge({}, state, { [action.spot.id]: action.spot });
+      return merge({}, state, { [action.spot.id]: action.spot });
     case RECEIVE_REVIEW:
-    return merge({}, state, state[action.spotId].reviews.push(action.review));
+      return merge({}, state, state[action.spotId].reviews.push(action.review));
     case RECEIVE_BOOKING:
-    return merge({}, state, state[action.spotId].bookings.push(action.booking));
+      return merge({}, state, state[action.spotId].bookings.push(action.booking));
     case REMOVE_SPOT:
-    delete newState[action.spot.id];
-    return newState;
+      delete newState[action.spot.id];
+      return newState;
     default:
-    return state;
+      return state;
   }
 };
 

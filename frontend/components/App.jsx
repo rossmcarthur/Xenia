@@ -12,8 +12,8 @@ const App = () => (
   <div>
     <header className="main-header">
       <Route exact path="/" component={ SessionContainer } />
-      <Route exact path="/spots" component={ SearchContainer } />
       <Route exact path='/spots/:spotId' component={ SpotShowContainer } />
+      <Route exact path="/spots" component={ SearchContainer } />
       <Route exact path='/spots/create' component={ SpotFormContainer } />
     </header>
   </div>

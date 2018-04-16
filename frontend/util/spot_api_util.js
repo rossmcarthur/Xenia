@@ -13,13 +13,14 @@ export const fetchSpot = id => {
   });
 };
 
-export const createSpot = spot => {
+export const createSpot = formData => {
   return $.ajax({
     method: 'post',
     url: 'api/spots',
     processData: false,
     contentType: false,
-    data: { spot }
+    dataType: 'json',
+    data: formData
   });
 };
 

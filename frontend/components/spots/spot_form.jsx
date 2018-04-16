@@ -6,7 +6,9 @@ import Counter from '../counter/counter';
 class SpotForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.spot;
+    this.state = {
+      spot: this.props.spot
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleImagePreview = this.handleImagePreview.bind(this);
   }
@@ -19,20 +21,26 @@ class SpotForm extends React.Component {
 
   update(field) {
     return e => this.setState({
-      [field]: e.currentTarget.value
+      spot: Object.assign({}, this.state.spot, {
+        [field]: e.currentTarget.value
+      })
     });
   }
 
   counterHandler(key, value) {
-    this.setState( { [key]: value });
+    this.setState( { spot: Object.assign({}, this.state.spot, { [key]: value })});
   }
 
   handleImagePreview(e) {
     const reader = new FileReader();
     const file = e.currentTarget.files[0];
     reader.onloadend = () =>
-      this.setState({ imageUrl: reader.result, imageFile: file});
-
+      this.setState({
+        spot: Object.assign({}, this.state.spot, {
+          imageUrl: reader.result, imageFile: file
+        })
+      }
+    );
       if (file) {
         reader.readAsDataURL(file);
       } else {
@@ -40,12 +48,11 @@ class SpotForm extends React.Component {
       }
     }
 
-
   previewAttachment() {
-    if (this.state.imageUrl) {
+    if (this.state.spot.imageUrl) {
       return (
         <div>
-          <img className='spot-create-upload-preview' src={this.state.imageUrl}  alt='Spot Preview'/>
+          <img className='spot-create-upload-preview' src={this.state.spot.imageUrl}  alt='Spot Preview'/>
         </div>
       );
     } else {
@@ -55,17 +62,22 @@ class SpotForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.props.formType === 'Create') {
-      const file = this.state.imageFile;
+    const file = this.state.imageFile;
+    const formData = new FormData();
 
-      const formData = new FormData();
-      formData.append("post[title]", title);
-      if (file) formData.append("post[image]", file);
-  this.props.createPost(formData);
-    } else if (this.props.formType === 'Edit') {
-      this.props.updateSpot(this.state);
-    }
+    formData.append('spot[title]', this.state.spot.title);
+    formData.append('spot[address]', this.state.spot.address);
+    formData.append('spot[body]', this.state.spot.body);
+    formData.append('spot[guests]', this.state.spot.guests);
+    formData.append('spot[price]', this.state.spot.price);
+    formData.append('spot[spot_type]', this.state.spot.spot_type);
+    formData.append('spot[bathrooms]', this.state.spot.bathrooms);
+    formData.append('spot[bedrooms]', this.state.spot.bedrooms);
+    formData.append('spot[beds]', this.state.spot.beds);
+    formData.append('spot[host_id]', this.state.spot.host_id);
+    if (file) formData.append('spot[image]', file);
 
+    this.props.createSpot(formData, this.resetForm);
   }
 
   render () {
@@ -89,7 +101,7 @@ class SpotForm extends React.Component {
                 <input
                   type='text'
                   className='spot-create-address'
-                  value={this.state.address}
+                  value={this.state.spot.address}
                   placeholder="Address, City, Country"
                   onChange={this.update('address')}
                   />
@@ -99,7 +111,7 @@ class SpotForm extends React.Component {
                 <input
                   type='text'
                   className='spot-create-title'
-                  value={this.state.title}
+                  value={this.state.spot.title}
                   onChange={this.update('title')}
                   />
               </div>
@@ -107,14 +119,14 @@ class SpotForm extends React.Component {
               <textarea
                 type='textarea'
                 className='spot-create-body'
-                value={this.state.body}
+                value={this.state.spot.body}
                 onChange={this.update('body')}
                 />
               <div className='spot-create-spot-type'>
                 Spot Type:
                 <input
                   className='spot-create-type'
-                  value={this.state.spot_type}
+                  value={this.state.spot.spot_type}
                   placeholder="(eg. Studio, 1 bedroom...)"
                   onChange={this.update('spot_type')}
                   />
@@ -123,7 +135,7 @@ class SpotForm extends React.Component {
                   <input
                     type='number'
                     className='spot-create-price'
-                    value={this.state.price}
+                    value={Number(this.state.spot.price)}
                     placeholder="Price"
                     onChange={this.update('price')}
                     />
@@ -164,38 +176,7 @@ class SpotForm extends React.Component {
         </div>
       );
     }
-
   }
-
 }
 
-// <select
-//   className='spot-create-bedrooms'
-//   value={this.state.spot.bedrooms}
-//   onChange={this.update('bedrooms')}
-//   >
-//     <option value='1'>1</option>
-//     <option value='2'>2</option>
-//     <option value='3'>3</option>
-//     <option value='4'>4</option>
-//     <option value='5'>5</option>
-// </select>
-
-
-// <select
-//   className='spot-create-guests'
-//   value={this.state.spot.guests}
-//   onChange={this.update('guests')}
-//   >
-//     <option value='1'>1</option>
-//     <option value='2'>2</option>
-//     <option value='3'>3</option>
-//     <option value='4'>4</option>
-//     <option value='5'>5</option>
-//     <option value='6'>6</option>
-//     <option value='7'>7</option>
-//     <option value='8'>8</option>
-//     <option value='8'>9</option>
-//     <option value='10'>10</option>
-// </select>
 export default SpotForm;

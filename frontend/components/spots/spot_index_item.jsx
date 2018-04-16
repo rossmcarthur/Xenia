@@ -5,7 +5,6 @@ import ReactStars from 'react-stars';
 
 
 const SpotIndexItem = ({ spot }) => {
-
     return (
       <div className="spot-index-item">
         <ul>

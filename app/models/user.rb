@@ -13,7 +13,7 @@ class User < ApplicationRecord
     class_name: :Spot,
     foreign_key: :host_id
 
-    has_many :bookings,
+  has_many :bookings,
     class_name: :Booking,
     foreign_key: :booker_id
 

@@ -22,7 +22,6 @@ class SpotMap extends React.Component {
     this.MarkerManager.updateMarkers(newProps.spots);
   }
 
-
   handleMarkerClick(spot) {
     this.props.history.push(`spots/${spot.id}`);
   }
