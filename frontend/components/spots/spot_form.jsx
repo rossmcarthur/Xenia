@@ -11,6 +11,7 @@ class SpotForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleImagePreview = this.handleImagePreview.bind(this);
+    this.handleAddress = this.handleAddress.bind(this);
   }
 
   componentWillMount() {
@@ -60,11 +61,29 @@ class SpotForm extends React.Component {
     }
   }
 
+  handleAddress() {
+    const geocoder = new google.maps.Geocoder();
+    const address = this.state.spot.address;
+    geocoder.geocode({ address }, data => {
+      const lat = data[0].geometry.location.lat();
+      const lng = data[0].geometry.location.lng();
+      this.setState({
+        spot: Object.assign({}, this.state.spot, {
+          lat: lat,
+          lng: lng
+          })
+        }
+      );
+    }
+  );
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    const file = this.state.imageFile;
+    const file = this.state.spot.imageFile;
     const formData = new FormData();
-
+    const geocoder = new google.maps.Geocoder();
+    const address = this.state.spot.address;
     formData.append('spot[title]', this.state.spot.title);
     formData.append('spot[address]', this.state.spot.address);
     formData.append('spot[body]', this.state.spot.body);
@@ -75,9 +94,28 @@ class SpotForm extends React.Component {
     formData.append('spot[bedrooms]', this.state.spot.bedrooms);
     formData.append('spot[beds]', this.state.spot.beds);
     formData.append('spot[host_id]', this.state.spot.host_id);
+
+
     if (file) formData.append('spot[image]', file);
 
-    this.props.createSpot(formData, this.resetForm);
+    geocoder.geocode({ address }, data => {
+      const lat = data[0].geometry.location.lat();
+      const lng = data[0].geometry.location.lng();
+      this.setState({
+        spot: Object.assign({}, this.state.spot, {
+          lat: lat,
+          lng: lng
+          })
+        }, () => {
+          formData.append('spot[lat]', this.state.spot.lat);
+          formData.append('spot[lng]', this.state.spot.lng);
+          return (
+          this.props.createSpot(formData, this.resetForm)
+        );
+        }
+      );
+    }
+  );
   }
 
   render () {
