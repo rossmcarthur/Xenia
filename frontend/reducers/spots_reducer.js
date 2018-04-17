@@ -19,7 +19,7 @@ const spotsReducer = (state = {}, action) => {
     case RECEIVE_REVIEW:
       return merge({}, state, state[action.spotId].reviews.push(action.review));
     case RECEIVE_BOOKING:
-      return merge({}, state, state[action.spotId].bookings.push(action.booking));
+      return merge({}, state, state[action.spot.id].bookings.push(action.booking));
     case REMOVE_SPOT:
       delete newState[action.spot.id];
       return newState;

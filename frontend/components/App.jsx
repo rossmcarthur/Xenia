@@ -7,6 +7,7 @@ import SpotShowContainer from './spots/spot_show_container';
 import SpotFormContainer from './spots/spot_form_container';
 import SpotIndexContainer from './spots/spot_index_container';
 import SearchContainer from './search/search_container';
+import BookingIndex from './bookings/booking_index';
 
 const App = () => (
   <div>
@@ -15,6 +16,7 @@ const App = () => (
       <Route exact path='/spots/:spotId' component={ SpotShowContainer } />
       <Route exact path="/spots" component={ SearchContainer } />
       <Route exact path='/spots/create' component={ SpotFormContainer } />
+      <Route exact path='/bookings' component={ BookingIndex } />
     </header>
   </div>
 );
