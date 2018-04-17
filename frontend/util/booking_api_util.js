@@ -5,6 +5,13 @@ export const fetchBookings = spotId => {
   });
 };
 
+export const fetchUserBookings = userId => {
+  return $.ajax({
+    method: 'get',
+    url: `/api/users/${userId}/bookings`
+  });
+};
+
 export const fetchBooking = id => {
   return $.ajax({
     method: 'get',

@@ -1,16 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchBooking } from '../../actions/booking_actions';
+import { fetchUserBookings } from '../../actions/booking_actions';
 
 const mapStateToProps = state => {
   return {
+    userId: state.session.currentUser.id,
     bookings: state.session.currentUser.bookings,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchBooking: id => dispatch(fetchBooking(id))
+    fetchUserBookings: userId => dispatch(fetchUserBookings(userId))
   };
 };
 
@@ -20,9 +21,7 @@ class BookingIndex extends React.Component {
   }
 
 componentDidMount() {
-  this.props.bookings.forEach( booking => {
-     this.props.fetchBooking(booking.id);
-  });
+  this.props.fetchUserBookings(this.props.userId);
 }
 
 render() {
@@ -30,7 +29,7 @@ render() {
     <div>
     WHAT UP!!
   </div>
-  )
+);
 }
 }
 

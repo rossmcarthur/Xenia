@@ -37,6 +37,13 @@ APIUtil.fetchBookings(spotId).then(bookings => (
   ))
 );
 
+export const fetchUserBookings = userId => dispatch => (
+  APIUtil.fetchUserBookings(userId).then(bookings => (
+    dispatch(receiveBookings(bookings)),
+    err => dispatch(receiveBookingErrors(err.responseJSON))
+  ))
+);
+
 export const fetchBooking = id => dispatch => (
 APIUtil.fetchBooking(id).then(booking => (
     dispatch(receiveBooking(booking)),
