@@ -10,7 +10,7 @@ class Api::BookingsController < ApplicationController
   end
 
   def index
-    @bookings = Booking.where("spot_id = ?", params[:spot_id])
+    @bookings = Booking.where(booker_id: params[:user_id])
     render :index
   end
 
@@ -23,6 +23,6 @@ class Api::BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :booker_id, :spot_id)
+    params.require(:booking).permit(:start_date, :end_date, :booker_id, :spot_id, :user_id)
   end
 end

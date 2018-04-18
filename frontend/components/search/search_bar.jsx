@@ -45,7 +45,7 @@ class SearchBar extends React.Component {
   }
 
   render() {
-    if (this.props.history.location.pathname.includes("/spots")) {
+    if (this.props.history.location.pathname.includes("/spots") || this.props.history.location.pathname.includes('/bookings')) {
       return (
         <div>
           <form onSubmit={this.handleSubmit} className="search-form">

@@ -1,5 +1,6 @@
 import merge from 'lodash/merge';
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
+import { RECEIVE_ALL_BOOKINGS } from '../actions/booking_actions';
 
 const _nullUser = Object.freeze({
   currentUser: null

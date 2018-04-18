@@ -20,9 +20,6 @@ export const receiveBooking = booking => {
   };
 };
 
-// spotId: booking.spot.id,
-// booker: booking.booker_id
-
 export const receiveBookingErrors = errors => {
   return {
     type: RECEIVE_BOOKING_ERRORS,
@@ -37,11 +34,12 @@ APIUtil.fetchBookings(spotId).then(bookings => (
   ))
 );
 
-export const fetchUserBookings = userId => dispatch => (
+export const fetchUserBookings = userId => (dispatch, getState) => (
   APIUtil.fetchUserBookings(userId).then(bookings => (
     dispatch(receiveBookings(bookings)),
     err => dispatch(receiveBookingErrors(err.responseJSON))
   ))
+
 );
 
 export const fetchBooking = id => dispatch => (
