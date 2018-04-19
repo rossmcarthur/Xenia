@@ -1,0 +1,40 @@
+.booking-index-page {
+  width: 100%;
+  height: 100%;
+}
+
+.booking-index {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  width: 100%;
+}
+
+.booking-index-item {
+  display: flex;
+  grid-column-start: 2;
+}
+
+.booking-index-spot-image {
+  width: 325px;
+  height: 200px;
+}
+
+.booking-index-host-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid white;
+  position: absolute;
+  bottom: -20px;
+  left: 115px;
+}
+
+.booking-index-image-container {
+  display: flex;
+  flex-direction: column;
+  position: relative
+}
+
+.booking-page-header {
+  grid-column-start: 2;
+}

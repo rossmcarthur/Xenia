@@ -39,10 +39,12 @@ render() {
   });
 }
   return (
-    <div>
+    <div className='booking-index-page'>
       <NavbarContainer />
-      <p className='booking-page-header'>Your Bookings</p>
-      { bookings }
+      <div className='booking-index'>
+        <p className='booking-page-header'>Your Bookings</p>
+        { bookings }
+      </div>
     </div>
   );
 }

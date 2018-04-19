@@ -7,24 +7,34 @@ class Navbar extends React.Component {
   render() {
     if (this.props.loggedIn) {
       return (
+
+
+
       <div  className="nav-header">
-        <Link to="/" className="nav-header-link">
+
+        <div className='nav-header-icon-container'>
           <img className="nav-header-icon" src={window.staticImages.XeniaLogo}/>
-        </Link>
-          <div className="search-container">
-            <SearchBarContainer />
-          </div>
-          <div className="nav-links">
-              <img className="nav-user-image" src={this.props.currentUser.image_url}/>
-              <Link to="/">
-                <button className="logout-button" onClick={this.props.logout}>Log Out</button>
-              </Link>
-              <Link to="/spots/create">
-                <button className="host-button">Become a host</button>
-              </Link>
+        </div>
+
+        <div>
+          <SearchBarContainer />
+        </div>
+
+        <div className="nav-links">
+          <Link to="/spots/create" className='spot-create-link'>
+            <button className="host-button">Become a host</button>
+          </Link>
+          <div className='nav-user-image-container'>
+            <img className="nav-user-image" src={this.props.currentUser.image_url}/>
           </div>
       </div>
+
+      </div>
       );
+
+
+
+
     } else {
       return (
         <div  className="nav-header">
@@ -50,3 +60,19 @@ class Navbar extends React.Component {
 }
 
 export default Navbar;
+
+// <Link to="/" className="nav-header-link">
+//   <img className="nav-header-icon" src={window.staticImages.XeniaLogo}/>
+// </Link>
+//   <div className="search-container">
+//     <SearchBarContainer />
+//   </div>
+//   <div className="nav-links">
+//       <img className="nav-user-image" src={this.props.currentUser.image_url}/>
+//       <Link to="/">
+//         <button className="logout-button" onClick={this.props.logout}>Log Out</button>
+//       </Link>
+//       <Link to="/spots/create">
+//         <button className="host-button">Become a host</button>
+//       </Link>
+//   </div>

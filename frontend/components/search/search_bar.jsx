@@ -47,18 +47,20 @@ class SearchBar extends React.Component {
   render() {
     if (this.props.history.location.pathname.includes("/spots") || this.props.history.location.pathname.includes('/bookings')) {
       return (
-        <div>
+        <div className="search-container">
           <form onSubmit={this.handleSubmit} className="search-form">
-            <input
-              id='search-input'
-              className="search-bar"
-              type="text"
-              placeholder="Anywhere"
-              value={this.state.search}
-              onChange={this.handleChange}>
-            </input>
+            <div className='search-bar-input'>
+              <i  id='search-icon' class="fas fa-search"></i>
+              <input
+                id='search-input'
+                className="search-bar"
+                type="text"
+                placeholder="Anywhere"
+                value={this.state.search}
+                onChange={this.handleChange}>
+              </input>
+          </div>
           </form>
-        <button onClick={this.handleClear} className="search-close-icon">&times;</button>
         </div>
     );
   } else {
