@@ -55,18 +55,17 @@
 }
 
 .spot-map {
-  // position: fixed;
-  // right: 0;
-  // top: 40px;
   grid-column-start: 2;
+  height: 100%;
   position: fixed;
   right: 0;
+  top: 31px;
 }
 
 #map-container {
   top: 50px;
   float: right;
-  height: 890px;
+  height: 100%;
 }
 
 .spot-index {

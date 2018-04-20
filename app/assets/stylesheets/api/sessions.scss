@@ -49,18 +49,6 @@ a {
   color: black;
 }
 
-.button-border {
-  text-decoration: none;
-  color: inherit;
-  font-size: 13px;
-  cursor: pointer;
-  outline: none;
-  &:hover {
-    padding-bottom: 6px;
-    border-bottom: 2px solid gray;
-  }
-}
-
 .login-link {
   border: none;
   padding-left: 22px;
