@@ -30,13 +30,10 @@ logoutLinks() {
     <div>
       <div className="nav-head">
         <nav className="host-logout">
-          <Link to='/spots/create'>
+          <Link className='spot-create-link' to='/spots/create'>
             <span className="button-border">Become a host</span>
           </Link>
             &nbsp;&nbsp;
-          <button onClick={this.props.logout} className="login-link">
-            <span className="button-border">Log Out</span>
-          </button>
           <img className="home-user-image" src={this.props.currentUser.image_url} />
         </nav>
       </div>
