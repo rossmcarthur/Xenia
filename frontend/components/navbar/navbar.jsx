@@ -7,19 +7,13 @@ class Navbar extends React.Component {
   render() {
     if (this.props.loggedIn) {
       return (
-
-
-
       <div  className="nav-header">
-
         <div className='nav-header-icon-container'>
           <img className="nav-header-icon" src={window.staticImages.XeniaLogo}/>
         </div>
-
         <div>
           <SearchBarContainer />
         </div>
-
         <div className="nav-links">
           <Link to="/spots/create" className='spot-create-link'>
             <button className="host-button">Become a host</button>
@@ -28,13 +22,8 @@ class Navbar extends React.Component {
             <img className="nav-user-image" src={this.props.currentUser.image_url}/>
           </div>
       </div>
-
       </div>
       );
-
-
-
-
     } else {
       return (
         <div  className="nav-header">

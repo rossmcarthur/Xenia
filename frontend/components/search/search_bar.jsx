@@ -65,11 +65,11 @@ class SearchBar extends React.Component {
     );
   } else {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit} className="search-form">
+      <div className='home-search'>
+        <form onSubmit={this.handleSubmit} className="home-search-form">
           <input
             id='search-input'
-            className="search-bar"
+            className="home-search-bar"
             type="text"
             placeholder="Anywhere"
             value={this.state.search}
