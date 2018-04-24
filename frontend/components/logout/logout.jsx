@@ -30,6 +30,9 @@ logoutLinks() {
     <div>
       <div className="nav-head">
         <nav className="host-logout">
+          <Link className='booking-page-link' to='/bookings'>
+            <span className='button-border'>Trips</span>
+          </Link>
           <Link className='spot-create-link' to='/spots/create'>
             <span className="button-border">Become a host</span>
           </Link>
