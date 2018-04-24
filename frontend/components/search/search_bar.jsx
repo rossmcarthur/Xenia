@@ -50,7 +50,7 @@ class SearchBar extends React.Component {
         <div className="search-container">
           <form onSubmit={this.handleSubmit} className="search-form">
             <div className='search-bar-input'>
-              <i  id='search-icon' class="fas fa-search"></i>
+              <i  id='search-icon' className="fas fa-search"></i>
               <input
                 id='search-input'
                 className="search-bar"
@@ -65,7 +65,7 @@ class SearchBar extends React.Component {
     );
   } else {
     return (
-      <div className='home-search'>
+      <div class='home-search'>
         <form onSubmit={this.handleSubmit} className="home-search-form">
           <input
             id='search-input'

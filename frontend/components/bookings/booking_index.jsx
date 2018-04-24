@@ -30,21 +30,17 @@ render() {
   let bookings;
   if (Object.values(this.props.bookings).length > 0) {
     bookings = this.props.bookings.map(booking => {
-    return (
-      <BookingIndexItem
-        key={booking.id}
-        booking={booking}
-        />
-    );
-  });
-}
+      return (
+        <BookingIndexItem
+          key={booking.id}
+          booking={booking}
+          />
+      );
+    });
+  }
   return (
-    <div className='booking-index-page'>
-      <NavbarContainer />
-      <div className='booking-index'>
-        <p className='booking-page-header'>Your Bookings</p>
-        { bookings }
-      </div>
+    <div className='booking-index'>
+      { bookings }
     </div>
   );
 }

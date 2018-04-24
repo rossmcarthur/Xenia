@@ -22,7 +22,6 @@ class SpotIndex extends React.Component {
     );
   }
 
-
 }
 
 export default SpotIndex;

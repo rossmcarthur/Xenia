@@ -15,6 +15,9 @@ class Navbar extends React.Component {
           <SearchBarContainer />
         </div>
         <div className="nav-links">
+          <Link to='/bookings'>
+            <button className='trips-button'>Trips</button>
+            </Link>
           <Link to="/spots/create" className='spot-create-link'>
             <button className="host-button">Become a host</button>
           </Link>

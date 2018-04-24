@@ -1,17 +1,36 @@
 .booking-index-page {
-  width: 100%;
   height: 100%;
+  width: 100%;
 }
 
-.booking-index {
+.booking-index-grid {
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  width: 100%;
+  position: relative;
+  top: 83px;
+  grid-template-columns: 1fr 3.5fr 1fr;
+  z-index: 1;
+}
+.booking-index {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  grid-column-start: 2;
+}
+
+.booking-index-header {
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  grid-column-start: 2;
+  margin-left: 7px;
+  color: #484848;
+  margin-top: 50px;
+  margin-bottom: 35px;
 }
 
 .booking-index-item {
-  display: flex;
-  grid-column-start: 2;
+  border: 1px solid lightgrey;
+  margin: 10px;
+  height: auto;
 }
 
 .booking-index-spot-image {
@@ -25,16 +44,33 @@
   border-radius: 50%;
   border: 3px solid white;
   position: absolute;
-  bottom: -20px;
-  left: 115px;
+  margin: 155px 0 0 120px;
+
 }
 
 .booking-index-image-container {
   display: flex;
   flex-direction: column;
-  position: relative
 }
 
-.booking-page-header {
-  grid-column-start: 2;
+.booking-index-text-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.booking-index-title {
+  font-size: 30px;
+  color: #484848;
+  padding: 10px;
+}
+
+.booking-index-dates {
+  display: flex;
+  justify-content: center;
+  padding: 10px 10px 10px 20px;
+}
+
+.bullet {
+  font-size: 10px;
+  padding: 3px 10px 0 10px;
 }
