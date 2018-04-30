@@ -9,7 +9,7 @@ const BookingIndexItem = ({ booking }) => {
     return (
       <div className="booking-index-item">
         <Link to={`/spots/${booking.spot.id}`}>
-        <ul>
+        <ul className='booking-index-list'>
           <div className='booking-index-image-container'>
             <img className='booking-index-spot-image' src={booking.spot.spot_image_url}/>
             <img className='booking-index-host-image' src={booking.host.host_image_url} />
