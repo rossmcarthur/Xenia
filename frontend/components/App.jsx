@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { ProtectedRoute } from '../util/route_util';
 import SessionFormContainer from './session_form/session_form_container';
 import LogoutContainer from './logout/logout_container';
 import SpotShowContainer from './spots/spot_show_container';
@@ -16,7 +17,7 @@ const App = () => (
       <Route exact path='/spots/:spotId' component={ SpotShowContainer } />
       <Route exact path="/spots" component={ SearchContainer } />
       <Route exact path='/spots/create' component={ SpotFormContainer } />
-      <Route exact path='/bookings' component={ BookingPage } />
+      <ProtectedRoute exact path='/bookings' component={ BookingPage } />
     </header>
   </div>
 );

@@ -56,6 +56,7 @@ a {
   border: none;
   padding-left: 22px;
   padding-right: 20px;
+  font-size: 13px;
   background-color: transparent;
   cursor: pointer;
   &:focus {
@@ -125,6 +126,7 @@ a {
 .signup-link {
   border: none;
   background-color: transparent;
+  font-size: 13px;
   cursor: pointer;
   &:focus {
     outline: none;

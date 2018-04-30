@@ -2,6 +2,7 @@ import React from 'react';
 import SearchBarContainer from '../search/search_bar_container';
 import { Link } from 'react-router-dom';
 import SessionFormContainer from '../session_form/session_form_container';
+import Dropdown from './dropdown';
 
 class Navbar extends React.Component {
   render() {
@@ -22,7 +23,7 @@ class Navbar extends React.Component {
             <button className="host-button">Become a host</button>
           </Link>
           <div className='nav-user-image-container'>
-            <img className="nav-user-image" src={this.props.currentUser.image_url}/>
+            <Dropdown />
           </div>
       </div>
       </div>
