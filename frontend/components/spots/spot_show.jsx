@@ -22,7 +22,7 @@ class SpotShow extends React.Component {
   getAmenityIcon(amenity){
     switch (amenity.amenity_type) {
       case "Kitchen":
-        return <i class="fa fa-cutlery" aria-hidden="true"></i>;
+        return <i class="fas fa-utensils"></i>;
       case "Wifi":
         return <i class="fa fa-wifi" aria-hidden="true"></i>;
       case "Air Conditioning":
@@ -128,22 +128,24 @@ class SpotShow extends React.Component {
         <div className="spot-show-container">
           <NavbarContainer />
           <img className="spot-show-image" src={this.props.spot.image_url}/>
-          <div className="spot-show-grid">
-            <li className="spot-show-title"> {this.props.spot.title}</li>
-              <BookingFormContainer created={this.handleBookingCreate}/>
-            <li className="spot-show-spot_type">{this.props.spot.spot_type}</li>
-              <ul className="spot-show-accommodations">
-                { this.renderGuests(this.props.spot.guests) }
-                { this.renderBedrooms(this.props.spot.bedrooms) }
-                { this.renderBeds(this.props.spot.beds) }
-                { this.renderBathrooms(this.props.spot.bathrooms) }
-              </ul>
-            <li className="spot-show-body"> {this.props.spot.body} </li>
-            {this.renderAmenities()}
-            {this.state.renderChild ? <SpotReviewsContainer render={this.state.renderChild} /> : null}
-            <div className="review-list">
-              {reviews}
+          <div className='booking-format'>
+            <div className='middle'>
+              <li className="spot-show-title"> {this.props.spot.title}</li>
+              <li className="spot-show-spot_type">{this.props.spot.spot_type}</li>
+                <ul className="spot-show-accommodations">
+                  { this.renderGuests(this.props.spot.guests) }
+                  { this.renderBedrooms(this.props.spot.bedrooms) }
+                  { this.renderBeds(this.props.spot.beds) }
+                  { this.renderBathrooms(this.props.spot.bathrooms) }
+                </ul>
+              <li className="spot-show-body"> {this.props.spot.body} </li>
+              {this.renderAmenities()}
+              {this.state.renderChild ? <SpotReviewsContainer render={this.state.renderChild} /> : null}
+                <div className="review-list">
+                  {reviews}
+                </div>
             </div>
+              <BookingFormContainer created={this.handleBookingCreate}/>
           </div>
         </div>
       );
@@ -152,5 +154,7 @@ class SpotShow extends React.Component {
     }
   }
 }
+
+
 
 export default SpotShow;

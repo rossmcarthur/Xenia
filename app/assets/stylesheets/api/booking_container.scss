@@ -1,10 +1,13 @@
 .booking-container {
   border: 1px solid lightgray;
   width: 380px;
-  grid-column-start: 4;
   position: sticky;
   margin-top: 48px;
   top: 130px;
+  height: 300px;
+  right: 150px;
+  background: white;
+
 }
 
 .booking-content {

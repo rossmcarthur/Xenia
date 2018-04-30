@@ -29,7 +29,7 @@ const mapStateToProps =  (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    action: review => dispatch(createReview(review)),
+    createReview: review => dispatch(createReview(review)),
   };
 };
 

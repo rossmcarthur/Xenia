@@ -4,6 +4,19 @@
   display: block;
 }
 
+.middle {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 600px;
+  padding-right: 30px;
+
+}
+
+.booking-format {
+  display: flex;
+}
+
 .spot-show-grid {
   display: grid;
   grid-template-columns: 1.2fr 2fr 0.1fr 2fr;

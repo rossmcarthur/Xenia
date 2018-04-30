@@ -29,7 +29,7 @@ class SpotReview extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state);
+    this.props.createReview(this.state);
     this.setState({ render: false });
     e.stopPropagation();
   }
@@ -39,6 +39,7 @@ class SpotReview extends React.Component {
   }
 
   render() {
+    debugger
     if (this.props.currentUser && this.state.render &&
         (this.props.bookingIds.filter(id => id === this.props.spotId).length > this.props.reviewIds.filter(id => id === this.props.spotId).length)) {
           return (
