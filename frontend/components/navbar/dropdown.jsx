@@ -45,15 +45,16 @@ class Dropdown extends React.Component {
   dropdownShow() {
   return (
     <div className='dropdown-full'>
-      <button className='dropdown-profile'>Profile</button>
+      <div className='dropdown-items'>
       <button className='dropdown-logout' onClick={this.handleLogout}>Logout</button>
+      </div>
     </div>
   );
 }
 
   render() {
     return (
-      <div>
+      <div className='dropdown-container'>
       <img className='nav-user-image' src={this.props.currentUser.image_url} onClick={this.handleShow} />
       {this.state.show ? this.dropdownShow() : null}
     </div>

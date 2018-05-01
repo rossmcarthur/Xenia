@@ -4,7 +4,7 @@ import SearchContainer from '../search/search_container';
 import NavbarContainer from '../navbar/navbar_container';
 import SearchBarContainer from '../search/search_bar_container';
 import { Link } from 'react-router-dom';
-
+import Dropdown from '../navbar/dropdown';
 
 class Logout extends React.Component {
   constructor(props) {
@@ -37,7 +37,7 @@ logoutLinks() {
             <span className="button-border">Become a host</span>
           </Link>
             &nbsp;&nbsp;
-          <img className="home-user-image" src={this.props.currentUser.image_url} />
+          <Dropdown />
         </nav>
       </div>
         {this.homeSearch()}

@@ -39,10 +39,10 @@ class Navbar extends React.Component {
             </div>
             <div className='nav-links'>
               <button onClick={this.props.loginModal} className="nav-login-link">
-                <span className="button-border">Log In</span>
+                <span className="spots-button-border">Log In</span>
               </button>
               <button onClick={this.props.signupModal} className="nav-signup-link">
-                <span className="button-border">Sign Up</span>
+                <span className="spots-button-border">Sign Up</span>
               </button>
             </div>
           <SessionFormContainer />

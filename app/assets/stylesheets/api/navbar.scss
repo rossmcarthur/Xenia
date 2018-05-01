@@ -79,7 +79,7 @@
 }
 
 .nav-user-image-container {
-  padding: 19px;
+  padding: 19px 19px 19px 19px;
   align-self: center;
   cursor: pointer;
   border-bottom: 2px solid transparent;
@@ -94,6 +94,7 @@
   border-radius: 50%;
   border: 1px solid #DBDBDB;
 }
+
 
 .host-button {
   background-color: transparent;
@@ -117,7 +118,7 @@
   font-size: 13px;
   cursor: pointer;
   font-family: 'Roboto', sans-serif;
-  padding: 31px 0 31px 0;
+  padding: 31px 31px 32px 31px;
   border-bottom: 2px solid transparent;
   &:hover {
     border-bottom: 2px solid gray;
@@ -171,6 +172,9 @@
     &:hover {
       border-bottom: 2px solid grey;
     }
+    &:focus {
+      outline: none;
+    }
 }
 
 .nav-signup-link {
@@ -183,4 +187,47 @@
     &:hover {
       border-bottom: 2px solid grey;
     }
+    &:focus {
+      outline: none;
+    }
+}
+
+.dropdown-full {
+  position: absolute;
+  top: 80px;
+  right: 8px;
+  border: 1px solid lightgrey;
+  background: white;
+  width: 280px;
+  height: 51px;
+}
+
+.dropdown-logout {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 15px;
+  background: white;
+  border: none;
+  color: grey;
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: 16px;
+  width: 100%;
+  cursor: pointer;
+    &:hover {
+      border-bottom: 1px solid grey;
+    }
+    &:focus {
+      outline: none;
+    }
+}
+
+.dropdown-items {
+  padding: 15px 20px 0 20px;
+}
+
+.spots-button-border {
+  font-size: 13px;
+  padding: 15px 30px 18px 30px;
+
 }
