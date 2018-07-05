@@ -43,3 +43,9 @@ export const deleteReview = id => dispatch => {
     return dispatch(removeReview(review));
   });
 };
+
+export const updateReview = review => dispath => {
+  return APIUtil.updateReview(review).then(review => {
+    return dispatch(receiveReview(review));
+  });
+};

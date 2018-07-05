@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { deleteReview } from '../../actions/review_actions';
+import { deleteReview, updateReview } from '../../actions/review_actions';
 
 class SpotReviewsIndexItem extends React.Component {
   render() {
@@ -47,6 +47,7 @@ class SpotReviewsIndexItem extends React.Component {
 const mapDispatchToProps = dispatch => {
   return {
     deleteReview: id => dispatch(deleteReview(id)),
+    updateReview: review => dispatch(updateReview(review))
   };
 };
 
