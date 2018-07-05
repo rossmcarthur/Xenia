@@ -5,14 +5,8 @@ import SpotReviewsIndexItem from './spot_reviews_index_item';
 class SpotReview extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      rating: 1,
-      body: '',
-      spot_id: this.props.spotId,
-      author_id: this.props.currentUser,
-      render: this.props.render,
-      show: false,
-    };
+    this.state = this.props.review;
+    this.show =  this.props.show;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
     this.handleRating = this.handleRating.bind(this);
@@ -35,12 +29,32 @@ class SpotReview extends React.Component {
   }
 
   handleCancel(e) {
-    this.setState({ body: '', show: false });
+    if (this.props.formType === 'create') {
+      this.setState({ body: '', show: false });
+    } else {
+      this.setState({ show: false });
+    }
+  }
+
+  renderCreate() {
+    return (
+      <button className='review-create-button' onClick={this.handleSubmit}>Create</button>
+    );
+  }
+
+  renderUpdate() {
+    return (
+      <button className='review-create-button' onClick={this.handleSubmit}>Update</button>
+    );
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createReview(this.state);
+    if (this.props.formType === 'create') {
+      this.props.createReview(this.state);
+    } else if (this.props.formType === 'edit') {
+      this.props.updateReview(this.state);
+    }
     this.handleHide();
     e.stopPropagation();
   }
@@ -73,17 +87,21 @@ class SpotReview extends React.Component {
               form='review-create-form'
               />
             <div className='review-create-cancel'>
-              <button className='review-create-button' onClick={this.handleSubmit}>Create</button>
+              {this.props.formType === 'create' ? this.renderCreate() : this.renderUpdate()}
               <button className='review-cancel-button' onClick={this.handleCancel}>Cancel</button>
             </div>
           </form>
         </div>
       );
-    } else {
+    } else if (this.props.formType === 'create'){
       return (
         <div>
           <button className='review-form-open' onClick={this.handleShow}>Leave a Review</button>
         </div>
+      );
+    } else if (this.props.formType === 'edit') {
+      return (
+        <SpotReviewsIndexItem review={this.state}/>
       );
     }
 

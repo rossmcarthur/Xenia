@@ -3,7 +3,7 @@ import ReactStars from 'react-stars';
 import BookingFormContainer from '../bookings/booking_form_container';
 import NavbarContainer from '../navbar/navbar_container';
 import SpotReviewIndexItem from '../reviews/spot_reviews_index_item';
-import SpotReviewsContainer from '../reviews/spot_reviews_container';
+import SpotReviewsCreateContainer from '../reviews/spot_reviews_create_container';
 
 class SpotShow extends React.Component {
   constructor(props) {
@@ -156,7 +156,7 @@ class SpotShow extends React.Component {
                 </ul>
               <li className="spot-show-body"> {this.props.spot.body} </li>
               {this.renderAmenities()}
-              <SpotReviewsContainer />
+              <SpotReviewsCreateContainer />
               <div className="review-list">
                 {reviews}
               </div>

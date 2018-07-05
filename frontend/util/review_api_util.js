@@ -23,7 +23,7 @@ export const deleteReview = id => {
 export const updateReview = review => {
   return $.ajax({
     method: 'patch',
-    url: `/api/review/${review.id}`,
+    url: `/api/reviews/${review.id}`,
     data: { review }
   });
 };

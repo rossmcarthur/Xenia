@@ -6,24 +6,15 @@ const mapStateToProps =  (state, ownProps) => {
   const spot = Object.values(state.entities.spots).map(spot => {
     return spot.id;
   });
-  let bookingIds;
-  let reviewIds;
-  if (state.session.currentUser) {
-      bookingIds =  Object.values(state.session.currentUser.bookings).map(booking => {
-        return booking.spot_id;
-      });
-      reviewIds = Object.values(state.session.currentUser.reviews).map(review => {
-        return review.spot_id;
-      });
-  } else {
-    bookingIds = null;
-    reviewIds = null;
-  }
   return {
-    spotId: parseInt(spot),
+    review: {
+      spot_id: parseInt(spot),
+      body: '',
+      rating: 1,
+      show: false,
+    },
     currentUser: state.session.currentUser,
-    reviewIds: reviewIds,
-    bookingIds: bookingIds,
+    formType: 'create'
   };
 };
 

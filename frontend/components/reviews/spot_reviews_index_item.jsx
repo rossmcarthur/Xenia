@@ -1,14 +1,26 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { deleteReview, updateReview } from '../../actions/review_actions';
+import SpotReviewsEditContainer from './spot_reviews_edit_container';
 
 class SpotReviewsIndexItem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      edit: false,
+    };
+  }
   render() {
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     const review = this.props.review;
     const currentUser = this.props.currentUser;
     const date = new Date(review.created_at);
-    if (review.author.id === currentUser.id){
+    debugger
+    if (this.state.edit) {
+      return (
+        <SpotReviewsEditContainer currentReview={review} />
+      );
+    } else if (review.author.id === currentUser.id){
       return (
         <div>
           <ul className="review-item">
@@ -20,7 +32,7 @@ class SpotReviewsIndexItem extends React.Component {
                 </div>
               </div>
               <li className="review-body">{review.body}</li>
-              <button>Edit</button>
+              <button onClick={() => this.setState({ edit: true })}>Edit</button>
               <button onClick={() => this.props.deleteReview(review.id)}>Delete</button>
           </ul>
         </div>
@@ -43,12 +55,16 @@ class SpotReviewsIndexItem extends React.Component {
     }
   }
 }
+const mapStateToProps = state =>  {
+  return {
+    currentUser: state.session.currentUser,
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   return {
     deleteReview: id => dispatch(deleteReview(id)),
-    updateReview: review => dispatch(updateReview(review))
   };
 };
 
-export default connect(null, mapDispatchToProps)(SpotReviewsIndexItem);
+export default connect(mapStateToProps, mapDispatchToProps)(SpotReviewsIndexItem);
