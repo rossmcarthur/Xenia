@@ -14,9 +14,11 @@ const App = () => (
   <div className='App'>
     <header className="main-header">
       <Route exact path="/" component={ SessionContainer } />
-      <Route exact path='/spots/:spotId' component={ SpotShowContainer } />
+      <Switch>
+        <ProtectedRoute exact path='/spots/create' component={ SpotFormContainer } />
+        <Route exact path='/spots/:spotId' component={ SpotShowContainer } />
+      </Switch>
       <Route exact path="/spots" component={ SearchContainer } />
-      <Route exact path='/spots/create' component={ SpotFormContainer } />
       <ProtectedRoute exact path='/bookings' component={ BookingPage } />
     </header>
   </div>

@@ -38,8 +38,9 @@ export const fetchSpot = id => dispatch => {
 export const createSpot = spot => dispatch => {
   return APIUtil.createSpot(spot).then(spot => {
     return dispatch(receiveSpot(spot));
-  });
-};
+    });
+  };
+
 
 export const updateSpot = spot => dispatch => {
   return APIUtil.updateSpot(spot).then(spot => {

@@ -180,6 +180,7 @@ i {
 
 .review-body-input {
   margin-top: 10px;
+  height: 100px;
 }
 
 .review-create-button {
@@ -199,6 +200,20 @@ i {
   background-color: #FF5A5F;
   border-radius: 5px;
   margin-top: 10px;
+}
+
+#review-create-form {
+  margin-top: 20px;
+}
+
+.review-form-open {
+  width: 110px;
+  height: 30px;
+  color: white;
+  background-color: #FF5A5F;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
 textarea {

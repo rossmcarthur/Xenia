@@ -6,11 +6,13 @@ import { fetchBookings } from '../../actions/booking_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const spotId = ownProps.match.params.spotId;
+  const spot = state.entities.spots[spotId];
   return {
-    spot: state.entities.spots[spotId],
+    spot,
     spotId,
     reviews: state.entities.reviews,
-    bookings: state.entities.bookings
+    bookings: state.entities.bookings,
+    currentUser: state.session.currentUser
   };
 };
 

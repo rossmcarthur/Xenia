@@ -141,7 +141,7 @@ class SpotForm extends React.Component {
                 onChange={this.update('body')}
                 />
               <div className='spot-create-spot-type'>
-                Spot Type:
+                Spot Type:&nbsp;
                 <input
                   className='spot-create-type'
                   value={this.state.spot.spot_type}
@@ -149,9 +149,9 @@ class SpotForm extends React.Component {
                   onChange={this.update('spot_type')}
                   />
               </div>
-                <label>Price:
+                <label>Price:&nbsp;
                   <input
-                    type='number'
+                    type='text'
                     className='spot-create-price'
                     value={Number(this.state.spot.price)}
                     placeholder="Price"

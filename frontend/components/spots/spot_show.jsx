@@ -9,14 +9,31 @@ class SpotShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      renderChild: true,
+      renderChild: false,
+      spot: this.props.spot,
     };
+
+    this.showReviewRender = this.showReviewRender.bind(this);
+    this.hideReviewRender = this.hideReviewRender.bind(this);
+  }
+
+  componentWillMount() {
+    this.props.fetchSpot(this.props.spotId).then((res) => {
+      this.setState({ spot: res.spot });
+    });
   }
 
   componentDidMount() {
-    this.props.fetchSpot(this.props.spotId);
     this.props.fetchReviews(this.props.spotId);
     this.props.fetchBookings(this.props.spotId);
+  }
+
+  showReviewRender() {
+    this.setState({ renderChild: true });
+  }
+
+  hideReviewRender() {
+    this.setState({ renderChild: false });
   }
 
   getAmenityIcon(amenity){
@@ -111,19 +128,18 @@ class SpotShow extends React.Component {
     if (Object.keys(this.props.reviews).length > 0) {
       reviews = Object.values(this.props.reviews).map(review => {
         if (review.spot.id === spotId) {
-        return (
-          <SpotReviewIndexItem
-            key={review.id}
-            review={review}
-            spot={this.props.spot}
-            />
-        );
-      }
-    });
-  } else {
-      return null;
+          return (
+            <SpotReviewIndexItem
+              key={review.id}
+              review={review}
+              spot={this.props.spot}
+              currentUser={this.props.currentUser}
+              />
+          );
+        }
+      });
     }
-    if (this.props.spot) {
+    if (this.state.spot) {
       return (
         <div className="spot-show-container">
           <NavbarContainer />
@@ -140,12 +156,12 @@ class SpotShow extends React.Component {
                 </ul>
               <li className="spot-show-body"> {this.props.spot.body} </li>
               {this.renderAmenities()}
-              {this.state.renderChild ? <SpotReviewsContainer render={this.state.renderChild} /> : null}
-                <div className="review-list">
-                  {reviews}
-                </div>
+              <SpotReviewsContainer />
+              <div className="review-list">
+                {reviews}
+              </div>
             </div>
-              <BookingFormContainer created={this.handleBookingCreate}/>
+              <BookingFormContainer renderReview={() => this.showReviewRender()}/>
           </div>
         </div>
       );
@@ -154,6 +170,8 @@ class SpotShow extends React.Component {
     }
   }
 }
+
+// {this.state.renderChild ? <SpotReviewsContainer render={this.state.renderChild} /> : null}
 
 
 

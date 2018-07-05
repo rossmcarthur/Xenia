@@ -93,3 +93,33 @@
   box-sizing: border-box;
   max-width: 400px;
 }
+
+.spot-index-item-list {
+  width: 400px;
+}
+
+@media (min-width: 1575px) {
+  .spot-image {
+    width: 310px;
+    height: 190px;
+  }
+  .spot-index-item-list {
+    width: 320px;
+  }
+  .spot-index-item {
+    width: 320px;
+  }
+}
+
+@media (min-width: 1050px) {
+  .spot-image {
+    width: 340px;
+    height: 200px;
+  }
+  .spot-index-item-list {
+    width: 350px;
+  }
+  .spot-index-item {
+    width: 350px;
+  }
+}

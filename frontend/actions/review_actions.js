@@ -11,10 +11,10 @@ export const receiveReviews = reviews => {
   };
 };
 
-export const removeReview = payload => {
+export const removeReview = review => {
   return {
     type: REMOVE_REVIEW,
-    review: payload.review,
+    review
   };
 };
 
@@ -40,6 +40,6 @@ export const createReview = review => dispatch => {
 
 export const deleteReview = id => dispatch => {
   return APIUtil.deleteReview(id).then(review => {
-    return dispatch(deleteReview(id));
+    return dispatch(removeReview(review));
   });
 };

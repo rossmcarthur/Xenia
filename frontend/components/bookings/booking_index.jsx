@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchUserBookings } from '../../actions/booking_actions';
+import { fetchSpots } from '../../actions/spot_actions';
 import BookingIndexItem from './booking_index_item';
 import NavbarContainer from '../navbar/navbar_container';
 
@@ -13,7 +14,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchUserBookings: userId => dispatch(fetchUserBookings(userId))
+    fetchUserBookings: userId => dispatch(fetchUserBookings(userId)),
+    fetchSpots: () => dispatch(fetchSpots())
   };
 };
 
@@ -24,6 +26,7 @@ class BookingIndex extends React.Component {
 
   componentWillMount() {
     this.props.fetchUserBookings(this.props.booker_id);
+    this.props.fetchSpots();
   }
 
 render() {

@@ -7,7 +7,7 @@ import ReactStars from 'react-stars';
 const SpotIndexItem = ({ spot }) => {
     return (
       <div className="spot-index-item">
-        <ul>
+        <ul className="spot-index-item-list">
           <Link className="spot-link" to={`/spots/${spot.id}`}>
             <img className="spot-image" src={spot.image_url}/>
             <li className="spot-type">{spot.spot_type}</li>
