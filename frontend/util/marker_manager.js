@@ -16,8 +16,14 @@ class MarkerManager {
         text: "$"+spot.price
       },
       icon: {
-
-      }
+        path: 'M-3,3a0.905778,0.905778,0,0,1,-1,-1v-4a1,1,0,0,1,1,-1h6a1,1,0,0,1,1,1v4a1,1,0,0,1,-1,1h-2l-0.9176470588235298,1.564705882352941l-1.015686274509804,-1.549019607843137Z',
+        fillColor: "white",
+        strokeColor: "gray",
+        fillOpacity: 1,
+        strokeWeight: 1,
+        scale: 6
+      },
+      zIndex: spot.id
     });
     marker.addListener('click', () => this.handleClick(spot));
     this.markers[marker.spotId] = marker;
