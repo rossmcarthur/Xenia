@@ -15,7 +15,6 @@ class SpotReviewsIndexItem extends React.Component {
     const review = this.props.review;
     const currentUser = this.props.currentUser;
     const date = new Date(review.created_at);
-    debugger
     if (this.state.edit) {
       return (
         <SpotReviewsEditContainer currentReview={review} />
