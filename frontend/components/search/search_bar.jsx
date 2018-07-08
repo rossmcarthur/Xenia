@@ -65,7 +65,7 @@ class SearchBar extends React.Component {
     );
   } else {
     return (
-      <div class='home-search'>
+      <div className='home-search'>
         <form onSubmit={this.handleSubmit} className="home-search-form">
           <input
             id='search-input'
