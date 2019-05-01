@@ -39,15 +39,15 @@ class SpotShow extends React.Component {
   getAmenityIcon(amenity){
     switch (amenity.amenity_type) {
       case "Kitchen":
-        return <i class="fas fa-utensils"></i>;
+        return <i className="fas fa-utensils"></i>;
       case "Wifi":
-        return <i class="fa fa-wifi" aria-hidden="true"></i>;
+        return <i className="fa fa-wifi" aria-hidden="true"></i>;
       case "Air Conditioning":
-        return <i class="fa fa-snowflake-o" aria-hidden="true"></i>;
+        return <i className="fa fa-snowflake-o" aria-hidden="true"></i>;
       case "Family/Kid Friendly":
-        return <i class="fa fa-child" aria-hidden="true"></i>;
+        return <i className="fa fa-child" aria-hidden="true"></i>;
       case "Cable TV":
-        return <i class="fa fa-television" aria-hidden="true"></i>;
+        return <i className="fa fa-television" aria-hidden="true"></i>;
       default:
         return null;
     }
@@ -57,13 +57,13 @@ class SpotShow extends React.Component {
     if (guests === 1) {
       return (
         <div>
-          <li className="spot-show-guests"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;&nbsp;{guests} guest</li>
+          <li className="spot-show-guests"><i className="fa fa-users" aria-hidden="true"></i>&nbsp;&nbsp;{guests} guest</li>
         </div>
       );
     } else {
       return (
         <div>
-          <li className="spot-show-guests"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;&nbsp;{guests} guests</li>
+          <li className="spot-show-guests"><i className="fa fa-users" aria-hidden="true"></i>&nbsp;&nbsp;{guests} guests</li>
         </div>
       );
     }
@@ -72,11 +72,11 @@ class SpotShow extends React.Component {
   renderBedrooms(bedrooms) {
     if (bedrooms === 1) {
       return (
-        <li className="spot-show-bedrooms"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;&nbsp;{bedrooms} bedroom</li>
+        <li className="spot-show-bedrooms"><i className="fa fa-home" aria-hidden="true"></i>&nbsp;&nbsp;{bedrooms} bedroom</li>
       );
     } else {
       return (
-        <li className="spot-show-bedrooms"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;&nbsp;{bedrooms} bedrooms</li>
+        <li className="spot-show-bedrooms"><i className="fa fa-home" aria-hidden="true"></i>&nbsp;&nbsp;{bedrooms} bedrooms</li>
       );
     }
   }
@@ -84,11 +84,11 @@ class SpotShow extends React.Component {
   renderBeds(beds) {
     if (beds === 1) {
       return (
-        <li className="spot-show-beds"><i class="fa fa-bed" aria-hidden="true"></i>&nbsp;&nbsp;{beds} bed</li>
+        <li className="spot-show-beds"><i className="fa fa-bed" aria-hidden="true"></i>&nbsp;&nbsp;{beds} bed</li>
       );
     } else {
       return (
-        <li className="spot-show-beds"><i class="fa fa-bed" aria-hidden="true"></i>&nbsp;&nbsp;{beds} beds</li>
+        <li className="spot-show-beds"><i className="fa fa-bed" aria-hidden="true"></i>&nbsp;&nbsp;{beds} beds</li>
       );
     }
   }
@@ -96,11 +96,11 @@ class SpotShow extends React.Component {
   renderBathrooms(bathrooms) {
     if (bathrooms === 1) {
       return (
-        <li className="spot-show-bathrooms"><i class="fa fa-bath" aria-hidden="true"></i>&nbsp;&nbsp;{bathrooms} bathroom</li>
+        <li className="spot-show-bathrooms"><i className="fa fa-bath" aria-hidden="true"></i>&nbsp;&nbsp;{bathrooms} bathroom</li>
       );
     } else {
       return (
-        <li className="spot-show-bathrooms"><i class="fa fa-bath" aria-hidden="true"></i>&nbsp;&nbsp;{bathrooms} bathrooms</li>
+        <li className="spot-show-bathrooms"><i className="fa fa-bath" aria-hidden="true"></i>&nbsp;&nbsp;{bathrooms} bathrooms</li>
       );
     }
   }
@@ -108,7 +108,7 @@ class SpotShow extends React.Component {
   renderAmenities() {
     const listItems = this.props.spot.amenities.map((amenity, i) => {
       return (
-        <div className="list-icons">
+        <div key={i} className="list-icons">
           { this.getAmenityIcon(amenity) }
           <li className="spot-amenity" key={i}>{amenity.amenity_type}</li>
         </div>

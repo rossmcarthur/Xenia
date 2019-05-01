@@ -40,6 +40,7 @@ logoutLinks() {
           <Dropdown />
         </nav>
       </div>
+      <img className='main-background' src='alamo_square_san_francisco.jpg'></img>
         {this.homeSearch()}
     </div>
   );

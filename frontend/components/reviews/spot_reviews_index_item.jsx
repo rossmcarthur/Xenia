@@ -10,16 +10,18 @@ class SpotReviewsIndexItem extends React.Component {
       edit: false,
     };
   }
+
   render() {
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     const review = this.props.review;
     const currentUser = this.props.currentUser;
     const date = new Date(review.created_at);
+    
     if (this.state.edit) {
       return (
         <SpotReviewsEditContainer currentReview={review} />
       );
-    } else if (review.author.id === currentUser.id){
+    } else if (currentUser && review.author.id === currentUser.id){
       return (
         <div>
           <ul className="review-item">
